@@ -1,0 +1,99 @@
+{
+  "version": 2,
+  "projects": {
+    "lbugasu.github.io": {
+      "root": "apps/lbugasu.github.io",
+      "sourceRoot": "apps/lbugasu.github.io",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/next:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "root": "apps/lbugasu.github.io",
+            "outputPath": "dist/apps/lbugasu.github.io"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "lbugasu.github.io:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "lbugasu.github.io:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "executor": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "lbugasu.github.io:build:production"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/lbugasu.github.io"],
+          "options": {
+            "jestConfig": "apps/lbugasu.github.io/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/lbugasu.github.io/**/*.{ts,tsx,js,jsx}"]
+          }
+        }
+      }
+    },
+    "lbugasu.github.io-e2e": {
+      "root": "apps/lbugasu.github.io-e2e",
+      "sourceRoot": "apps/lbugasu.github.io-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/lbugasu.github.io-e2e/cypress.json",
+            "devServerTarget": "lbugasu.github.io:serve",
+            "tsConfig": "apps/lbugasu.github.io-e2e/tsconfig.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "lbugasu.github.io:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/lbugasu.github.io-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/next"
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "scss",
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "lbugasu.github.io"
+}
