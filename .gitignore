@@ -8,6 +8,13 @@
 # dependencies
 /node_modules
 
+# Env Variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
 # IDEs and editors
 /.idea
 .project
