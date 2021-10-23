@@ -10,6 +10,10 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
+  images: {
+    domains: ['images.unsplash.com'],
+  },
+  webpack: {}
 };
 
 module.exports = withNx(nextConfig);
