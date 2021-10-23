@@ -1,22 +1,24 @@
 import Header from '../../components/header'
+import { getFilesFromSrcDir } from '../../helpers/files'
 
-export default function Index({ props }) {
+export default function Index(props) {
   return (
     <div>
       <Header {...props} />
       <p>This is the development environment Next.js runs in.</p>
+      {props.posts.map(post => (
+        <h1 key={post.title}>{post.title}</h1>
+      ))}
     </div>
   )
 }
 
-export async function getStaticPaths() {
-  const config = {}
-  return {}
-}
-
-export const getStaticProps = async ({ params }) => {
-  const config = {}
+export async function getStaticProps() {
+  const filePosts = getFilesFromSrcDir('posts/dev')
   return {
-    props: {}
+    props: {
+      initialColorMode: 'light',
+      posts: filePosts
+    }
   }
 }

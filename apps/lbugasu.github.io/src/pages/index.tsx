@@ -1,6 +1,10 @@
 import styles from './index.module.scss'
 import { useColorMode } from 'theme-ui'
 import Header from '../components/header'
+import path from 'path'
+import fs from 'fs'
+import matter from 'gray-matter'
+
 export function Index(props) {
   /*
    * Replace the elements below with your own.
@@ -21,10 +25,18 @@ export function Index(props) {
 export default Index
 
 export async function getStaticProps() {
+  const postsDirectory = path.join(process.cwd(), 'src/posts/dev')
+  const filenames = fs.readdirSync(postsDirectory)
+  const filePosts = filenames.map(filename => {
+    const fullPath = path.join(process.cwd(), 'src/posts', filename)
+    const post = fs.readFileSync(fullPath, 'utf-8')
+    const { data } = matter(post)
+    return data
+  })
   return {
     props: {
       initialColorMode: 'light',
-      word: 'Larry McLarry'
+      posts: filePosts
     }
   }
 }
