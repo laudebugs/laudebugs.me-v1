@@ -10,11 +10,16 @@ const theme = {
   containers: {
     header: {
       display: 'flex',
+      justifyContent: 'space-between',
       alignItems: 'center',
-      justifyContent: 'center',
-      width: '100%',
-      logo: {
-        margin: '0 2ch 0 2ch'
+      centerNav: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        logo: {
+          margin: '0 2ch 0 2ch'
+        }
       }
     }
   },

@@ -1,9 +1,6 @@
 import styles from './index.module.scss'
 import { useColorMode } from 'theme-ui'
-import Header from '../components/header'
-import path from 'path'
-import fs from 'fs'
-import matter from 'gray-matter'
+import { getFilesFromSrcDir } from '../helpers/files'
 
 export function Index(props) {
   /*
@@ -16,7 +13,6 @@ export function Index(props) {
 
   return (
     <div className={styles.page}>
-      <Header {...props} />
       <h2>{props.word}</h2>
     </div>
   )
@@ -25,14 +21,7 @@ export function Index(props) {
 export default Index
 
 export async function getStaticProps() {
-  const postsDirectory = path.join(process.cwd(), 'src/posts/dev')
-  const filenames = fs.readdirSync(postsDirectory)
-  const filePosts = filenames.map(filename => {
-    const fullPath = path.join(process.cwd(), 'src/posts', filename)
-    const post = fs.readFileSync(fullPath, 'utf-8')
-    const { data } = matter(post)
-    return data
-  })
+  const filePosts = getFilesFromSrcDir('posts/dev')
   return {
     props: {
       initialColorMode: 'light',
