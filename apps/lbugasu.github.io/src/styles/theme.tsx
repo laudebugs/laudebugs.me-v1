@@ -5,8 +5,13 @@ const theme = {
   ...tosh,
   initialColorModeName: 'light',
   colors: {
-    ...tosh.colors
+    ...tosh.colors,
+    background: '#efebe9',
+    modes: {
+      ...tosh.colors.modes
+    }
   },
+
   containers: {
     header: {
       display: 'flex',

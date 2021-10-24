@@ -12,6 +12,7 @@
   "dependencies": {
     "@apollo/client": "^3.4.16",
     "@mapbox/rehype-prism": "^0.8.0",
+    "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^11.1.2",
     "@nrwl/next": "12.8.0",
     "@theme-ui/mdx": "^0.11.1",
