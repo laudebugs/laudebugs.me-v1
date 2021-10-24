@@ -16,6 +16,6 @@ export function getFilesFromSrcDir(directory: string) {
 export function getSinglePostFromSrcDir(directory: string, filename: string) {
   const fullPath = path.join(process.cwd(), `apps/lbugasu.github.io/src/${directory}/${filename}.mdx`)
   const post = fs.readFileSync(fullPath, 'utf-8')
-  const { data } = matter(post)
-  return data
+
+  return post
 }

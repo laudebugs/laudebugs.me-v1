@@ -4,6 +4,7 @@ const withPlugins = require('next-compose-plugins')
 const nextEnv = require('next-env')
 const dotEnvLoad = require('dotenv-load')
 const withMDX = require('@next/mdx')({ extension: /\.mdx$/ })
+const rehypePrism = require('@mapbox/rehype-prism')
 dotEnvLoad()
 
 /**
@@ -22,7 +23,23 @@ const nextConfig = {
     config.experiments = { topLevelAwait: true }
     return config
   },
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx']
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  module: {
+    rules: [
+      {
+        test: /.mdx$/,
+        use: [
+          'babel-loader',
+          {
+            resolve: '@mdx-js/loader',
+            options: {
+              rehypePlugins: [rehypePrism]
+            }
+          }
+        ]
+      }
+    ]
+  }
 }
 
 module.exports = withPlugins([nextEnv, withMDX], withNx(nextConfig))

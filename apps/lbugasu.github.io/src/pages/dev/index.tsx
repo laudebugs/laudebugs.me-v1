@@ -1,5 +1,6 @@
 import Header from '../../components/header'
 import { getFilesFromSrcDir } from '../../helpers/files'
+import Link from 'next/link'
 
 export default function Index(props) {
   return (
@@ -7,7 +8,9 @@ export default function Index(props) {
       <Header {...props} />
       <p>This is the development environment Next.js runs in.</p>
       {props.posts.map(post => (
-        <h1 key={post.title}>{post.title}</h1>
+        <h3 key={post.slug}>
+          <Link href={`/dev/${post.slug}`}>{post.title}</Link>
+        </h3>
       ))}
     </div>
   )

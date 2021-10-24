@@ -1,12 +1,10 @@
 ---
-title: Build an Express GraphQL API in TypeScript
+title: 'How To: Build an Express GraphQL API in TypeScript'
 publishedOn: '2021-02-23'
 author: Laurence Ininda
 summary: Learn how to build a Node.js GraphQL API with Express and TypeScript
 slug: build-graphqp-api-in-typescript
 ---
-
-# How To: Build an Express GraphQL API in TypeScript
 
 > So you wanna write a node GraphQL backend in TypeScript? Well, Let's put all the pieces together and begin.
 
@@ -33,11 +31,9 @@ We'll be working in a terminal - be it the standalone teminal - or the integrate
 
 3. Initialize a Readme
    Having a Readme is essential for any project - this is the document people will see when they come across your repository in Github.
-   <br>
-We'll start off with a simple description but feel free to add more information about your project as you go.
-```bash
-echo '# Express GraphQL API in TypeScript' >  Readme.md
-```
+   <br />
+   We'll start off with a simple description but feel free to add more information about your project as you go. ```bash echo '# Express GraphQL
+   API in TypeScript' > Readme.md ```
 4. Initalize the source directory
    This is where we will place our `.ts` files
    ```bash
@@ -157,39 +153,39 @@ Create the following files to match the following structure:
 
 GraphQL requires a schema to be defined. A schema what graphQL uses to know what type of data to expect.
 
-<br>
-We will define the schema in the `schema.ts` file in the following way:
-We will use our graphQL endpoint to create and query a user. So we need to define:
+<br />
+We will define the schema in the `schema.ts` file in the following way: We will use our graphQL endpoint to create and query a user. So we need
+to define:
 
 - a `user` type
 - a `UserInput` input - that has the same structure as the `User` type
 - a `Query` type - where we will define all the queries
 - a `Mutation` type - where we will define the mutations
 
-```ts
-import { resolvers } from './resolvers'
-import { makeExecutableSchema } from 'graphql-tools'
+  ```ts
+  import { resolvers } from './resolvers'
+  import { makeExecutableSchema } from 'graphql-tools'
 
-const typeDefs = `
-  type User {
-    name: String
-    username: String
-  }
-  input UserInput {
-    name: String
-    username: String
-  }
-  type Query {
-    getUser(username: String): User
-  }
-  type Mutation{
-    createUser(user: UserInput): User
-  }
-`
-// Build the schema and export
-const schema = makeExecutableSchema({ typeDefs, resolvers })
-export { schema }
-```
+  const typeDefs = `
+    type User {
+      name: String
+      username: String
+    }
+    input UserInput {
+      name: String
+      username: String
+    }
+    type Query {
+      getUser(username: String): User
+    }
+    type Mutation{
+      createUser(user: UserInput): User
+    }
+  `
+  // Build the schema and export
+  const schema = makeExecutableSchema({ typeDefs, resolvers })
+  export { schema }
+  ```
 
 ### Definine the type - `type.ts`
 
@@ -213,8 +209,10 @@ Before we move into this step, we will need to first set up our database. One ca
 6. Proceed to choosing a connection method - in our case we will use the `connect your application` option
 7. This will lead us to a page to select our driver and version - which in our case should be `Node.js` Version `3.6 or later`.
 8. Copy your connection string somewhere safe that you can edit. You will notice that the username is included in the connection string but you will need to replace the `<password>` with your password and also pick a name for our database
-   <br>
-Assuming our username was `amani` with password `AEDPfTeq61WH04NL`, and we want our database to be called `bliss`, our connection string would look like:
+   {' '}
+   <br />
+   Assuming our username was `amani` with password `AEDPfTeq61WH04NL`, and we want our database to be called `bliss`, our connection string
+   would look like:
 
 ```txt
 mongodb+srv://amani:AEDPfTeq61WH04NL@cluster0.9ntf0.mongodb.net/bliss?retryWrites=true&w=majority
@@ -226,107 +224,108 @@ mongodb+srv://amani:AEDPfTeq61WH04NL@cluster0.9ntf0.mongodb.net/bliss?retryWrite
 
 In the `db.js` file, we will import `mongoose` and then define a new schema for the database - in our case, the only schema we will need is the user schema.
 
-<br>
-We will then create a new mongoose model that will be exported for use to query the database.
-Notice that we have set the `connectionString` variable to an environment variable - this is safer than pasting the connection string right into your code because it makes your database vulnerable. In our case, will set the connection string to an environment varible when we are ready to run the application.
+<br />
+We will then create a new mongoose model that will be exported for use to query the database. Notice that we have set the `connectionString`
+variable to an environment variable - this is safer than pasting the connection string right into your code because it makes your database vulnerable.
+In our case, will set the connection string to an environment varible when we are ready to run the application.
 
-```ts
-import mongoose from 'mongoose'
-const Schema = mongoose.Schema
+    ```ts
+    import mongoose from 'mongoose'
+    const Schema = mongoose.Schema
 
-// @ts-ignore
-const connectionString: String = process.env.MONGO_DB
-// @ts-ignore
-mongoose.connect(connectionString, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true
-})
+    // @ts-ignore
+    const connectionString: String = process.env.MONGO_DB
+    // @ts-ignore
+    mongoose.connect(connectionString, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useFindAndModify: false,
+      useCreateIndex: true
+    })
 
-const UserSchema = new Schema({
-  name: String,
-  username: String
-})
+    const UserSchema = new Schema({
+      name: String,
+      username: String
+    })
 
-const User = mongoose.model('User', UserSchema)
+    const User = mongoose.model('User', UserSchema)
 
-export { User }
-```
+    export { User }
+    ```
 
 ### Declaring the resolvers - `resolvers.ts`
 
 The resolvers are the functions that are run whenever the endpoint is run - so you need to define a function for each query and mutation as we will do below:
 
-```ts
-import { UserType } from './types'
+    ```ts
+    import { UserType } from './types'
 
-// import the User from the database
-import { User } from './db'
+    // import the User from the database
+    import { User } from './db'
 
-export const resolvers = {
-  Query: {
-    //@ts-ignore
-    getUser: (root, { username }) => {
-      return User.findOne({ username: username })
-        .then((user: UserType) => {
-          return user
-        })
-        .catch((error: any) => {
-          console.log(error.message)
-        })
+    export const resolvers = {
+      Query: {
+        //@ts-ignore
+        getUser: (root, { username }) => {
+          return User.findOne({ username: username })
+            .then((user: UserType) => {
+              return user
+            })
+            .catch((error: any) => {
+              console.log(error.message)
+            })
+        }
+      },
+      Mutation: {
+        // @ts-ignore
+        createUser: async (root, { user }) => {
+          const newUser = new User({ name: user.name, username: user.username })
+          await newUser.save()
+          return newUser
+        }
+      }
     }
-  },
-  Mutation: {
-    // @ts-ignore
-    createUser: async (root, { user }) => {
-      const newUser = new User({ name: user.name, username: user.username })
-      await newUser.save()
-      return newUser
-    }
-  }
-}
-```
+    ```
 
 ## Piece the pie together 🥧 - `index.ts`
 
 Our `index.ts` file is where all the majic happens. We will begin by importing the necessary packages and instantiating a new express app. Then we will initialize the connection to the database and attach the `grapqlHTTP` middleware function with our schema and `graphiql` - which we can use to explore the api:
 
-```ts
-import express from 'express'
-import { graphqlHTTP } from 'express-graphql'
-import { schema } from './data/schema'
+    ```ts
+    import express from 'express'
+    import { graphqlHTTP } from 'express-graphql'
+    import { schema } from './data/schema'
 
-// Initialize app
-const app = express()
-require('./data/db')
+    // Initialize app
+    const app = express()
+    require('./data/db')
 
-// the graphQL endpoint at /graphql.
-app.use('/graphql', graphqlHTTP({ schema: schema, graphiql: true }))
+    // the graphQL endpoint at /graphql.
+    app.use('/graphql', graphqlHTTP({ schema: schema, graphiql: true }))
 
-app.get('*', (req, res) => {
-  res.json({ message: 'Welcome to the api' })
-})
+    app.get('*', (req, res) => {
+      res.json({ message: 'Welcome to the api' })
+    })
 
-const PORT = 7000
-app.listen(PORT, () => {
-  console.log(`api is running on port ${PORT}`)
-})
-```
+    const PORT = 7000
+    app.listen(PORT, () => {
+      console.log(`api is running on port ${PORT}`)
+    })
+    ```
 
 ## Running the server
 
 Before we run the server, we will need to add our mongoDB connection string to the environment variables:
 
-```bash
-export MONGO_DB='mongodb+srv://amani:AEDPfTeq61WH04NL@cluster0.9ntf0.mongodb.net/bliss?retryWrites=true&w=majority'
-```
+    ```bash
+    export MONGO_DB='mongodb+srv://amani:AEDPfTeq61WH04NL@cluster0.9ntf0.mongodb.net/bliss?retryWrites=true&w=majority'
+    ```
 
 Now, we are ready to run the server 🚀
 
-```bash
-npm run start
-```
+    ```bash
+    npm run start
+    ```
 
 And we can run the server and explore our api.
 Here's an example of a mutation that you can make with the api:
@@ -335,25 +334,25 @@ Here's an example of a mutation that you can make with the api:
 
 We can add a user by making a mutation on the api:
 
-```txt
-mutation createUser ($input:UserInput){
-  createUser(user:$input) {
-    name
-    username
-  }
-}
-```
+    ```txt
+    mutation createUser ($input:UserInput){
+      createUser(user:$input) {
+        name
+        username
+      }
+    }
+    ```
 
 We can then pass in the user input using the query variables:
 
-```txt
-{
-  "input": {
-    "name": "Laurence",
-    "username": "laudebugs"
-  }
-}
-```
+    ```txt
+    {
+      "input": {
+        "name": "Laurence",
+        "username": "laudebugs"
+      }
+    }
+    ```
 
 Here's how the mutation looks like:
 ![mutation](https://raw.githubusercontent.com/lbugasu/articles/main/resources/graphqlmutation.png)
@@ -362,13 +361,13 @@ Here's how the mutation looks like:
 
 If we were to then ask the api for a certain user, we can make the query by:
 
-```txt
-query {
-  getUser (username:"laudebugs"){
-    name
-  }
-}
-```
+    ```txt
+    query {
+      getUser (username:"laudebugs"){
+        name
+      }
+    }
+    ```
 
 You can check out the [repo here](https://github.com/lbugasu/express-gql-api)
 

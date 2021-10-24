@@ -1,16 +1,23 @@
-import { AppProps } from 'next/app';
-import Head from 'next/head';
-import './styles.css';
-import { ThemeProvider } from 'theme-ui';
-import theme from "../styles/theme"
+import { AppProps } from 'next/app'
+import Head from 'next/head'
+import './styles.css'
+import { ThemeProvider } from 'theme-ui'
+import theme from '../styles/theme'
 
-function CustomApp({ Component, pageProps }: AppProps) {
+import Prism from '@theme-ui/prism'
 
-  return (
-    <ThemeProvider theme={theme} >
-      <Component {...pageProps} />
-    </ThemeProvider>
-  );
+const components = {
+  // eslint-disable-next-line react/display-name
+  pre: ({ children }) => <>{children}</>,
+  code: Prism
 }
 
-export default CustomApp;
+function CustomApp({ Component, pageProps }: AppProps) {
+  return (
+    <ThemeProvider theme={theme} components={components}>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  )
+}
+
+export default CustomApp
