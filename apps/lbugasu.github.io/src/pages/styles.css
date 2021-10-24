@@ -2,29 +2,33 @@ h1 {
   font-size: 36pt;
 }
 h2 {
-  font-size: 28pt;
+  font-size: 32pt;
 }
 h3 {
-  font-size: 18pt;
+  font-size: 28pt;
 }
 h4 {
-  font-size: 20pt;
+  font-size: 24pt;
+  margin: 0;
 }
 h5 {
-  font-size: 16pt;
+  font-size: 20pt;
+  margin: 0;
 }
 h6 {
-  font-size: 14pt;
+  font-size: 18pt;
   font-style: italic;
+  margin: 0;
+  font-weight: 300;
 }
 html {
   margin: 1.5% 5% 1.5% 5%;
 }
 p {
-  font-size: 12pt;
+  font-size: 16pt;
 }
 small {
-  font-size: 10pt;
+  font-size: 14pt;
 }
 footer ul {
   font-size: 18pt;

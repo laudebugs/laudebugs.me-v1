@@ -17,7 +17,7 @@ const nextConfig = {
     svgr: false
   },
   images: {
-    domains: ['images.unsplash.com']
+    domains: ['images.unsplash.com', 'images.ctfassets.net']
   },
   webpack: config => {
     config.experiments = { topLevelAwait: true }
