@@ -35,7 +35,7 @@ const Header = () => {
           </span>
         )}
       </span>
-      <span>{!isHomePage && <Logo />}</span>
+      <span sx={{ variant: 'containers.stickMe' }}>{!isHomePage && <Logo />}</span>
     </header>
   )
 }

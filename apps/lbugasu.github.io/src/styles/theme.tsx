@@ -17,7 +17,6 @@ const theme = {
       }
     }
   },
-
   containers: {
     header: {
       display: 'flex',
@@ -38,7 +37,21 @@ const theme = {
         h3: {
           margin: '0'
         }
-      }
+      },
+      position: 'sticky',
+      top: '4px',
+      backgroundColor: 'background'
+    },
+    stickyMe: {
+      position: 'sticky',
+      top: 0
+    },
+    progressBar: {
+      position: 'sticky',
+      width: '100%',
+      top: '0',
+      left: 0,
+      margin: '0 0 1.5% 0'
     }
   },
   fonts: {

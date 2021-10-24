@@ -7,7 +7,6 @@ import { useRouter } from 'next/router'
 import { Spinner } from 'theme-ui'
 import { getFilesFromSrcDir, getSinglePostFromSrcDir } from '../../helpers/files.helpers'
 import PostInfo from '../../components/post-info'
-
 const components = {}
 
 function JournalEntry({ source, frontMatter }) {
