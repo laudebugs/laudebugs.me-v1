@@ -15,8 +15,10 @@ export function Index({ initialColorMode, posts }) {
   return (
     <div>
       <Featured post={posts[0]} />
-      <PostPreview post={posts[1]} />
-      <PostPreview post={posts[2]} />
+      <div className={styles.nonFeatured}>
+        <PostPreview post={posts[1]} />
+        <PostPreview post={posts[2]} />
+      </div>
     </div>
   )
 }

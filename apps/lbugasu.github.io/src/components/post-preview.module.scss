@@ -1,0 +1,13 @@
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5rem;
+
+  .image {
+    width: 95%;
+    height: auto;
+  }
+  p {
+    margin-top: 0;
+  }
+}

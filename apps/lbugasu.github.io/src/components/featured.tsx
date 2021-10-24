@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 
 import Link from 'next/link'
-import Image from 'next/image'
+import { Image } from 'theme-ui'
 import styles from './featured.module.scss'
 
 const Featured = ({ post }) => {
@@ -37,7 +37,7 @@ const Featured = ({ post }) => {
         </small>
       </div>
       <div className={styles.image}>
-        <Image src={post.image} alt={post.title} width={300} height={300} />
+        <Image src={post.image} alt={post.title} />
       </div>
     </div>
   )
