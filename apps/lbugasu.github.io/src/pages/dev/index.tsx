@@ -1,7 +1,5 @@
-import Header from '../../components/header'
-import { getFilesFromSrcDir } from '../../helpers/files'
+import { getFilesFromSrcDir } from '../../helpers/files.helpers'
 import Link from 'next/link'
-
 export default function Index(props) {
   return (
     <div>

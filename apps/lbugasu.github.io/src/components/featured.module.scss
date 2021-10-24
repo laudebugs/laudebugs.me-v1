@@ -1,15 +1,16 @@
 .featured {
   display: flex;
   flex-direction: row;
+
   .content {
     width: 70%;
     div.postInfo {
       display: flex;
+      justify-content: space-between;
       span.title {
         width: 85%;
-        span.tags {
-          display: flex;
-          flex-direction: row;
+        h5:hover {
+          cursor: pointer;
         }
       }
       span.details {
@@ -21,6 +22,10 @@
           margin-bottom: 0.25em;
         }
       }
+    }
+    p.summary {
+      margin-top: 0;
+      margin-bottom: 0;
     }
   }
   .image {

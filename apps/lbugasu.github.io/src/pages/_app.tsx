@@ -18,7 +18,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
   const isHome = true
   return (
     <ThemeProvider theme={theme} components={components}>
-      <Header isHomePage={isHome} />
+      <Header />
       <Component {...pageProps} />
     </ThemeProvider>
   )

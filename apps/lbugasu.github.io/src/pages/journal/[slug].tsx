@@ -1,13 +1,61 @@
-import { useRouter } from "next/router"
+/** @jsxImportSource theme-ui */
 
-function JournalEntry() {
+import matter from 'gray-matter'
+import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
+import { useRouter } from 'next/router'
+import { Spinner } from 'theme-ui'
+import { getFilesFromSrcDir, getSinglePostFromSrcDir } from '../../helpers/files.helpers'
+import PostInfo from '../../components/post-info'
+
+const components = {}
+
+function JournalEntry({ source, frontMatter }) {
   const router = useRouter()
-  const { slug } = router.query
+
+  if (router.isFallback) {
+    return (
+      <div sx={{ width: '100%', height: '100%' }}>
+        <Spinner size={48} />
+      </div>
+    )
+  }
   return (
-    <div>
-      <h1>Journal Entry {slug}</h1>
+    <div sx={{ margin: '0 10% 0 10%' }}>
+      <PostInfo frontMatter={frontMatter} />
+      <MDXRemote {...source} components={components} />
     </div>
   )
 }
 
 export default JournalEntry
+
+export async function getStaticPaths(slug) {
+  const filePosts = getFilesFromSrcDir('posts/journal')
+
+  const paths = filePosts.map(post => ({ params: { slug: post.slug } }))
+
+  return {
+    paths: paths,
+    fallback: false
+  }
+}
+
+export async function getStaticProps({ params }) {
+  let post
+  try {
+    post = getSinglePostFromSrcDir('posts/journal', params.slug)
+  } catch (err) {
+    // TODO: handle error
+  }
+
+  const source = post
+  const { content, data } = matter(source)
+  const mdxSource = await serialize(content, { scope: data })
+  return {
+    props: {
+      source: mdxSource,
+      frontMatter: data
+    }
+  }
+}

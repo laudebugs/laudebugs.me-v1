@@ -1,7 +1,6 @@
-/* eslint-disable react/display-name */
 /** @jsxImportSource theme-ui */
 
-import { getFilesFromSrcDir, getSinglePostFromSrcDir } from '../../helpers/files'
+import { getFilesFromSrcDir, getSinglePostFromSrcDir } from '../../helpers/files.helpers'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 
@@ -9,6 +8,7 @@ import { useRouter } from 'next/router'
 import { Spinner } from 'theme-ui'
 import matter from 'gray-matter'
 import Btn from '../../components/btn'
+import PostInfo from '../../components/post-info'
 
 const components = {
   Btn
@@ -25,10 +25,10 @@ const DevPost = ({ source, frontMatter }) => {
     )
   }
   return (
-    <>
-      <h1>{frontMatter.title}</h1>
+    <div sx={{ margin: '0 10% 0 10%' }}>
+      <PostInfo frontMatter={frontMatter} />
       <MDXRemote {...source} components={components} />
-    </>
+    </div>
   )
 }
 

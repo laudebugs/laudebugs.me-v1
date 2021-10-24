@@ -22,7 +22,10 @@ h6 {
   font-weight: 300;
 }
 html {
-  margin: 1.5% 5% 1.5% 5%;
+  margin: 1.5% 7.5% 1.5% 7.5%;
+}
+body {
+  font-size: 16pt;
 }
 p {
   font-size: 16pt;

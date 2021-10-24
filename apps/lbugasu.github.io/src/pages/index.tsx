@@ -1,6 +1,6 @@
 import styles from './index.module.scss'
 import { useColorMode } from 'theme-ui'
-import { getFilesFromSrcDir } from '../helpers/files'
+import { getFilesFromSrcDir } from '../helpers/files.helpers'
 import Featured from '../components/featured'
 import PostPreview from '../components/post-preview'
 export function Index({ initialColorMode, posts }) {
@@ -9,8 +9,8 @@ export function Index({ initialColorMode, posts }) {
    *
    * Note: The corresponding styles are in the ./index.scss file.
    */
-  const [colorMode, setColorMode] = useColorMode()
-  setColorMode(initialColorMode)
+  // const [colorMode, setColorMode] = useColorMode()
+  // setColorMode(initialColorMode)
 
   return (
     <div>

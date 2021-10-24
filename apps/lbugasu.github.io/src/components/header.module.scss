@@ -1,0 +1,35 @@
+.selected {
+  position: relative;
+  a:not(.selected_right, .selected_left) {
+    color: #a6a6a6;
+  }
+  a.selected_left {
+    ::before {
+      content: '| ';
+      position: absolute;
+      margin-left: -0.5em;
+    }
+  }
+
+  a.selected_right {
+    ::after {
+      content: ' |';
+      position: absolute;
+      margin-left: 0.25em;
+    }
+  }
+  a:nth-of-type(1) {
+    padding-right: 2em;
+  }
+  a:nth-of-type(3) {
+    padding-left: 2em;
+  }
+}
+.paths {
+  a:nth-of-type(1) {
+    padding-right: 2em;
+  }
+  a:nth-of-type(3) {
+    padding-left: 2em;
+  }
+}

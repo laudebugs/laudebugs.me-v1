@@ -11,3 +11,16 @@
     margin-top: 0;
   }
 }
+.link {
+  text-decoration: none;
+  color: #1a1a1a;
+  &:hover {
+    text-decoration: none;
+  }
+  &:visited {
+    text-decoration: none;
+  }
+  &:active {
+    text-decoration: none;
+  }
+}
