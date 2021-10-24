@@ -5,7 +5,6 @@ import Link from 'next/link'
 export default function Index(props) {
   return (
     <div>
-      <Header {...props} />
       <p>This is the development environment Next.js runs in.</p>
       {props.posts.map(post => (
         <h3 key={post.slug}>
