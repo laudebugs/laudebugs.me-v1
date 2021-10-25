@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <header sx={{ variant: 'containers.header' }}>
       <span>
-        <MenuButton />
+        <MenuButton open={false} />
       </span>
       <span>
         {isHomePage && (

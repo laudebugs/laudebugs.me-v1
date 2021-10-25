@@ -9,6 +9,7 @@ import Prism from '@theme-ui/prism'
 
 import Header from '../components/header'
 import Footer from '../components/footer'
+import SideNav from '../components/side-nav'
 import { Progress } from 'theme-ui'
 
 const components = {

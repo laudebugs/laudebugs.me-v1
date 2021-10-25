@@ -58,12 +58,39 @@ const theme = {
       position: 'sticky',
       top: 0
     },
+    menuButton: {
+      position: 'sticky',
+      top: 0,
+      zIndex: 2
+    },
     progressBar: {
       position: 'sticky',
       width: '100%',
       top: '0',
       left: 0,
       margin: '0 0 1.5% 0'
+    },
+    sideNav: {
+      position: 'fixed',
+      minHeight: '100%',
+      top: 0,
+      width: '100%',
+      left: 0,
+      zIndex: 1,
+      display: 'grid',
+      gridTemplateColumns: '1fr 3fr',
+      menu: {
+        backgroundColor: 'background',
+        height: '100vh',
+        padding: '10%'
+      },
+      shadow: {
+        position: 'relative',
+        backgroundColor: 'text',
+        opacity: 0.65,
+        height: '100%',
+        zIndex: 3
+      }
     }
   },
   fonts: {
