@@ -43,6 +43,5 @@ export function getImageForPost(slug) {
   const imagesPath = 'apps/lbugasu.github.io/public/posts.images/'
   const images = fs.readdirSync(imagesPath)
   const image = images.find(_image => _image.includes(slug))
-  console.log(image)
   return image ?? ''
 }

@@ -40,7 +40,6 @@ const theme = {
       },
       position: 'sticky',
       top: '4px'
-      // backgroundColor: 'background'
     },
     focus: {
       margin: '0 10% 0 10%'

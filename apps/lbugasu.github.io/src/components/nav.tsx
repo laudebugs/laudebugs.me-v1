@@ -1,24 +1,24 @@
-import { Link } from 'next/link';
+import Link from 'next/link'
 
 const Nav = () => {
   return (
     <nav>
       <ul>
         <li>
-          <Link to="/">developer notes</Link>
+          <Link href="/">developer notes</Link>
         </li>
         <li>
-          <Link to="/about">journal</Link>
+          <Link href="/about">journal</Link>
         </li>
         <li>
-          <Link to="/contact">listenings</Link>
+          <Link href="/contact">listenings</Link>
         </li>
         <li>
-          <Link to="/contact">old stuff</Link>
+          <Link href="/contact">old stuff</Link>
         </li>
       </ul>
     </nav>
-  );
-};
+  )
+}
 
-export default Nav;
+export default Nav
