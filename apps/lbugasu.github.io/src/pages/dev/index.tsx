@@ -1,13 +1,16 @@
-import { getFilesFromSrcDir } from '../../helpers/files.helpers'
-import Link from 'next/link'
+/** @jsxImportSource theme-ui */
+
+import { getFilesFromSrcDir, getStatsForPosts } from '../../helpers/files.helpers'
+
+import Stats from '../../components/stats'
+import PostPreview from '../../components/post-preview'
+
 export default function Index(props) {
   return (
-    <div>
-      <p>This is the development environment Next.js runs in.</p>
+    <div sx={{ variant: 'containers.contentPage' }}>
+      <Stats {...props}></Stats>
       {props.posts.map(post => (
-        <h3 key={post.slug}>
-          <Link href={`/dev/${post.slug}`}>{post.title}</Link>
-        </h3>
+        <PostPreview key={post.id} post={post}></PostPreview>
       ))}
     </div>
   )
@@ -15,10 +18,15 @@ export default function Index(props) {
 
 export async function getStaticProps() {
   const filePosts = getFilesFromSrcDir('posts/dev')
+  const { tags, startDate, endDate, count } = getStatsForPosts(filePosts)
   return {
     props: {
       initialColorMode: 'light',
-      posts: filePosts
+      posts: filePosts,
+      tags,
+      startDate,
+      endDate,
+      count
     }
   }
 }

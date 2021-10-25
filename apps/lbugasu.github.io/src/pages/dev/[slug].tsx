@@ -25,7 +25,7 @@ const DevPost = ({ source, frontMatter }) => {
     )
   }
   return (
-    <div sx={{ margin: '0 10% 0 10%' }}>
+    <div sx={{ variant: 'containers.focus' }}>
       <PostInfo frontMatter={frontMatter} />
       <MDXRemote {...source} components={components} />
     </div>

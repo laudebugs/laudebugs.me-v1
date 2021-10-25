@@ -39,8 +39,17 @@ const theme = {
         }
       },
       position: 'sticky',
-      top: '4px',
-      backgroundColor: 'background'
+      top: '4px'
+      // backgroundColor: 'background'
+    },
+    focus: {
+      margin: '0 10% 0 10%'
+    },
+    contentPage: {
+      margin: '2.5% 10% 0 10%',
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gridGap: '2ch'
     },
     stickyMe: {
       position: 'sticky',

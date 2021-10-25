@@ -11,7 +11,7 @@ export default function PostInfo(matter) {
   return (
     <div className={styles.postinfo}>
       <span>
-        <Image src={frontMatter.image}></Image>
+        <Image src={`/posts.images/${frontMatter.image}`} alt={frontMatter.title} />
       </span>
       <span className={styles.deets}>
         <h1>{frontMatter.title.toLowerCase()}</h1>

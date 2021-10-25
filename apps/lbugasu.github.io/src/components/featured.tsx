@@ -36,7 +36,7 @@ const Featured = ({ post }) => {
         </small>
       </div>
       <div className={styles.image}>
-        <Image src={post.image} alt={post.title} />
+        <Image src={`/posts.images/${post.image}`} alt={post.title} />
       </div>
     </div>
   )
