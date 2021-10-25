@@ -18,6 +18,11 @@ export function getFilesFromSrcDir(directory: string) {
   })
 }
 
+export function getChangeLog() {
+  const fullPath = path.join(process.cwd(), `CHANGELOG.md`)
+  return fs.readFileSync(fullPath, 'utf-8')
+}
+
 export function getSinglePostFromSrcDir(directory: string, filename: string) {
   const fullPath = path.join(process.cwd(), `${rootPath + directory}/${filename}.mdx`)
   return fs.readFileSync(fullPath, 'utf-8')
