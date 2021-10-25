@@ -9,8 +9,8 @@ export function Index({ initialColorMode, posts }) {
    *
    * Note: The corresponding styles are in the ./index.scss file.
    */
-  // const [colorMode, setColorMode] = useColorMode()
-  // setColorMode(initialColorMode)
+  const [colorMode, setColorMode] = useColorMode()
+  setColorMode(initialColorMode)
 
   return (
     <div>

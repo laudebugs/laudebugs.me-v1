@@ -7,7 +7,6 @@ import styles from './featured.module.scss'
 import Tags from './tags'
 
 const Featured = ({ post }) => {
-  console.log(post)
   return (
     <div className={styles.featured}>
       <div className={styles.content}>

@@ -5,10 +5,12 @@ import { AppProps } from 'next/app'
 import './styles.css'
 import { ThemeProvider } from 'theme-ui'
 import theme from '../styles/theme'
-
 import Prism from '@theme-ui/prism'
+
 import Header from '../components/header'
+import Footer from '../components/footer'
 import { Progress } from 'theme-ui'
+
 const components = {
   // eslint-disable-next-line react/display-name
   pre: ({ children }) => <>{children}</>,
@@ -24,6 +26,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
       </Progress>
       <Header />
       <Component {...pageProps} />
+      <Footer />
     </ThemeProvider>
   )
 }

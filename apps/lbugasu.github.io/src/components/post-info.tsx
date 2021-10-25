@@ -7,7 +7,6 @@ import styles from './post-info.module.scss'
 
 export default function PostInfo(matter) {
   const { frontMatter } = matter
-  console.log(frontMatter)
   return (
     <div className={styles.postinfo}>
       <span>

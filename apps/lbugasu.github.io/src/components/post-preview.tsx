@@ -4,7 +4,6 @@ import styles from './post-preview.module.scss'
 import Link from 'next/link'
 
 const PostPreview = ({ post }) => {
-  console.log(post)
   return (
     <Link href={`/${post.type}/${post.slug}`}>
       <a className={styles.link}>

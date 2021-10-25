@@ -41,6 +41,10 @@ const theme = {
       position: 'sticky',
       top: '4px'
     },
+    link: {
+      color: 'text',
+      textDecoration: 'none'
+    },
     focus: {
       margin: '0 10% 0 10%'
     },
