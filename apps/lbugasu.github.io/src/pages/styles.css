@@ -22,11 +22,28 @@ h6 {
   font-weight: 300;
 }
 html {
-  margin: 0 7.5% 1.5% 7.5%;
+  margin: 0 7.5% 0 7.5%;
+  height: 100%;
 }
 body {
+  height: 100%;
   font-size: 16pt;
+  display: flex;
+  flex-direction: column;
 }
+
+.contentBody {
+  min-height: calc(95vh - 70px);
+  /* height: 100%; */
+  /* margin-bottom: 20px; */
+}
+
+.content {
+}
+.footer {
+  height: 50px;
+}
+
 p {
   font-size: 16pt;
 }

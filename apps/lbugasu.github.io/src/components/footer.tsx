@@ -3,11 +3,11 @@ import Link from 'next/link'
 import packageJson from 'package.json'
 import styles from './footer.module.scss'
 
-const Footer = () => {
+const Footer = className => {
   const { name, version } = packageJson
 
   return (
-    <footer className="footer">
+    <footer>
       <div className={styles.footer}>
         <span />
         <nav>

@@ -21,12 +21,19 @@ function CustomApp({ Component, pageProps }: AppProps) {
   const isHome = true
   return (
     <ThemeProvider theme={theme} components={components}>
-      <Progress sx={{ variant: 'containers.progressBar' }} max={1} value={1 / 2}>
-        50%
-      </Progress>
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
+      <div className="contentBody">
+        <Progress sx={{ variant: 'containers.progressBar' }} max={1} value={1 / 2}>
+          50%
+        </Progress>
+        <span className="content">
+          <Header />
+        </span>
+        <Component {...pageProps} />
+      </div>
+
+      <span className="footer">
+        <Footer />
+      </span>
     </ThemeProvider>
   )
 }
