@@ -3,6 +3,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
+  z-index: -1;
   span.deets {
     display: flex;
     flex-direction: column;

@@ -9,9 +9,8 @@ import styles from './header.module.scss'
 const Header = () => {
   const router = useRouter()
   const path = router.pathname
-
   const { slug } = router.query
-  const isHomePage = !slug
+  const isHomePage = !slug || path === '/changelog'
 
   return (
     <header sx={{ variant: 'containers.header' }}>
@@ -20,7 +19,7 @@ const Header = () => {
       </span>
       <span>
         {isHomePage && (
-          <span sx={{ variant: 'containers.header.centerNav' }} className={`${path !== '/' ? styles.selected : styles.paths}`}>
+          <span sx={{ variant: 'containers.header.centerNav' }} className={`${(path !== '/' && path !== '/changelog') ? styles.selected : styles.paths}`}>
             <Link href="/journal">
               <a className={`${path === '/journal' ? styles.selected_left : ''}`}>
                 <h3 sx={{ marginRight: '1.5em' }}>journal</h3>

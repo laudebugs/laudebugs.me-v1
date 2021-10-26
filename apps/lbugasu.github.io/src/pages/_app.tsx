@@ -11,7 +11,9 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import SideNav from '../components/side-nav'
 import { Progress } from 'theme-ui'
-
+import { fromEvent } from 'rxjs'
+import {map, tap} from 'rxjs/operators'
+import { useEffect } from 'react'
 const components = {
   // eslint-disable-next-line react/display-name
   pre: ({ children }) => <>{children}</>,
@@ -20,6 +22,30 @@ const components = {
 
 function CustomApp({ Component, pageProps }: AppProps) {
   const isHome = true
+
+  function calculateScrollPercent(element) {
+    console.log(element)
+    const { scrollTop, scrollHeight, clientHeight } = scrollingElement
+    return (scrollTop / (scrollHeight - clientHeight)) * 100
+  }
+
+
+  useEffect(() => {
+    const scroll$ = fromEvent(document, 'scroll')
+    const progress$ = scroll$.pipe(
+      map((event:Event) => {
+        console.log(event.target)
+        return event.target
+      }),
+      map((target) => calculateScrollPercent(target))
+    )
+
+    progress$.subscribe(console.log)
+  }, [])
+
+
+
+
   return (
     <ThemeProvider theme={theme} components={components}>
       <div className="contentBody">

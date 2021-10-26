@@ -12,6 +12,8 @@ export function Index({ initialColorMode, posts }) {
   const [colorMode, setColorMode] = useColorMode()
   setColorMode(initialColorMode)
 
+
+
   return (
     <div>
       <Featured post={posts[0]} />

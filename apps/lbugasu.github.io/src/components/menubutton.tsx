@@ -16,7 +16,7 @@ const MenuButton = open => {
   return (
     <>
       <Image
-        sx={{ variant: 'containers.menuButton', transform: `rotate(${!isOpen ? '180deg' : '0deg'})` }}
+        sx={{ variant: 'containers.menuButton', transform: `rotate(${isOpen ? '90deg' : '0deg'})` }}
         src="/images/elements/menu.svg"
         width={40}
         height={40}
