@@ -12,8 +12,8 @@ import Footer from '../components/footer'
 import SideNav from '../components/side-nav'
 import { Progress } from 'theme-ui'
 import { fromEvent } from 'rxjs'
-import { map, tap } from 'rxjs/operators'
-import { useEffect } from 'react'
+import { distinctUntilChanged, map, tap } from 'rxjs/operators'
+import { useEffect, useState } from 'react'
 const components = {
   // eslint-disable-next-line react/display-name
   pre: ({ children }) => <>{children}</>,
@@ -22,31 +22,34 @@ const components = {
 
 function CustomApp({ Component, pageProps }: AppProps) {
   const isHome = true
-
-  function calculateScrollPercent(element) {
-    console.log(element)
-    const { scrollTop, scrollHeight, clientHeight } = element
-    return (scrollTop / (scrollHeight - clientHeight)) * 100
+  const [progress, setProgress] = useState(0)
+  function calculateScrollPercent(scrollTop, scrollHeight, clientHeight) {
+    return Math.floor((scrollTop / (scrollHeight - clientHeight)) * 10000) / 10000
   }
-
   useEffect(() => {
     const scroll$ = fromEvent(document, 'scroll')
     const progress$ = scroll$.pipe(
       map((event: Event) => {
-        console.log(event.target)
-        return event.target
+        const clientHeight = window.document.body.clientHeight
+        const scrollTop = window.pageYOffset
+        const scrollHeight = window.document.body.scrollHeight
+        return { scrollTop, scrollHeight, clientHeight }
       }),
-      map(target => calculateScrollPercent(target))
+      map(({ scrollTop, scrollHeight, clientHeight }) => calculateScrollPercent(scrollTop, scrollHeight, clientHeight)),
+      distinctUntilChanged()
     )
 
-    progress$.subscribe(console.log)
+    progress$.subscribe(progress => {
+      setProgress(progress)
+      console.log(progress)
+    })
   }, [])
 
   return (
     <ThemeProvider theme={theme} components={components}>
       <div className="contentBody">
-        <Progress sx={{ variant: 'containers.progressBar' }} max={1} value={1 / 2}>
-          50%
+        <Progress sx={{ variant: 'containers.progressBar' }} max={1} value={progress}>
+          {progress * 100}%
         </Progress>
         <span className="content">
           <Header />

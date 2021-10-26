@@ -3,7 +3,9 @@ import nightOwl from '@theme-ui/prism/presets/night-owl.json'
 import shadesOfPurple from '@theme-ui/prism/presets/shades-of-purple.json'
 const theme = {
   ...tosh,
-  initialColorModeName: 'light',
+  config: {
+    initialColorModeName: 'light'
+  },
   colors: {
     ...tosh.colors,
     background: '#efebe9',
@@ -111,6 +113,9 @@ const theme = {
     code: {
       ...shadesOfPurple,
       margin: '0.25rem 1rem 0.25rem 1rem'
+    },
+    progress: {
+      color: '#c2185b'
     }
   }
 }
