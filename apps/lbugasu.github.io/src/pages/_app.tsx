@@ -41,7 +41,6 @@ function CustomApp({ Component, pageProps }: AppProps) {
 
     progress$.subscribe(progress => {
       setProgress(progress)
-      console.log(progress)
     })
   }, [])
 

@@ -4,7 +4,7 @@ import shadesOfPurple from '@theme-ui/prism/presets/shades-of-purple.json'
 const theme = {
   ...tosh,
   config: {
-    initialColorModeName: 'light'
+    // initialColorModeName: 'dark'
   },
   colors: {
     ...tosh.colors,
@@ -15,6 +15,7 @@ const theme = {
       ...tosh.colors.modes,
       dark: {
         ...dark.colors,
+        background: '#202124',
         borderColor: '#efebe9'
       }
     }

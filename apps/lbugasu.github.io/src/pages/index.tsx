@@ -12,8 +12,6 @@ export function Index({ initialColorMode, posts }) {
   const [colorMode, setColorMode] = useColorMode()
   setColorMode(initialColorMode)
 
-
-
   return (
     <div>
       <Featured post={posts[0]} />
@@ -39,7 +37,7 @@ export async function getStaticProps() {
   })
   return {
     props: {
-      initialColorMode: 'light',
+      initialColorMode: 'dark',
       posts: _posts
     }
   }

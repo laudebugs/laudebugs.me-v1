@@ -19,7 +19,10 @@ const Header = () => {
       </span>
       <span>
         {isHomePage && (
-          <span sx={{ variant: 'containers.header.centerNav' }} className={`${(path !== '/' && path !== '/changelog') ? styles.selected : styles.paths}`}>
+          <span
+            sx={{ variant: 'containers.header.centerNav' }}
+            className={`${path !== '/' && path !== '/changelog' ? styles.selected : styles.paths}`}
+          >
             <Link href="/journal">
               <a className={`${path === '/journal' ? styles.selected_left : ''}`}>
                 <h3 sx={{ marginRight: '1.5em' }}>journal</h3>
