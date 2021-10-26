@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
+    "build:prod": "nx build lbugasu.github.io --prod",
     "test": "nx test",
     "commit": "cz",
     "prepare": "husky install",
