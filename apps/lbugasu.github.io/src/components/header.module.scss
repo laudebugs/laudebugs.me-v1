@@ -12,7 +12,7 @@
         margin: 0 2ch 0 2ch;
       }
       a {
-        color: var(--theme-ui-colors-text);
+        // color: var(--theme-ui-colors-text);
         text-decoration: none;
       }
       h3 {
@@ -27,7 +27,7 @@
 .selected {
   position: relative;
   a:not(.selected_right, .selected_left) {
-    color: #a6a6a6;
+    color: var(--theme-ui-colors-highlight);
   }
   a.selected_left {
     ::before {

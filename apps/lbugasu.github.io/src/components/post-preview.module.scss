@@ -1,15 +1,24 @@
 .content {
   display: grid;
   position: relative;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  div.summary {
+    width: 57.5%;
+  }
+  div.image {
+    width: 40%;
+    display: flex;
+    align-items: flex-start;
+    .img {
+      width: 100%;
+    }
+  }
   z-index: -1;
   p {
     margin-top: 0;
-  }
-  .img {
-    width: 100%;
-    object-fit: contain;
+    font-size: 14pt;
   }
 }
 .link {
@@ -28,6 +37,12 @@
 
 @media screen and (max-width: 1000px) {
   .content {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    div.summary {
+      width: 100%;
+    }
+    div.image {
+      width: 100%;
+    }
   }
 }
