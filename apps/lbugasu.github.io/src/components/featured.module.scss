@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: row;
+  z-index: 0;
   .content {
     width: 60%;
     div.postInfo {
@@ -37,13 +38,15 @@
       &:active {
         color: var(--theme-ui-colors-text);
       }
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
   .image {
     display: flex;
     align-items: center;
     width: 40%;
-    z-index: -1;
     img {
       width: 100%;
     }

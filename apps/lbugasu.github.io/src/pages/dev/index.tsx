@@ -10,7 +10,7 @@ export default function Index(props) {
     <div className={styles.content}>
       <Stats {...props}></Stats>
       {props.posts.map(post => (
-        <PostPreview key={post.id} post={post}></PostPreview>
+        <PostPreview key={post.slug} post={post}></PostPreview>
       ))}
     </div>
   )

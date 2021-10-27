@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 
 import styles from './side-nav.module.scss'
-import { fromEvent, Subject } from 'rxjs'
+import { Subject } from 'rxjs'
 import Image from 'next/image'
 import { useState } from 'react'
 import SideNav from './side-nav'

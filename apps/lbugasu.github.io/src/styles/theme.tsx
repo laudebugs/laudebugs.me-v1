@@ -33,7 +33,7 @@ const theme = {
     menuButton: {
       position: 'sticky',
       top: 0,
-      zIndex: 2
+      zIndex: 4
     },
     progressBar: {
       position: 'sticky',

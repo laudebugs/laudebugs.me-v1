@@ -52,8 +52,8 @@ function CustomApp({ Component, pageProps }: AppProps) {
         </Progress>
         <span className="content">
           <Header />
+          <Component {...pageProps} />
         </span>
-        <Component {...pageProps} />
       </div>
 
       <span className="footer">
