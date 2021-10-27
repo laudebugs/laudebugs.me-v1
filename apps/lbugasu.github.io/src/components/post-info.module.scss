@@ -4,6 +4,12 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
   z-index: -1;
+  span.featuredImage {
+    img {
+      object-fit: contain;
+    }
+  }
+
   span.deets {
     display: flex;
     flex-direction: column;

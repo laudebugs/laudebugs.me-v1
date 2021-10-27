@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
 
-import { Image } from 'theme-ui'
+import Image from 'next/image'
 import { dayCount } from '../helpers/posts.helpers'
 import Tags from './tags'
 import styles from './post-info.module.scss'
@@ -9,8 +9,14 @@ export default function PostInfo(matter) {
   const { frontMatter } = matter
   return (
     <div className={styles.postinfo}>
-      <span>
-        <Image src={`/posts.images/${frontMatter.image}`} alt={frontMatter.title} />
+      <span className={styles.featuredImage}>
+        <Image
+          className={styles.featuredImage}
+          src={`/post-images/${frontMatter.image}`}
+          height={720}
+          width={1280}
+          alt={frontMatter.title}
+        />
       </span>
       <span className={styles.deets}>
         <h1>{frontMatter.title.toLowerCase()}</h1>

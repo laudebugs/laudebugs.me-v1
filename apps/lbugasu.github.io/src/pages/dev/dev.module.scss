@@ -1,0 +1,30 @@
+div.content {
+  margin: 2.5% 10% 0 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: '2ch';
+  z-index: -1;
+}
+
+div.singlePost {
+  margin: 0 10% 0 10%;
+}
+
+@media screen and (max-width: 1200px) {
+  div.content {
+    grid-template-columns: 1fr;
+    margin: 2.5% 7.5% 0 7.5%;
+  }
+  div.singlePost {
+    margin: 0 7.5% 0 7.5%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  div.content {
+    margin: 2.5% 5% 0 5%;
+  }
+  div.singlePost {
+    margin: 0 5% 0 5%;
+  }
+}

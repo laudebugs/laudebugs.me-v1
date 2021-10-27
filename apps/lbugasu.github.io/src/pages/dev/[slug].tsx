@@ -14,6 +14,8 @@ const components = {
   Btn
 }
 
+import styles from './dev.module.scss'
+
 const DevPost = ({ source, frontMatter }) => {
   const router = useRouter()
 
@@ -25,7 +27,7 @@ const DevPost = ({ source, frontMatter }) => {
     )
   }
   return (
-    <div sx={{ variant: 'containers.focus' }}>
+    <div className={styles.singlePost}>
       <PostInfo frontMatter={frontMatter} />
       <MDXRemote {...source} components={components} />
     </div>

@@ -4,7 +4,7 @@ import path from 'path'
 import uniq from 'lodash/uniq'
 import { dayCount } from './posts.helpers'
 
-const rootPath = 'apps/lbugasu.github.io/src/'
+const rootPath = ''
 
 export function getFilesFromSrcDir(directory: string) {
   const postsDirectory = path.join(process.cwd(), `${rootPath + directory}`)
@@ -45,7 +45,7 @@ export function getStatsForPosts(posts) {
 }
 
 export function getImageForPost(slug) {
-  const imagesPath = 'apps/lbugasu.github.io/public/posts.images/'
+  const imagesPath = 'apps/lbugasu.github.io/public/post-images/'
   const images = fs.readdirSync(imagesPath)
   const image = images.find(_image => _image.includes(slug))
   return image ?? ''

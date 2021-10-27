@@ -37,7 +37,7 @@ export async function getStaticProps() {
   })
   return {
     props: {
-      initialColorMode: 'dark',
+      initialColorMode: 'light',
       posts: _posts
     }
   }

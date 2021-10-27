@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2rem;
+  margin-top: 2rem;
   p {
     font-size: 18px;
   }
@@ -11,4 +12,10 @@
 }
 .light-text {
   color: #efebe9;
+}
+
+@media screen and (max-width: 600px) {
+  .nonFeatured {
+    margin: 5% 5% 0 5%;
+  }
 }

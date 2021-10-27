@@ -4,10 +4,11 @@ import { getFilesFromSrcDir, getStatsForPosts } from '../../helpers/files.helper
 
 import Stats from '../../components/stats'
 import PostPreview from '../../components/post-preview'
+import styles from '../dev/dev.module.scss'
 
 function Journal(props) {
   return (
-    <div sx={{ variant: 'containers.contentPage' }}>
+    <div className={styles.content}>
       <Stats {...props}></Stats>
       {props.posts.map(post => (
         <PostPreview key={post.id} post={post}></PostPreview>

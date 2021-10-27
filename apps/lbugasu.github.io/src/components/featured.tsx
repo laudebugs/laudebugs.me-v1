@@ -1,7 +1,8 @@
 /** @jsxImportSource theme-ui */
 
 import Link from 'next/link'
-import { Image } from 'theme-ui'
+import Image from 'next/image'
+
 import { dayCount } from '../helpers/posts.helpers'
 import styles from './featured.module.scss'
 import Tags from './tags'
@@ -35,7 +36,7 @@ const Featured = ({ post }) => {
         </small>
       </div>
       <div className={styles.image}>
-        <Image src={`/posts.images/${post.image}`} alt={post.title} />
+        <Image src={`/post-images/${post.image}`} height={720} width={1280} alt={post.title} />
       </div>
     </div>
   )

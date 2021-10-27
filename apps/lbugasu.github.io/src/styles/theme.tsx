@@ -21,42 +21,11 @@ const theme = {
     }
   },
   containers: {
-    header: {
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      centerNav: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '100%',
-        logo: {
-          margin: '0 2ch 0 2ch'
-        },
-        a: {
-          color: 'text',
-          textDecoration: 'none'
-        },
-        h3: {
-          margin: '0'
-        }
-      },
-      position: 'sticky',
-      top: '4px'
-    },
     link: {
       color: 'text',
       textDecoration: 'none'
     },
-    focus: {
-      margin: '0 10% 0 10%'
-    },
-    contentPage: {
-      margin: '2.5% 10% 0 10%',
-      display: 'grid',
-      gridTemplateColumns: '1fr 1fr',
-      gridGap: '2ch'
-    },
+
     stickyMe: {
       position: 'sticky',
       top: 0
@@ -72,28 +41,6 @@ const theme = {
       top: '0',
       left: 0,
       margin: '0 0 1.5% 0'
-    },
-    sideNav: {
-      position: 'fixed',
-      minHeight: '100%',
-      top: 0,
-      width: '100%',
-      left: 0,
-      zIndex: 1,
-      display: 'grid',
-      gridTemplateColumns: '1fr 3fr',
-      menu: {
-        backgroundColor: 'background',
-        height: '100vh',
-        padding: '10%'
-      },
-      shadow: {
-        position: 'relative',
-        backgroundColor: 'text',
-        opacity: 0.65,
-        height: '100%',
-        zIndex: 3
-      }
     }
   },
   fonts: {
@@ -112,8 +59,7 @@ const theme = {
       border: '0'
     },
     code: {
-      ...shadesOfPurple,
-      margin: '0.25rem 1rem 0.25rem 1rem'
+      ...shadesOfPurple
     },
     progress: {
       color: '#c2185b'

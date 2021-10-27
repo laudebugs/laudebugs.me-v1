@@ -1,8 +1,46 @@
 .sideNav {
-  // position: fixed;
-  // min-height: 100vh;
-  // height: 100%;
-  // div{
-  //   height: 100%;
-  // }
+  position: fixed;
+  min-height: 100%;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  .menu {
+    background-color: var(--theme-ui-colors-background);
+    height: 100vh;
+    padding: 10%;
+  }
+  .shadow {
+    position: relative;
+    background-color: var(--theme-ui-colors-text);
+    opacity: 0.65;
+    height: 100%;
+    z-index: 3;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .sideNav {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .sideNav {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .sideNav {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sideNav {
+    grid-template-columns: 3fr 1fr;
+  }
 }

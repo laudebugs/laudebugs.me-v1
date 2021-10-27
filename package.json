@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
+    "next": "next",
     "build": "nx build",
     "build:prod": "nx build lbugasu.github.io --prod --runner=no-cloud",
     "test": "nx test",
@@ -28,6 +29,7 @@
     "@mui/styles": "^5.0.1",
     "@next/mdx": "^11.1.2",
     "@nrwl/next": "12.8.0",
+    "@theme-ui/match-media": "^0.11.3",
     "@theme-ui/mdx": "^0.11.1",
     "@theme-ui/presets": "^0.11.1",
     "@theme-ui/prism": "^0.11.1",

@@ -1,4 +1,4 @@
-import { Image } from 'theme-ui'
+import Image from 'next/image'
 import { dayCount } from '../helpers/posts.helpers'
 import styles from './post-preview.module.scss'
 import Link from 'next/link'
@@ -10,7 +10,7 @@ const PostPreview = ({ post }) => {
         <h5>{post.title}</h5>
         <small>{dayCount(post.publishedOn)}</small>
         <div className={styles.content}>
-          <Image className={styles.image} src={`posts.images/${post.image}`} alt={post.title} />
+          <Image className={styles.image} src={`/post-images/${post.image}`} alt={post.title} height={720} width={1280} />
 
           <p>{post.summary}</p>
         </div>

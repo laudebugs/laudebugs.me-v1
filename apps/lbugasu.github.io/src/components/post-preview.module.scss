@@ -1,19 +1,16 @@
 .content {
   display: grid;
+  position: relative;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 0.5rem;
-
-  .image {
-    width: 95%;
-    height: auto;
-  }
+  grid-gap: 0.5em;
+  z-index: -1;
   p {
     margin-top: 0;
   }
 }
 .link {
   text-decoration: none;
-  color: #1a1a1a;
+  color: var(--theme-ui-colors-text);
   &:hover {
     text-decoration: none;
   }
@@ -22,5 +19,11 @@
   }
   &:active {
     text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .content {
+    grid-template-columns: 1fr;
   }
 }
