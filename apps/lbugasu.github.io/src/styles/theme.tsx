@@ -40,7 +40,8 @@ const theme = {
       width: '100%',
       top: '0',
       left: 0,
-      margin: '0 0 1.5% 0'
+      margin: '0 0 1.5% 0',
+      zIndex: 100
     }
   },
   fonts: {

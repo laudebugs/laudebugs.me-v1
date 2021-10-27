@@ -9,7 +9,6 @@ import Prism from '@theme-ui/prism'
 
 import Header from '../components/header'
 import Footer from '../components/footer'
-import SideNav from '../components/side-nav'
 import { Progress } from 'theme-ui'
 import { fromEvent } from 'rxjs'
 import { distinctUntilChanged, map, tap } from 'rxjs/operators'
@@ -55,7 +54,6 @@ function CustomApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </span>
       </div>
-
       <span className="footer">
         <Footer />
       </span>
