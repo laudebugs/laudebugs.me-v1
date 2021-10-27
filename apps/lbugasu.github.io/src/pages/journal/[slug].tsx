@@ -9,6 +9,8 @@ import { getFilesFromSrcDir, getSinglePostFromSrcDir } from '../../helpers/files
 import PostInfo from '../../components/post-info'
 const components = {}
 
+import styles from '../dev/dev.module.scss'
+
 function JournalEntry({ source, frontMatter }) {
   const router = useRouter()
 
@@ -20,7 +22,7 @@ function JournalEntry({ source, frontMatter }) {
     )
   }
   return (
-    <div sx={{ margin: '0 10% 0 10%' }}>
+    <div className={styles.singlePost}>
       <PostInfo frontMatter={frontMatter} />
       <MDXRemote {...source} components={components} />
     </div>

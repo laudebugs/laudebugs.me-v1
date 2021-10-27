@@ -6,7 +6,7 @@
   z-index: -1;
   span.featuredImage {
     img {
-      object-fit: contain;
+      object-fit: cover;
     }
   }
 
@@ -25,5 +25,11 @@
     top: 50%;
     bottom: 0;
     height: 90%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .postinfo {
+    grid-template-columns: 1fr;
   }
 }

@@ -66,6 +66,10 @@ nav ul {
 nav .label {
   font-size: 18pt;
 }
+a {
+  color: var(--theme-ui-colors-text);
+  text-decoration: none;
+}
 
 code[class*='language-'],
 pre[class*='language-'] {
