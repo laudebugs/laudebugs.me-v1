@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/lbugasu/sandstorm/compare/v0.0.2...v0.0.3) (2021-10-28)
+
+### Features
+
+- **posts:** add Posts ([17fb23d](https://github.com/lbugasu/sandstorm/commits/17fb23d68eed2199b3df054927dd2a5149ba0abf))
+
+### Bug Fixes
+
+- **post preview:** fix Image being resized incorrectly ([44ba316](https://github.com/lbugasu/sandstorm/commits/44ba316429b65aed39115b4cf0e737c5df8f3fa0)), closes [#12](https://github.com/lbugasu/sandstorm/issues/12)
+- **sidenav:** fix issue with Z-index ([074a9ee](https://github.com/lbugasu/sandstorm/commits/074a9ee0ef57e2493cd9de5e79eb598a171c897e))
+
 ### 0.0.2 (2021-10-27)
 
 ### Features
