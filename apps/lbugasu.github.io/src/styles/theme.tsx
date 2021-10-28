@@ -55,6 +55,10 @@ const theme = {
       ...tosh.styles.p,
       fontSize: '16pt'
     },
+    h6: {
+      ...tosh.styles.h6,
+      variant: 'text.pre'
+    },
     pre: {
       ...tosh.styles.pre,
       border: '0'

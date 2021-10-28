@@ -33,10 +33,10 @@ export function getStatsForPosts(posts) {
   let tags = []
   posts.map(post => {
     dates.push(new Date(post.publishedOn))
-    tags.push(...post.tags)
+    if (post.tags) tags.push(...post.tags)
   })
 
-  tags = uniq(tags)
+  tags = uniq(tags).filter(tag => tag !== '')
 
   const startDate = dayCount(new Date(Math.min(...dates)).toString())
   const endDate = dayCount(new Date(Math.max(...dates)).toString())
