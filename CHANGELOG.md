@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/lbugasu/sandstorm/compare/v0.0.3...v0.1.0) (2021-10-29)
+
+### Features
+
+- **color mode toggle; new font!:** add A light/dark toggle + add a new font ([91d2ba8](https://github.com/lbugasu/sandstorm/commits/91d2ba825c8811a6ca4b8e23b678f50f60623f50))
+
+### Bug Fixes
+
+- **styles:** remove !important from styles ([0f27303](https://github.com/lbugasu/sandstorm/commits/0f27303a8b6813b07b563977ebb4a5c16549a1d6))
+
 ### [0.0.3](https://github.com/lbugasu/sandstorm/compare/v0.0.2...v0.0.3) (2021-10-28)
 
 ### Features
