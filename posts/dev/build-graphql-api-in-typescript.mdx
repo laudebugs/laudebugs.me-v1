@@ -34,8 +34,8 @@ We'll be working in a terminal - be it the standalone teminal - or the integrate
 3. Initialize a Readme
    Having a Readme is essential for any project - this is the document people will see when they come across your repository in Github.
    <br />
-   We'll start off with a simple description but feel free to add more information about your project as you go. ```bash echo '# Express GraphQL
-   API in TypeScript' > Readme.md ```
+   We'll start off with a simple description but feel free to add more information about your project as you go. ```bash echo '# Express GraphQLAPI
+   in TypeScript' > Readme.md ```
 4. Initalize the source directory
    This is where we will place our `.ts` files
    ```bash
@@ -169,21 +169,21 @@ to define:
   import { makeExecutableSchema } from 'graphql-tools'
 
   const typeDefs = `
-    type User {
-      name: String
-      username: String
-    }
-    input UserInput {
-      name: String
-      username: String
-    }
-    type Query {
-      getUser(username: String): User
-    }
-    type Mutation{
-      createUser(user: UserInput): User
-    }
-  `
+      type User {
+        name: String
+        username: String
+      }
+      input UserInput {
+        name: String
+        username: String
+      }
+      type Query {
+        getUser(username: String): User
+      }
+      type Mutation{
+        createUser(user: UserInput): User
+      }
+    `
   // Build the schema and export
   const schema = makeExecutableSchema({ typeDefs, resolvers })
   export { schema }
