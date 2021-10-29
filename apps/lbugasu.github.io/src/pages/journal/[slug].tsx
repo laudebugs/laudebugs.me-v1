@@ -5,11 +5,10 @@ import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import { useRouter } from 'next/router'
 import { Spinner } from 'theme-ui'
-import { getFilesFromSrcDir, getSinglePostFromSrcDir } from '../../helpers/files.helpers'
 import PostInfo from '../../components/post-info'
-const components = {}
-
+import { getFilesFromSrcDir, getSinglePostFromSrcDir } from '../../helpers/files.helpers'
 import styles from '../dev/dev.module.scss'
+const components = {}
 
 function JournalEntry({ source, frontMatter }) {
   const router = useRouter()

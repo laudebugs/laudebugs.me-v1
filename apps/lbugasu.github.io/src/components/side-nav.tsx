@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 
-import styles from './side-nav.module.scss'
 import Link from 'next/link'
+import styles from './side-nav.module.scss'
 function SideNav({ close, isOpen }) {
   return (
     <div sx={{ display: !isOpen ? 'none' : 'block' }}>

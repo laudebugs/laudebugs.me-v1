@@ -1,7 +1,7 @@
-import matter from 'gray-matter'
 import fs from 'fs'
-import path from 'path'
+import matter from 'gray-matter'
 import uniq from 'lodash/uniq'
+import path from 'path'
 import { dayCount } from './posts.helpers'
 
 const rootPath = ''

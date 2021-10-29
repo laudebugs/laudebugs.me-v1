@@ -1,12 +1,12 @@
 /** @jsxImportSource theme-ui */
 
-import MenuButton from '../components/menubutton'
-import Logo from '../components/logo'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import styles from './header.module.scss'
 import { useEffect } from 'react'
 import { useColorMode } from 'theme-ui'
+import Logo from '../components/logo'
+import MenuButton from '../components/menubutton'
+import styles from './header.module.scss'
 
 const Header = () => {
   const router = useRouter()
@@ -16,16 +16,9 @@ const Header = () => {
 
   const [colorMode, setColorMode] = useColorMode()
 
-  useEffect(() => {
-    const colorMode = localStorage.getItem('colorMode')
-    if (colorMode) setColorMode(colorMode)
-    else setColorMode('light')
-  }, [])
-
   function changeColorMode() {
     if (colorMode === 'light') setColorMode('dark')
     else setColorMode('light')
-    localStorage.setItem('colorMode', colorMode)
   }
 
   return (

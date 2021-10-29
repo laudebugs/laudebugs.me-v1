@@ -1,20 +1,18 @@
 /** @jsxImportSource theme-ui */
 
-import { getFilesFromSrcDir, getSinglePostFromSrcDir } from '../../helpers/files.helpers'
-import { serialize } from 'next-mdx-remote/serialize'
+import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
-
+import { serialize } from 'next-mdx-remote/serialize'
 import { useRouter } from 'next/router'
 import { Spinner } from 'theme-ui'
-import matter from 'gray-matter'
 import Btn from '../../components/btn'
 import PostInfo from '../../components/post-info'
+import { getFilesFromSrcDir, getSinglePostFromSrcDir } from '../../helpers/files.helpers'
+import styles from './dev.module.scss'
 
 const components = {
   Btn
 }
-
-import styles from './dev.module.scss'
 
 const DevPost = ({ source, frontMatter }) => {
   const router = useRouter()

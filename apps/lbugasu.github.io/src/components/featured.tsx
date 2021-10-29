@@ -1,8 +1,7 @@
 /** @jsxImportSource theme-ui */
 
-import Link from 'next/link'
 import Image from 'next/image'
-
+import Link from 'next/link'
 import { dayCount } from '../helpers/posts.helpers'
 import styles from './featured.module.scss'
 import Tags from './tags'

@@ -1,7 +1,7 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { dayCount } from '../helpers/posts.helpers'
 import styles from './post-preview.module.scss'
-import Link from 'next/link'
 
 const PostPreview = ({ post }) => {
   return (

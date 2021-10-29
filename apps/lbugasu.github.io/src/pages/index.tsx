@@ -1,21 +1,26 @@
-import styles from './index.module.scss'
-import { useColorMode } from 'theme-ui'
-import { getFilesFromSrcDir } from '../helpers/files.helpers'
+import Head from 'next/head'
 import Featured from '../components/featured'
 import PostPreview from '../components/post-preview'
-export function Index({ initialColorMode, posts }) {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.scss file.
-   */
+import { getFilesFromSrcDir } from '../helpers/files.helpers'
+import styles from './index.module.scss'
+import archive from '../../../../posts/archive.json'
 
+export function Index({ initialColorMode, posts }) {
   return (
     <div>
-      <Featured post={posts[0]} />
+      <Head>
+        <title key="title">Lau de Bugs</title>
+        <meta
+          key="description"
+          name="description"
+          content="Bugasu\'s blog where you can read Web Development articles as well as stories, poetry and more"
+        />
+        <meta name="robots" content="index, follow" />
+      </Head>
+      <Featured post={archive[0]} />
       <div className={styles.nonFeatured}>
-        <PostPreview post={posts[1]} />
-        <PostPreview post={posts[2]} />
+        <PostPreview post={archive[1]} />
+        <PostPreview post={archive[2]} />
       </div>
     </div>
   )

@@ -39,7 +39,8 @@ const nextConfig = {
         ]
       }
     ]
-  }
+  },
+  amp: 'hybrid'
 }
 
 module.exports = withPlugins([nextEnv, withMDX], withNx(nextConfig))

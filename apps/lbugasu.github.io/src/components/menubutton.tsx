@@ -1,11 +1,10 @@
 /** @jsxImportSource theme-ui */
 
-import styles from './side-nav.module.scss'
-import { Subject } from 'rxjs'
 import Image from 'next/image'
 import { useState } from 'react'
-import SideNav from './side-nav'
+import { Subject } from 'rxjs'
 import { useColorMode } from 'theme-ui'
+import SideNav from './side-nav'
 
 const MenuButton = open => {
   const [isOpen, setIsOpen] = useState(false)

@@ -1,18 +1,16 @@
 /** @jsxImportSource theme-ui */
 
-import { AppProps } from 'next/app'
-
-import './styles.css'
-import { ThemeProvider } from 'theme-ui'
-import theme from '../styles/theme'
 import Prism from '@theme-ui/prism'
-
-import Header from '../components/header'
-import Footer from '../components/footer'
-import { Progress } from 'theme-ui'
-import { fromEvent } from 'rxjs'
-import { distinctUntilChanged, map, tap } from 'rxjs/operators'
+import { AppProps } from 'next/app'
 import { useEffect, useState } from 'react'
+import { fromEvent } from 'rxjs'
+import { distinctUntilChanged, map } from 'rxjs/operators'
+import { Progress, ThemeProvider } from 'theme-ui'
+import Footer from '../components/footer'
+import Header from '../components/header'
+import theme from '../styles/theme'
+import './styles.css'
+
 const components = {
   // eslint-disable-next-line react/display-name
   pre: ({ children }) => <>{children}</>,
