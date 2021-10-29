@@ -2,7 +2,7 @@
 title: 'Kenya Web Project'
 publishedOn: '2020-06-05'
 author: Laurence Ininda
-slug: kenya-web-project
+slug: 'kenya-web-project'
 tags: [lighthouse, node.js, python]
 type: dev
 image: ''
@@ -18,10 +18,12 @@ In developing countries like Kenya, with companies shifting online, there is a g
 ## Conceptualization
 
 Through this project, I would like to accomplish two things:
-Create a directory of Kenyan websites – websites with extensions “.co.ke” or “.ke” or that include “kenya” within the domain name.
 
-Of the collected sites, note how much data is downloaded on the landing page of the site and organize this data into a repository.
-Data Collection and Preparation
+- Create a directory of Kenyan websites - websites with extensions “.co.ke” or “.ke” or that include “kenya” within the domain name.
+- Of the collected sites, note how much data is downloaded on the landing page of the site and organize this data into a repository.
+
+## Data Collection and Preparation
+
 How many websites can I find by randomly searching common words and the big companies in Kenya?
 
 After considering this, I searched the internet to try to find a difinitive list of websites in Kenya. To find this list, I would have to contact organizations like The Kenya Network Information Centre (KENIC) to obtain this information. And although this seemed like the route to go, I also found a list of the top 500 websites in Kenya provided by Alexa and figured that this list would be more useful to use as a baseline of websites in Kenya. And as the list showed, there's a large number of domains that do not end with .co.ke or .ke that Kenyans use. After signing up for the free trial, I parsed the data to this json file using a simple java script.
@@ -182,10 +184,19 @@ Having obtained two additional metrics of each website, i.e. the performance and
 
 In order to answer questions that the data presented, there still remained missing pieces of information that would enable me to analyze the data accurately. With metrics such as performance, size of webpage downloaded and average time spent on a website, we could take a look at the general trend of the top websites in Kenya as shown below.
 
-![Size of the web page downloaded](https://raw.githubusercontent.com/lbugasu/kenya-web-project/master/analysis/graphs/Size%20of%20the%20web%20page%20downloaded.png)
+<img
+  alt="Size of the web page downloaded"
+  src={'https://raw.githubusercontent.com/lbugasu/kenya-web-project/master/analysis/graphs/Size%20of%20the%20web%20page%20downloaded.png'}
+  width={'100%'}
+/>
 
 The optimal size of a web page is 0 - 1 MB downloaded once a use logs onto a site. This is of course, not taking into account cached resources that might reduce the size of the page downloaded.
-![TimeSpentOnWebsite](https://raw.githubusercontent.com/lbugasu/kenya-web-project/master/analysis/graphs/TimeSpentOnWebsite.png)
+
+<img
+  alt="TimeSpentOnWebsite"
+  src={'https://raw.githubusercontent.com/lbugasu/kenya-web-project/master/analysis/graphs/TimeSpentOnWebsite.png'}
+  width={'100%'}
+/>
 
 The modal time spent on a website by Kenyans is 3 minutes with the average coming to 7.2682 minutes.
 
