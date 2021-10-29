@@ -17,7 +17,9 @@ const Footer = className => {
         </nav>
         <small>
           <Link href="/changelog">
-            <a sx={{ variant: 'containers.link' }}>{`v${version}`}</a>
+            <a sx={{ variant: 'containers.link' }}>
+              <h6>{`v${version}`}</h6>
+            </a>
           </Link>
         </small>
       </div>

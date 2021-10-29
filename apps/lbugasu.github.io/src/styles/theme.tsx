@@ -1,6 +1,6 @@
 import { dark, tosh } from '@theme-ui/presets'
-import nightOwl from '@theme-ui/prism/presets/night-owl.json'
 import shadesOfPurple from '@theme-ui/prism/presets/shades-of-purple.json'
+
 const theme = {
   ...tosh,
   config: {
@@ -8,14 +8,17 @@ const theme = {
   },
   colors: {
     ...tosh.colors,
-    background: '#efebe9',
-    text: '#202124',
-    borderColor: '#202124',
+    background: '#D6C9C9',
+    text: '#061323',
+    borderColor: '#061323',
     modes: {
       ...tosh.colors.modes,
       dark: {
         ...dark.colors,
-        background: '#202124',
+        text: '#DBD8F0',
+        primary: '#CA7DF9',
+        secondary: '#50CAE2',
+        background: '#181528',
         borderColor: '#efebe9'
       }
     }
@@ -44,11 +47,7 @@ const theme = {
       zIndex: 100
     }
   },
-  fonts: {
-    heading: 'Amiri, serif',
-    body: 'Amiri, serif',
-    monospace: 'IBM Plex Mono, monospace'
-  },
+
   styles: {
     ...tosh.styles,
     p: {
@@ -69,6 +68,11 @@ const theme = {
     progress: {
       color: '#c2185b'
     }
+  },
+  fonts: {
+    heading: 'Amiri, serif',
+    body: 'Jost, sans-serif',
+    monospace: 'IBM Plex Mono, monospace'
   }
 }
 export default theme

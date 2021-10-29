@@ -231,103 +231,103 @@ We will then create a new mongoose model that will be exported for use to query 
 variable to an environment variable - this is safer than pasting the connection string right into your code because it makes your database vulnerable.
 In our case, will set the connection string to an environment varible when we are ready to run the application.
 
-    ```ts
-    import mongoose from 'mongoose'
-    const Schema = mongoose.Schema
+```ts
+import mongoose from 'mongoose'
+const Schema = mongoose.Schema
 
-    // @ts-ignore
-    const connectionString: String = process.env.MONGO_DB
-    // @ts-ignore
-    mongoose.connect(connectionString, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-      useCreateIndex: true
-    })
+// @ts-ignore
+const connectionString: String = process.env.MONGO_DB
+// @ts-ignore
+mongoose.connect(connectionString, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true
+})
 
-    const UserSchema = new Schema({
-      name: String,
-      username: String
-    })
+const UserSchema = new Schema({
+  name: String,
+  username: String
+})
 
-    const User = mongoose.model('User', UserSchema)
+const User = mongoose.model('User', UserSchema)
 
-    export { User }
-    ```
+export { User }
+```
 
 ### Declaring the resolvers - `resolvers.ts`
 
 The resolvers are the functions that are run whenever the endpoint is run - so you need to define a function for each query and mutation as we will do below:
 
-    ```ts
-    import { UserType } from './types'
+```ts
+import { UserType } from './types'
 
-    // import the User from the database
-    import { User } from './db'
+// import the User from the database
+import { User } from './db'
 
-    export const resolvers = {
-      Query: {
-        //@ts-ignore
-        getUser: (root, { username }) => {
-          return User.findOne({ username: username })
-            .then((user: UserType) => {
-              return user
-            })
-            .catch((error: any) => {
-              console.log(error.message)
-            })
-        }
-      },
-      Mutation: {
-        // @ts-ignore
-        createUser: async (root, { user }) => {
-          const newUser = new User({ name: user.name, username: user.username })
-          await newUser.save()
-          return newUser
-        }
-      }
+export const resolvers = {
+  Query: {
+    //@ts-ignore
+    getUser: (root, { username }) => {
+      return User.findOne({ username: username })
+        .then((user: UserType) => {
+          return user
+        })
+        .catch((error: any) => {
+          console.log(error.message)
+        })
     }
-    ```
+  },
+  Mutation: {
+    // @ts-ignore
+    createUser: async (root, { user }) => {
+      const newUser = new User({ name: user.name, username: user.username })
+      await newUser.save()
+      return newUser
+    }
+  }
+}
+```
 
 ## Piece the pie together 🥧 - `index.ts`
 
 Our `index.ts` file is where all the majic happens. We will begin by importing the necessary packages and instantiating a new express app. Then we will initialize the connection to the database and attach the `grapqlHTTP` middleware function with our schema and `graphiql` - which we can use to explore the api:
 
-    ```ts
-    import express from 'express'
-    import { graphqlHTTP } from 'express-graphql'
-    import { schema } from './data/schema'
+```ts
+import express from 'express'
+import { graphqlHTTP } from 'express-graphql'
+import { schema } from './data/schema'
 
-    // Initialize app
-    const app = express()
-    require('./data/db')
+// Initialize app
+const app = express()
+require('./data/db')
 
-    // the graphQL endpoint at /graphql.
-    app.use('/graphql', graphqlHTTP({ schema: schema, graphiql: true }))
+// the graphQL endpoint at /graphql.
+app.use('/graphql', graphqlHTTP({ schema: schema, graphiql: true }))
 
-    app.get('*', (req, res) => {
-      res.json({ message: 'Welcome to the api' })
-    })
+app.get('*', (req, res) => {
+  res.json({ message: 'Welcome to the api' })
+})
 
-    const PORT = 7000
-    app.listen(PORT, () => {
-      console.log(`api is running on port ${PORT}`)
-    })
-    ```
+const PORT = 7000
+app.listen(PORT, () => {
+  console.log(`api is running on port ${PORT}`)
+})
+```
 
 ## Running the server
 
 Before we run the server, we will need to add our mongoDB connection string to the environment variables:
 
-    ```bash
-    export MONGO_DB='mongodb+srv://amani:AEDPfTeq61WH04NL@cluster0.9ntf0.mongodb.net/bliss?retryWrites=true&w=majority'
-    ```
+```bash
+  export MONGO_DB='mongodb+srv://amani:AEDPfTeq61WH04NL@cluster0.9ntf0.mongodb.net/bliss?retryWrites=true&w=majority'
+```
 
 Now, we are ready to run the server 🚀
 
-    ```bash
-    npm run start
-    ```
+```bash
+  npm run start
+```
 
 And we can run the server and explore our api.
 Here's an example of a mutation that you can make with the api:
@@ -336,25 +336,25 @@ Here's an example of a mutation that you can make with the api:
 
 We can add a user by making a mutation on the api:
 
-    ```txt
-    mutation createUser ($input:UserInput){
-      createUser(user:$input) {
-        name
-        username
-      }
+```txt
+  mutation createUser ($input:UserInput){
+    createUser(user:$input) {
+      name
+      username
     }
-    ```
+  }
+```
 
 We can then pass in the user input using the query variables:
 
-    ```txt
-    {
-      "input": {
-        "name": "Laurence",
-        "username": "laudebugs"
-      }
+```txt
+  {
+    "input": {
+      "name": "Laurence",
+      "username": "laudebugs"
     }
-    ```
+  }
+```
 
 Here's how the mutation looks like:
 
@@ -364,13 +364,13 @@ Here's how the mutation looks like:
 
 If we were to then ask the api for a certain user, we can make the query by:
 
-    ```txt
-    query {
-      getUser (username:"laudebugs"){
-        name
-      }
+```txt
+  query {
+    getUser (username:"laudebugs"){
+      name
     }
-    ```
+  }
+```
 
 You can check out the [repo here](https://github.com/lbugasu/express-gql-api)
 
@@ -379,9 +379,10 @@ You can check out the [repo here](https://github.com/lbugasu/express-gql-api)
 1. **IP isn't whitelisted**: If you're running into this issue, it may be the case that your ip address has changed and you need to add your current IP to be able to connect.
 2. **Could not find a declaration file for 'express'**
    Install the declaratio file for `express`:
-   ```bash
-   npm i --save-dev express
-   ```
+
+```bash
+    npm i --save-dev express
+```
 
 ## Further Reading
 

@@ -3,6 +3,8 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
+  background-color: var(--theme-ui-colors-background);
+  user-select: none;
   span.centerNav {
     span {
       display: flex;
@@ -55,7 +57,10 @@
     padding-left: 2em;
   }
 }
-.menuBtn {
+.colorModeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
 }
 
@@ -63,7 +68,7 @@
   .menuBtn {
     margin-left: 2rem;
   }
-  .homeBtn {
+  .colorModeToggle {
     margin-right: 2rem;
   }
 
