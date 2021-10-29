@@ -33,5 +33,5 @@ jobs:
       run: |
           # Stage the file, commit and push
           git add posts/archive.json
-          git commit -m "updated posts archive"
+          git commit -m "updated posts archive" --no-verify
           git push origin main
