@@ -27,8 +27,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Install packages
-      run: npm install 🤖
+    - name: Install packages🤖
+      run: npm install
     - name: "Update Articles Archive ⚙️"
       run: node posts/archive.js
     - name: commit 🦄
