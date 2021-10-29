@@ -11,9 +11,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [14.x]
@@ -22,6 +20,8 @@ jobs:
     steps:
     - name: "Checkout 🧞"
       uses: actions/checkout@v2
+    - name: "Set up user 🩸"
+      uses: fregante/setup-git-user@v1
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
