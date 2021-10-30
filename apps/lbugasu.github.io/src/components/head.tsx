@@ -3,8 +3,9 @@ import Head from 'next/head'
 function HeadWithMetaTags(frontMatter) {
   return (
     <Head>
-      <meta property="title" content={frontMatter.title} />
-      <meta property="description" content={frontMatter.summary} />
+      <title key="title">{frontMatter.title}</title>
+      <meta key="title" property="title" content={frontMatter.title} />
+      <meta key="description" property="description" content={frontMatter.summary} />
       <meta property="og:type" content="article" />
       <meta property="og:title" content={frontMatter.title} />
       <meta property="og:description" content={frontMatter.summary} />
