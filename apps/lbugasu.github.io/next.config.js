@@ -41,10 +41,10 @@ const nextConfig = {
       }
     ]
   },
-  amp: 'hybrid',
-  pwa: {
-    dest: 'public'
-  }
+  amp: 'hybrid'
+  // pwa: {
+  //   dest: 'public'
+  // }
 }
 
 module.exports = withPlugins([nextEnv, withMDX, withPWA], withNx(nextConfig))
