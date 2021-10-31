@@ -1,5 +1,5 @@
 /** @jsxImportSource theme-ui */
-
+import Head from 'next/head'
 import Prism from '@theme-ui/prism'
 import { AppProps } from 'next/app'
 import { useEffect, useState } from 'react'
@@ -43,6 +43,12 @@ function CustomApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider theme={theme} components={components}>
+      <Head>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+        />
+      </Head>
       <div className="contentBody">
         <Progress sx={{ variant: 'containers.progressBar' }} max={1} value={progress}>
           {progress * 100}%

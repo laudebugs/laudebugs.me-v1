@@ -2,6 +2,7 @@
 const withNx = require('@nrwl/next/plugins/with-nx')
 const withPlugins = require('next-compose-plugins')
 const nextEnv = require('next-env')
+const withPWA = require('next-pwa')
 const dotEnvLoad = require('dotenv-load')
 const withMDX = require('@next/mdx')({ extension: /\.mdx$/ })
 const rehypePrism = require('@mapbox/rehype-prism')
@@ -43,4 +44,4 @@ const nextConfig = {
   amp: 'hybrid'
 }
 
-module.exports = withPlugins([nextEnv, withMDX], withNx(nextConfig))
+module.exports = withPlugins([nextEnv, withMDX, withPWA], withNx(nextConfig))
