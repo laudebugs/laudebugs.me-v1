@@ -32,5 +32,5 @@ jobs:
       - name: 'chore(Archive ⚙️): update Posts Archive'
         run: node posts/archive.js
       - name: commit 🦄
-        run: _/script.sh
+        run: .github/_/run_commits.sh
         shell: bash
