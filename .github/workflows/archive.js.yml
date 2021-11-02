@@ -32,8 +32,5 @@ jobs:
       - name: 'chore(Archive ⚙️): update Posts Archive'
         run: node posts/archive.js
       - name: commit 🦄
-        run: |
-          # Stage the file, commit and push
-          git add posts/archive.json
-          git commit -m "updated posts archive" --no-verify
-          git push origin main
+        run: _/script.sh
+        shell: bash
