@@ -21,7 +21,10 @@ const nextConfig = {
     domains: ['images.unsplash.com', 'images.ctfassets.net']
   },
   webpack: config => {
-    config.experiments = { topLevelAwait: true }
+    config.experiments = {
+      topLevelAwait: true,
+      layers: true
+    }
     return config
   },
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
