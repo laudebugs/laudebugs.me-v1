@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/lbugasu/sandstorm/compare/v0.1.0...v0.1.1) (2021-11-02)
+
+### Features
+
+- **pwa:** add PWA support ([789698f](https://github.com/lbugasu/sandstorm/commits/789698f37a009bb58fd3523c78d05ddeb166b9c6))
+
+### Bug Fixes
+
+- **title tag:** add title tag to dev and journal page ([bb3e040](https://github.com/lbugasu/sandstorm/commits/bb3e0400997ca09855ac121a63a2c82eb9c1ca58))
+
 ## [0.1.0](https://github.com/lbugasu/sandstorm/compare/v0.0.3...v0.1.0) (2021-10-29)
 
 ### Features
