@@ -1,6 +1,4 @@
 #!/bin/sh
-
-
 if [[ `git status --porcelain` ]]; then
   # Changes
   # Stage the file, commit and push
