@@ -6,7 +6,7 @@
   left: 0;
   z-index: 2;
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 7fr 2fr;
 
   .menu {
     background-color: var(--theme-ui-colors-background);
@@ -27,7 +27,7 @@
       a {
         text-align: center;
         svg {
-          width: 60%;
+          width: 40%;
           margin: 10%;
           stroke: var(--theme-ui-colors-text);
           &:hover {
@@ -55,7 +55,7 @@
 
 @media screen and (max-width: 1200px) {
   .sideNav {
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 5fr 2fr;
   }
 }
 
@@ -67,12 +67,12 @@
 
 @media screen and (max-width: 800px) {
   .sideNav {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 2fr;
   }
 }
 
 @media screen and (max-width: 600px) {
   .sideNav {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
   }
 }

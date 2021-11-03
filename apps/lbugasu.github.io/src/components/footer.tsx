@@ -30,7 +30,11 @@ const Footer = className => {
             socials
           </span>
           <span>&nbsp;―&nbsp;</span>
-          <span className={styles.link}>stats</span>
+          <Link href="/stats">
+            <a>
+              <span className={styles.link}>stats</span>
+            </a>
+          </Link>
         </nav>
         <small>
           <Link href="/changelog">

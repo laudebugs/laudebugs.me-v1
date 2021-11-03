@@ -165,7 +165,7 @@ pre[class*='language-'] {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 /* Track */
@@ -176,7 +176,7 @@ pre[class*='language-'] {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--theme-ui-colors-text);
-  border-radius: 3px;
+  border-radius: 1px;
 }
 
 /* Handle on hover */
