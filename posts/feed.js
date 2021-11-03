@@ -17,7 +17,7 @@ combinedData.map((post, index) => {
 combinedData.sort((a, b) => b.no - a.no)
 
 const feed = createFeed(combinedData)
-
+console.log(feed.json1())
 const feedStore = {
   rss: feed.rss2(),
   json: JSON.stringify(feed.json1(), undefined, 4),

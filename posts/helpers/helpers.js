@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const matter = require('gray-matter')
 const Feed = require('feed').Feed
+const marked = require('marked')
 
 function getFilesFromDir(dir, includeSource) {
   const postsDirectory = path.join(process.cwd(), `posts/${dir}`)
@@ -12,7 +13,7 @@ function getFilesFromDir(dir, includeSource) {
     const { data, content } = matter(post)
     data.image = getImageForPost(data.slug)
     data.date = new Date(data.publishedOn)
-    if (includeSource) data.content = content
+    if (includeSource) data.content = marked.parse(content)
     return data
   })
 }
