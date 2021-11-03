@@ -84,6 +84,12 @@ a {
   color: var(--theme-ui-colors-text);
   text-decoration: none;
 }
+.material-icons-outlined,
+.material-icons,
+.material-icons-sharp,
+.material-icons-two-tone {
+  font-family: 'Material Icons';
+}
 
 code[class*='language-'],
 pre[class*='language-'] {

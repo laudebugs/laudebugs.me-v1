@@ -18,7 +18,13 @@ const Footer = className => {
   return (
     <footer>
       <div className={styles.footer}>
-        <span />
+        <span>
+          <Link href="/api/feed/rss">
+            <a>
+              <span className="material-icons-outlined">rss_feed</span>
+            </a>
+          </Link>
+        </span>
         <nav>
           <span className={styles.link} onClick={() => toggleDrawer(!isOpen)}>
             socials
