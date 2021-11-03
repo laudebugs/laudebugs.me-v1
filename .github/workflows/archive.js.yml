@@ -2,7 +2,6 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 name: Update Posts Archive
-
 on:
   push:
     branches: [main]
@@ -33,6 +32,7 @@ jobs:
         run: node posts/archive.js
       - name: Verify Changed files
         uses: tj-actions/verify-changed-files@v8.3
+        id: verify-changed-files
       - name: commit 🦄
         if: steps.verify-changed-files.outputs.files_changed == 'true'
         run: |
