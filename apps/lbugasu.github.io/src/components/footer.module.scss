@@ -7,6 +7,11 @@
     justify-content: center;
     align-items: center;
     font-family: 'Amiri', serif;
+    span.link {
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
   small {
     text-align: right;
