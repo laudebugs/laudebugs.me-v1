@@ -31,9 +31,6 @@ jobs:
         run: npm install
       - name: 'chore(Archive ⚙️): update Posts Archive'
         run: node posts/archive.js
-      - name: Update Script permissions
-        run: chmod +x .github/_/run_commits.sh
-        shell: bash
       - name: commit 🦄
-        run: .github/_/run_commits.sh
+        run: sh ./.github/_/run_commits.sh
         shell: bash
