@@ -20,7 +20,7 @@ const Footer = className => {
       <div className={styles.footer}>
         <span>
           <Link href="/api/feed/rss">
-            <a>
+            <a target="_blank">
               <span className="material-icons-outlined">rss_feed</span>
             </a>
           </Link>
