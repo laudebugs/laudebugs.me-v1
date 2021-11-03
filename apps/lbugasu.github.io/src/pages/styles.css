@@ -166,6 +166,11 @@ pre[class*='language-'] {
   animation: animateFont 0.75s ease 0s infinite normal none running;
 }
 
+.verySpecialChar {
+  font-family: 'Whirly Bats';
+  animation: animateFont 0.75s ease 0s infinite normal none running;
+}
+
 /* Animateion */
 
 @keyframes animateFont {
