@@ -9,9 +9,23 @@ const fetcher = (...args) => fetch(...args).then(res => res.json())
 export default function Stats() {
   const { data, error } = useSWR('/api/stats', fetcher)
   if (!data) {
-    return <div> no data</div>
+    return (
+      <div>
+        <h1 sx={{ textAlign: 'center', fontSize: '48pt' }} className="verySpecialChar">
+          W
+        </h1>
+      </div>
+    )
   }
-  if (error) return <div></div>
+  if (error)
+    return (
+      <div>
+        <h1 sx={{ textAlign: 'center', fontSize: '48pt' }} className="verySpecialChar">
+          =
+        </h1>
+        <p sx={{ textAlign: 'center' }}>Something bad happened</p>
+      </div>
+    )
 
   const ghData = data.gh.data
 
