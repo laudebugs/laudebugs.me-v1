@@ -163,6 +163,27 @@ pre[class*='language-'] {
   }
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--theme-ui-colors-gray);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--theme-ui-colors-text);
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-ui-colors-text);
+}
+
 .specialChar {
   font-family: 'Whirly Bats';
   font-size: 24pt;
