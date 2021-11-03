@@ -1,9 +1,8 @@
 const fs = require('fs')
-const path = require('path')
-const matter = require('gray-matter')
 
-const devPostData = getFilesFromDir('dev')
-const journalPostData = getFilesFromDir('journal')
+const { getFilesFromDir } = require('./helpers/helpers')
+const devPostData = getFilesFromDir('dev', false)
+const journalPostData = getFilesFromDir('journal', false)
 
 const combinedData = [...devPostData, ...journalPostData]
 
@@ -29,23 +28,3 @@ fs.writeFile(
   },
   4
 )
-
-function getFilesFromDir(dir) {
-  const postsDirectory = path.join(process.cwd(), `posts/${dir}`)
-  const filenames = fs.readdirSync(postsDirectory)
-  return filenames.map(filename => {
-    const fullPath = path.join(process.cwd(), `posts/${dir}/`, filename)
-    const post = fs.readFileSync(fullPath, 'utf-8')
-    const { data } = matter(post)
-    data.image = getImageForPost(data.slug)
-    data.date = new Date(data.publishedOn)
-    return data
-  })
-}
-
-function getImageForPost(slug) {
-  const imagesPath = 'apps/lbugasu.github.io/public/post-images/'
-  const images = fs.readdirSync(imagesPath)
-  const image = images.find(_image => _image.includes(slug))
-  return image ?? ''
-}
