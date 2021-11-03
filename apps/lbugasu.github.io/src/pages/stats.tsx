@@ -2,9 +2,8 @@
 import useSWR from 'swr'
 import styles from './stats.module.scss'
 import { Card } from 'theme-ui'
-import { Table, Column } from '@component-controls/components'
 
-const fetcher = (...args) => fetch(...args).then(res => res.json())
+const fetcher = (input: RequestInfo, init?: RequestInit) => fetch(input, init).then(res => res.json())
 
 export default function Stats() {
   const { data, error } = useSWR('/api/stats', fetcher)
