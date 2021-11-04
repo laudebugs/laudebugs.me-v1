@@ -46,10 +46,14 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+figcaption {
   font-family: 'Amiri', serif;
 }
-
+figcaption {
+  font-style: italic;
+  font-size: 12pt;
+}
 .contentBody {
   min-height: calc(95vh - 70px);
   position: relative;

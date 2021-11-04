@@ -11,6 +11,7 @@ export default function PostInfo(matter) {
   const { frontMatter } = matter
   const posts = archive as any[]
   const { no } = posts.find(post => post.slug === frontMatter.slug)
+  const caption = frontMatter.imageCaption || frontMatter.imageCredit
 
   return (
     <div className={styles.postinfo}>
@@ -23,6 +24,11 @@ export default function PostInfo(matter) {
           width={1280}
           alt={frontMatter.title}
         />
+        {frontMatter.imageCaption ? (
+          <figcaption>{frontMatter.imageCaption}</figcaption>
+        ) : frontMatter.imageCredit ? (
+          <figcaption dangerouslySetInnerHTML={{ __html: frontMatter.imageCredit }}></figcaption>
+        ) : null}
       </span>
       <span className={styles.deets}>
         <h1>{frontMatter.title.toLowerCase()}</h1>
