@@ -1,5 +1,23 @@
 [
     {
+        "title": "Endings",
+        "publishedOn": "2021-11-03",
+        "author": "Laurence Ininda",
+        "summary": "And it’s almost as if I left through the back door. The sense of escaping what I knew to be how things were supposed to end. How are things supposed to end?",
+        "slug": "endings",
+        "tags": [
+            "archive",
+            "college"
+        ],
+        "type": "journal",
+        "imageCaption": "Solva (Fishing Village in Pembrokeshire), 1936 by Frances Hodgkins (d. 1947)",
+        "imageCredit": "Photo by <a href=\"https://unsplash.com/@birminghammuseumstrust?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText\">Birmingham Museums Trust</a> on <a href=\"https://unsplash.com/s/photos/generative-art?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText\">Unsplash</a>",
+        "imageOriginalUrl": "https://unsplash.com/photos/9pOXS0ZGPDM",
+        "image": "endings.jpg",
+        "date": "2021-11-03T00:00:00.000Z",
+        "no": 19
+    },
+    {
         "title": "Dawn",
         "publishedOn": "2021-03-08",
         "author": "Laurence Ininda",
@@ -203,8 +221,9 @@
             "python"
         ],
         "type": "dev",
-        "image": "kenya-web-project.webp",
+        "image": "kenya-web-project.jpg",
         "summary": "Examining performance and data download sizes of Kenya's top 500 websites. Expecially in emerging markets, website developers need to build small and efficient web applications.",
+        "imageCredits": "Photo by <a href=\"https://unsplash.com/@joecalih?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText\">Joecalih</a> on <a href=\"https://unsplash.com/s/photos/nairobi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText\">Unsplash</a>",
         "date": "2020-06-05T00:00:00.000Z",
         "no": 5
     },
