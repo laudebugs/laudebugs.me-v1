@@ -3,7 +3,8 @@
   "version": "0.1.1",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
+    "start": "nx serve --port 5000",
+    "local": "nx serve --host 0.0.0.0 --port 5000",
     "next": "next",
     "build": "nx build",
     "build:prod": "nx build lbugasu.github.io --prod --runner=no-cloud",
@@ -115,6 +116,11 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
   }
 }
