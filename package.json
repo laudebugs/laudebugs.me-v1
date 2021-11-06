@@ -9,7 +9,7 @@
     "build": "nx build",
     "build:prod": "nx build lbugasu.github.io --prod --runner=no-cloud",
     "test": "nx test",
-    "commit": "cz",
+    "cz": "cz",
     "prepare": "husky install",
     "release": "standard-version",
     "release:minor": "standard-version --release-as minor",
@@ -113,14 +113,14 @@
     "ts-jest": "27.0.3",
     "typescript": "~4.3.5"
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
   "husky": {
     "hooks": {
       "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
     }
   }
 }
