@@ -39,6 +39,7 @@ jobs:
         run: |
           # Stage the file, commit and push
           node posts/feed.js
+          node posts/archive.js
           git add .
           git commit -m "updated posts archive" --no-verify
           git push origin main

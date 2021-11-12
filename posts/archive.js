@@ -21,7 +21,7 @@ fs.writeFile(
   'utf8',
   err => {
     if (err) {
-      console.log('Error updating archive❌: ', err.message)
+      console.log('Error updating archive: ', err.message)
     } else {
       console.log('Successfully Updated archive✅')
     }
