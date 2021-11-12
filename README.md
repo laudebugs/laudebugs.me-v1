@@ -2,7 +2,7 @@
 
 <span style="text-align: center; width: '100%'">
   <img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" style="height: 22.5px; width: auto; padding-right: 5px">
-  <a href="https://www.laudebugs.me/api/feed/rss"><img src="./design_notes/assets/rss.png" style="height: 22.5px; width: auto; padding-right: 5px"> </a>
+  <a href="https://www.laudebugs.me/api/feed/rss"><img src="./design_notes/assets/rss.png" style="height: 22.5px; width: 50px; padding-right: 5px"> </a>
 </span>
 
 <hr/>
