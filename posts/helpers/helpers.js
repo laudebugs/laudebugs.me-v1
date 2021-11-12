@@ -3,6 +3,7 @@ const path = require('path')
 const matter = require('gray-matter')
 const Feed = require('feed').Feed
 const marked = require('marked')
+const uniq = require('lodash').uniq
 
 function getFilesFromDir(dir, includeSource) {
   const postsDirectory = path.join(process.cwd(), `posts/${dir}`)
@@ -48,7 +49,9 @@ function createFeed(posts) {
     }
   })
 
+  let categories = []
   posts.forEach(post => {
+    categories.push(...post.tags)
     feed.addItem({
       title: post.title,
       id: post.url,
@@ -74,9 +77,41 @@ function createFeed(posts) {
     })
   })
 
-  feed.addCategory('Technology')
+  categories = uniq(categories)
+  categories.forEach(category => feed.addCategory(category))
 
   return feed
 }
 
-module.exports = { getFilesFromDir, getImageForPost, createFeed }
+function writeFeed(data, fileName) {
+  data.sort((a, b) => b.date - a.date).reverse()
+
+  data.map((post, index) => {
+    post.no = index + 1
+    return post
+  })
+
+  data.sort((a, b) => b.no - a.no)
+  const feed = createFeed(data)
+
+  const feedStore = {
+    rss: feed.rss2(),
+    json: JSON.stringify(feed.json1(), undefined, 4),
+    atom: feed.atom1()
+  }
+  fs.writeFile(
+    `./posts/${fileName}.json`,
+    JSON.stringify(feedStore, null, 4),
+    'utf8',
+    err => {
+      if (err) {
+        console.log(`Error updating the ${fileName} Rss Feeds: `, err.message)
+      } else {
+        console.log(`Successfully Updated ${fileName} Rss Feeds`)
+      }
+    },
+    4
+  )
+}
+
+module.exports = { getFilesFromDir, getImageForPost, createFeed, writeFeed }
