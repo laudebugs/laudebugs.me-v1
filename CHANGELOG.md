@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/lbugasu/sandstorm/compare/v0.1.1...v0.1.2) (2021-11-16)
+
+### Features
+
+- **custom 404 page:** add custom 404 page ([6312029](https://github.com/lbugasu/sandstorm/commits/631202932f7e4475856c512c12a502549361af5d))
+- **image captions:** add image captions or credit if available ([39df092](https://github.com/lbugasu/sandstorm/commits/39df0928b9314b4de63dfe183bf0622637ede2c5))
+- **material icons:** add Material Icons font ([e812208](https://github.com/lbugasu/sandstorm/commits/e8122084a7532dfee90b9c38ab12a04c09a61603))
+- **rss feeds:** add Atom, XML and JSON rss feeds ([8eb728f](https://github.com/lbugasu/sandstorm/commits/8eb728f32b7449f46ef1347edc58266f49ab53d3))
+- **rss:** convert markdown to html for feed ([d575137](https://github.com/lbugasu/sandstorm/commits/d575137528b2f8f0cf4a22de74212cd02c507e88))
+- **scrollbar:** customize the scrollbar to match theme ([24e4694](https://github.com/lbugasu/sandstorm/commits/24e4694085e0f18e7d023802c9bbc89468454fc5))
+- **section rss feeds:** add Rss Feeds for Dev and Journal sections ([8d1dbbf](https://github.com/lbugasu/sandstorm/commits/8d1dbbf508a6582f0c6a64dc7a87479d4299c99b))
+- **socials:** add Social Links ([97e8a52](https://github.com/lbugasu/sandstorm/commits/97e8a5265d6a852c3222fc8dafba06a84b8217c2))
+- **stats error message:** show Error message if there's an error with the stats page ([40ec004](https://github.com/lbugasu/sandstorm/commits/40ec0047f9aa5d0d79e82649a2f5b63deb651bd8))
+- **stats:** add Basic Project Stats ([433a74e](https://github.com/lbugasu/sandstorm/commits/433a74e6a22b60992694fcb5e6b4d7766d10e3f7))
+
+### Bug Fixes
+
+- **archive ci:** update archive ci script ([cf2b67a](https://github.com/lbugasu/sandstorm/commits/cf2b67ad779010aea855e8971c474edf8446586b))
+- **fetch:** fix Fetcher in stats endpoint ([7956e3b](https://github.com/lbugasu/sandstorm/commits/7956e3bef2ad6df40bbbfedd41aba365ad94c026))
+- **rss:** open Rss feed in new window ([b217e7e](https://github.com/lbugasu/sandstorm/commits/b217e7e4e9092514f7c04a06c65f79c28aaf3545))
+
 ### [0.1.1](https://github.com/lbugasu/sandstorm/compare/v0.1.0...v0.1.1) (2021-11-02)
 
 ### Features
