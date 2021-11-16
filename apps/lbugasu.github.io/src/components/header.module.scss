@@ -6,6 +6,10 @@
   background-color: var(--theme-ui-colors-background);
   user-select: none;
   span.centerNav {
+    h2 {
+      margin: 0;
+      text-align: center;
+    }
     span {
       display: flex;
       align-items: center;
@@ -22,8 +26,8 @@
       }
     }
   }
-  position: sticky;
-  top: 4px;
+  // position: sticky;
+  // top: 4px;
 }
 
 .selected {
@@ -51,10 +55,10 @@
 .paths,
 .selected {
   a:nth-of-type(1) {
-    padding-right: 2em;
+    padding-right: 1em;
   }
   a:nth-of-type(3) {
-    padding-left: 2em;
+    padding-left: 0.75em;
   }
 }
 .colorModeToggle {
