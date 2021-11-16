@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 function HeadWithMetaTags(frontMatter) {
+  console.log(frontMatter.title)
   return (
     <Head>
       <title key="title">{frontMatter.title}</title>

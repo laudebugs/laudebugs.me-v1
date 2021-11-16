@@ -8,6 +8,7 @@ import journalFeed from '../../../../../../posts/journal.json'
 const handler = nc<NextApiRequest, NextApiResponse>()
 
 handler.get((request, response) => {
+  response.setHeader('Content-Type', 'application/json')
   if (request.query?.section === 'dev') {
     response.send(devFeed.json)
   } else if (request.query?.section === 'journal') {
