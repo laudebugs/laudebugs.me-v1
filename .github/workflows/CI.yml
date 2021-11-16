@@ -3,7 +3,7 @@
 
 name: Update Posts Archive
 on:
-  push:
+  pull_request:
     branches: [main]
 jobs:
   build:
@@ -24,22 +24,5 @@ jobs:
           cache: 'npm'
       - name: Install packages🤖
         run: npm install
-      - name: 'chore(Archive ⚙️): update Posts Archive'
-        run: node posts/archive.js
-      - name: Update Rss Feeds and Archive 🦄
-        run: |
-          node posts/feed.js
-          node posts/archive.js
-      - name: Verify Changed files 🐒
-        uses: tj-actions/verify-changed-files@v8.3
-        id: verify-changed-files
-        with:
-          files: |
-            posts
-      - name: commit 💾
-        if: steps.verify-changed-files.outputs.files_changed == 'true'
-        run: |
-          # Stage the file, commit and push
-          git add .
-          git commit -m "updated posts archive" --no-verify
-          git push origin main
+      - name: Build
+        run: npm run build
