@@ -1,3 +1,6 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
 const Github = () => {
   return (
     <svg fill="none" stroke="black" strokeWidth="0.7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
