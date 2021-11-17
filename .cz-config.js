@@ -26,12 +26,12 @@ module.exports = {
     { value: ':rewind: revert', name: '🗑 revert:\tRevert to a commit' },
     { value: ':construction: wip', name: '🚧 wip:\tWork in progress' },
     {
-      value: ':construction_worker: build',
-      name: '🛠 build:\tAdd or update regards to build process'
+      value: ':building_construction: build',
+      name: '🏗️ build:\tAdd or update regards to build process'
     },
     {
-      value: ':green_heart: ci',
-      name: '💚 ci:\tAdd or update regards to build process'
+      value: ':wrench: ci',
+      name: '🔧 ci:\tAdd or update regards to build process'
     },
     {
       value: ':bulb: article',
