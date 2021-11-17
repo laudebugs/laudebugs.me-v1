@@ -34,7 +34,7 @@ module.exports = {
       name: '💚 ci:\tAdd or update regards to build process'
     },
     {
-      value: 'article',
+      value: ':bulb: article',
       name: '💡 article:\tAn Article or Blog Post'
     }
   ],
