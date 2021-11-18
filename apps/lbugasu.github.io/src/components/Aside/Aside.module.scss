@@ -1,0 +1,15 @@
+.wrapper {
+  &::before {
+    font-family: 'Material Icons';
+    content: 'join_right';
+    -webkit-font-feature-settings: 'liga';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+  }
+  .aside {
+    border-left: 1px solid;
+    padding: 0 15px;
+    margin: 15px 0 0 0;
+  }
+}

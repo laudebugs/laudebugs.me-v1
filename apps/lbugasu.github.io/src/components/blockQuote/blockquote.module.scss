@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  span:first-child {
+    margin-right: 0.5ch;
+    &:hover {
+      stroke: var(--theme-ui-colors-text);
+      color: var(--theme-ui-colors-accent);
+      font-family: 'Material Icons';
+      transform: all 0.5s;
+      cursor: default;
+    }
+  }
+}

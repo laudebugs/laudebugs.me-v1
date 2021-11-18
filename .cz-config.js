@@ -16,8 +16,8 @@ module.exports = {
       name: '⚡️ perf:\tCode change that improves performance'
     },
     {
-      value: ':white_check_mark: test',
-      name: '🚨 test:\tAdding tests cases'
+      value: ':alembic: test',
+      name: '⚗️ test:\tAdding tests cases'
     },
     {
       value: ':truck: chore',

@@ -6,12 +6,16 @@ import { serialize } from 'next-mdx-remote/serialize'
 import { useRouter } from 'next/router'
 import { Spinner } from 'theme-ui'
 import Btn from '../../components/btn'
+import Aside from '../../components/Aside/Aside'
+import BlockQuote from '../../components/blockQuote/blockquote'
 import PostInfo from '../../components/post-info'
 import { getFilesFromSrcDir, getSinglePostFromSrcDir } from '../../helpers/files.helpers'
 import styles from './dev.module.scss'
 
 const components = {
-  Btn
+  Btn,
+  Aside,
+  BlockQuote
 }
 
 const DevPost = ({ source, frontMatter }) => {
