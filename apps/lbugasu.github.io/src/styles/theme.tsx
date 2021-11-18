@@ -11,7 +11,7 @@ const theme = {
     background: '#D6C9C9',
     text: '#061323',
     borderColor: '#061323',
-    muted: text => text.muted,
+    muted: tosh.colors.muted,
     secondary: '#327169',
     accent: '#FC7A1E',
     modes: {
