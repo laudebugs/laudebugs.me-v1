@@ -3,19 +3,22 @@ import matter from 'gray-matter'
 import uniq from 'lodash/uniq'
 import path from 'path'
 import { dayCount } from './posts.helpers'
-
+import { compareAsc, parseISO } from 'date-fns'
 const rootPath = ''
 
 export function getFilesFromSrcDir(directory: string) {
   const postsDirectory = path.join(process.cwd(), `${rootPath + directory}`)
   const filenames = fs.readdirSync(postsDirectory)
-  return filenames.map(filename => {
-    const fullPath = path.join(process.cwd(), `${rootPath + directory}`, filename)
-    const post = fs.readFileSync(fullPath, 'utf-8')
-    const { data } = matter(post)
-    data.image = getImageForPost(data.slug)
-    return data
-  })
+  return filenames
+    .map(filename => {
+      const fullPath = path.join(process.cwd(), `${rootPath + directory}`, filename)
+      const post = fs.readFileSync(fullPath, 'utf-8')
+      const { data } = matter(post)
+      data.image = getImageForPost(data.slug)
+      return data
+    })
+    .sort((a, b) => compareAsc(parseISO(a.publishedOn), parseISO(b.publishedOn)))
+    .reverse()
 }
 
 export function getChangeLog() {
