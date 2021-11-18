@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { useColorMode } from 'theme-ui'
 import Logo from '../components/logo'
-import MenuButton from '../components/menubutton'
+import MenuButton from './menuButton/menubutton'
 import styles from './header.module.scss'
 
 const Header = () => {
