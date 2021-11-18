@@ -13,7 +13,7 @@ const Featured = ({ post }) => {
         <div className={styles.postInfo}>
           <span className={styles.title}>
             <Link href={`/${post.type}/${post.slug}`}>
-              <a href={`/${post.type}/${post.slug}`}>
+              <a>
                 <h5>{post.title}</h5>
               </a>
             </Link>
@@ -29,7 +29,7 @@ const Featured = ({ post }) => {
         </div>
 
         <Link href={`/${post.type}/${post.slug}`}>
-          <a href={`/${post.type}/${post.slug}`}>
+          <a>
             <p className={styles.summary}>{post.summary}</p>
           </a>
         </Link>
@@ -40,7 +40,11 @@ const Featured = ({ post }) => {
         </small>
       </div>
       <div className={styles.image}>
-        <Image src={`/post-images/${post.image}`} height={720} width={1280} alt={post.title} />
+        <Link href={`/${post.type}/${post.slug}`}>
+          <a>
+            <Image src={`/post-images/${post.image}`} height={720} width={1280} alt={post.title} />
+          </a>
+        </Link>
       </div>
     </div>
   )
