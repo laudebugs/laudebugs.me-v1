@@ -9,12 +9,16 @@ import styles from './menuButton.module.scss'
 
 const MenuButton = open => {
   const [isOpen, setIsOpen] = useState(false)
-  const toggleDrawer = open => setIsOpen(open)
+  const [activated, setActivated] = useState(false)
+  const toggleDrawer = open => {
+    setActivated(true)
+    setIsOpen(open)
+  }
 
   const close = new Subject()
   close.subscribe(_isOpen => toggleDrawer(_isOpen))
 
-  const [rotation, setRotation] = useState('90deg')
+  const [rotation, setRotation] = useState('0deg')
   useEffect(() => {
     if (!isOpen) setTimeout(() => setRotation('0deg'), 400)
     else setTimeout(() => setRotation('90deg'), 500)
@@ -27,7 +31,7 @@ const MenuButton = open => {
         sx={{ variant: 'containers.menuButton', transform: `rotateZ(${rotation})` }}
         src={`/images/elements/menu${colorMode == 'light' ? '' : '_light'}.svg`}
         width={40}
-        className={isOpen ? styles.opened : styles.closed}
+        className={activated ? (isOpen ? styles.opened : styles.closed) : ''}
         height={40}
         alt="menu toggle"
         onClick={() => toggleDrawer(!isOpen)}
