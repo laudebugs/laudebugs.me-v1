@@ -1,11 +1,20 @@
 /** @jsxImportSource theme-ui */
 
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import styles from './side-nav.module.scss'
+
 function SideNav({ close, isOpen }) {
+  const [display, setDisplay] = useState('none')
+
+  useEffect(() => {
+    if (!isOpen) setTimeout(() => setDisplay('none'), 500)
+    else setDisplay('block')
+  }, [isOpen])
+
   return (
-    <div sx={{ display: !isOpen ? 'none' : 'block' }}>
-      <div className={styles.sideNav}>
+    <div sx={{ display }}>
+      <div className={styles.sideNav + ' ' + (isOpen ? styles.open : styles.close)}>
         <div className={styles.menu}>
           <nav>
             <Link href="/dev">

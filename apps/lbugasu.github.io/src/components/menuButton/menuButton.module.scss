@@ -1,0 +1,27 @@
+.menu {
+}
+
+@keyframes open {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(90deg);
+  }
+}
+
+@keyframes close {
+  0% {
+    transform: rotateZ(90deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+.opened {
+  animation: open ease-in-out 500ms;
+}
+.closed {
+  animation: close ease-in-out 400ms;
+}
