@@ -36,13 +36,13 @@ const Header = () => {
           <span className={`${path !== '/' && path !== '/changelog' ? styles.selected : styles.paths}`}>
             <Link href="/journal">
               <a className={`${path === '/journal' ? styles.selected_left : ''}`}>
-                <h4>journal</h4>
+                <h4 className={styles.link}>journal</h4>
               </a>
             </Link>
             <Logo />
             <Link href="/dev">
               <a className={`${path === '/dev' ? styles.selected_right : ''}`}>
-                <h4>dev</h4>
+                <h4 className={styles.link}>dev</h4>
               </a>
             </Link>
           </span>
