@@ -5,7 +5,8 @@ import styles from './blockquote.module.scss'
 const BlockQuote = props => {
   return (
     <div className={styles.wrapper}>
-      <span {...props}></span>
+      <span className="material-icons-outlined">tips_and_updates</span>
+      <span className="content" {...props}></span>
     </div>
   )
 }

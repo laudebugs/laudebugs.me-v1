@@ -14,6 +14,21 @@ div.singlePost {
   //   -webkit-font-feature-settings: 'liga';
   //   vertical-align: top;
   // }
+  pre {
+    // position: relative;
+    // &:hover{
+    //   &::after {
+    //     color: #F4602A; //var(--theme-ui-colors-accent);
+    //     font-family: 'Material Icons';
+    //     content: 'content_copy';
+    //     -webkit-font-feature-settings: 'liga';
+    //     position: absolute;
+    //     top: 10px;
+    //     right: 10px;
+    //     cursor: pointer;
+    //   }
+    // }
+  }
 }
 
 @media screen and (max-width: 1200px) {
