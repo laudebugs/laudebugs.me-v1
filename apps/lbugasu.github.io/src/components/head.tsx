@@ -1,7 +1,6 @@
 import Head from 'next/head'
 
 function HeadWithMetaTags(frontMatter) {
-  console.log(frontMatter.title)
   return (
     <Head>
       <title key="title">{frontMatter.title}</title>
@@ -10,12 +9,12 @@ function HeadWithMetaTags(frontMatter) {
       <meta property="og:type" content="article" />
       <meta property="og:title" content={frontMatter.title} />
       <meta property="og:description" content={frontMatter.summary} />
-      <meta property="og:image" content={`/post-images/${frontMatter.image}`} />
+      <meta property="og:image" content={`https://www.laudebugs.me/post-images/${frontMatter.image}`} />
       <meta property="og:url" content="PERMALINK" />
       <meta property="og:site_name" content="Lau de Bugs" />
       <meta name="twitter:title" content={frontMatter.title} />
       <meta name="twitter:description" content={frontMatter.summary} />
-      <meta name="twitter:image" content={`/post-images/${frontMatter.image}`} />
+      <meta name="twitter:image" content={`https://www.laudebugs.me/post-images/${frontMatter.image}`} />
       <meta name="twitter:site" content="@lbugasu" />
       <meta name="twitter:creator" content="@lbugasu"></meta>
       <meta name="robots" content="index, follow" />
