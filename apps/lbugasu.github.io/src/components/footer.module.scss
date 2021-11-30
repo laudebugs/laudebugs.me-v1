@@ -20,6 +20,9 @@
       cursor: pointer;
     }
   }
+  @media print {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 700px) {

@@ -4,7 +4,8 @@ import shadesOfPurple from '@theme-ui/prism/presets/shades-of-purple.json'
 const theme = {
   ...tosh,
   config: {
-    // initialColorModeName: 'dark'
+    initialColorModeName: 'lightMode',
+    printColorModeName: 'lightMode',
   },
   colors: {
     ...tosh.colors,
@@ -71,7 +72,8 @@ const theme = {
     },
     progress: {
       color: '#c2185b'
-    }
+    },
+
   },
   fonts: {
     heading: 'Amiri, serif',

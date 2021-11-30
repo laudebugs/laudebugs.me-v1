@@ -50,7 +50,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <div className="contentBody">
-        <Progress sx={{ variant: 'containers.progressBar' }} max={1} value={progress}>
+        <Progress sx={{ variant: 'containers.progressBar' }} className='progressBar' max={1} value={progress}>
           {progress * 100}%
         </Progress>
         <span className="content">

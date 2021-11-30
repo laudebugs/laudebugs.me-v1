@@ -11,5 +11,8 @@ span.tags {
       color: var(--theme-ui-colors-background);
       cursor: pointer;
     }
+    @media print {
+      // font-size: 12pt !important;
+    }
   }
 }
