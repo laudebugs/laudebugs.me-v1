@@ -415,4 +415,7 @@ pre[class*='language-'] {
   span h6{
     font-size: 10pt;
   }
+  a:after {
+    content: " [" attr(href) "] ";
+  }
 }
