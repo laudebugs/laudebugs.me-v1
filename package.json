@@ -3,8 +3,8 @@
   "version": "0.1.2",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve --port 5000",
-    "local": "nx serve --host 0.0.0.0 --port 5000",
+    "start": "nx serve --port 5001",
+    "local": "nx serve --host 0.0.0.0 --port 5001",
     "next": "next",
     "build": "nx build",
     "build:prod": "nx build lbugasu.github.io --prod --runner=no-cloud",
@@ -114,7 +114,6 @@
     "husky": "^7.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.3.1",
-    "node-sass": "5.0.0",
     "prettier": "^2.4.1",
     "pretty-quick": "^3.1.1",
     "react-test-renderer": "^17.0.2",
