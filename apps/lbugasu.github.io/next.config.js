@@ -45,9 +45,9 @@ const nextConfig = {
     ]
   },
   amp: 'hybrid',
-  // pwa: {
-  //   dest: 'public'
-  // },
+  pwa: {
+    dest: 'public'
+  },
   swcMinify: true
 }
 
