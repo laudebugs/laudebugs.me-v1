@@ -3,17 +3,15 @@ import 'reflect-metadata'
 import { buildSchema } from 'type-graphql'
 import { GreetingResolver } from '../../graphql/resolvers'
 
-const createServer = async () => {
+export const createServer = async () => {
   const schema = await buildSchema({
     resolvers: [GreetingResolver],
     emitSchemaFile: true
   })
-  return new ApolloServer({ schema })
+  const server = new ApolloServer({ schema })
+   server.start()
+   server.createHandler({ path: '/api/graphql' })
 }
-
-const server = await createServer()
-await server.start()
-export default server.createHandler({ path: '/api/graphql' })
 
 export const config = {
   api: {
