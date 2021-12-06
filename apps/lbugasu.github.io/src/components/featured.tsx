@@ -42,7 +42,7 @@ const Featured = ({ post }) => {
       <div className={styles.image}>
         <Link href={`/${post.type}/${post.slug}`}>
           <a>
-            <Image src={`/post-images/${post.image}`} height={720} width={1280} alt={post.title} />
+            <Image src={post.image} height={720} width={1280} alt={post.title} />
           </a>
         </Link>
       </div>

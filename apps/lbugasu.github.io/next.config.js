@@ -18,7 +18,7 @@ const nextConfig = {
     svgr: false
   },
   images: {
-    domains: ['images.unsplash.com', 'images.ctfassets.net']
+    domains: ['images.unsplash.com', 'images.ctfassets.net', 'raw.githubusercontent.com']
   },
   webpack: config => {
     config.experiments = {

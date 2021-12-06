@@ -3,7 +3,7 @@ import Featured from '../components/featured'
 import PostPreview from '../components/post-preview'
 import { getFilesFromSrcDir } from '../helpers/files.helpers'
 import styles from './index.module.scss'
-import archive from '../../../../posts/archive.json'
+import archive from '../../../../posts/out/archive.json'
 
 export function Index({ initialColorMode, posts }) {
   return (

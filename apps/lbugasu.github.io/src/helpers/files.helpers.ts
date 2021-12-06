@@ -4,6 +4,7 @@ import uniq from 'lodash/uniq'
 import path from 'path'
 import { dayCount } from './posts.helpers'
 import { compareAsc, parseISO } from 'date-fns'
+import { IMAGE_BASE_URL } from '../constants'
 const rootPath = ''
 
 export function getFilesFromSrcDir(directory: string) {
@@ -48,8 +49,8 @@ export function getStatsForPosts(posts) {
 }
 
 export function getImageForPost(slug) {
-  const imagesPath = 'apps/lbugasu.github.io/public/post-images/'
+  const imagesPath = 'posts/assets/'
   const images = fs.readdirSync(imagesPath)
   const image = images.find(_image => _image.includes(slug))
-  return image ?? ''
+  return IMAGE_BASE_URL + image ?? ''
 }

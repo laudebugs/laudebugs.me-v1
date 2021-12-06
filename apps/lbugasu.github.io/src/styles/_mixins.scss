@@ -1,0 +1,5 @@
+@mixin material-icon($icon) {
+  font-family: 'Material Icons';
+  content: $icon;
+  -webkit-font-feature-settings: 'liga';
+}
