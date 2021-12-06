@@ -23,6 +23,14 @@ function SideNav({ close, isOpen }) {
             <Link href="/journal">
               <a onClick={() => close.next(!isOpen)}>- journal</a>
             </Link>
+            <Link href="/fragments">
+              <a onClick={() => close.next(!isOpen)}>
+                - fragments{' '}
+                <span className="specialChar" style={{ color: 'var(--theme-ui-colors-accent)', fontSize: '1.5rem' }}>
+                  G
+                </span>
+              </a>
+            </Link>
             <a className={styles.undone}> - listenings</a>
             <a className={styles.undone}> - old stuff</a>
           </nav>

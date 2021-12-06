@@ -22,7 +22,7 @@ const components = {
 
 const DevPost = ({ source, frontMatter }) => {
   const router = useRouter()
-
+  console.log(source)
   if (router.isFallback) {
     return (
       <div sx={{ width: '100%', height: '100%' }}>

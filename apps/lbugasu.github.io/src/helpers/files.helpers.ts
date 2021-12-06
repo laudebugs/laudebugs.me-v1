@@ -7,15 +7,22 @@ import { compareAsc, parseISO } from 'date-fns'
 import { IMAGE_BASE_URL } from '../constants'
 const rootPath = ''
 
-export function getFilesFromSrcDir(directory: string) {
+export function getFilesFromSrcDir(directory: string, includeContent = false) {
   const postsDirectory = path.join(process.cwd(), `${rootPath + directory}`)
   const filenames = fs.readdirSync(postsDirectory)
   return filenames
     .map(filename => {
       const fullPath = path.join(process.cwd(), `${rootPath + directory}`, filename)
       const post = fs.readFileSync(fullPath, 'utf-8')
-      const { data } = matter(post)
+      const { content, data } = matter(post)
+
       data.image = getImageForPost(data.slug)
+      if (includeContent) {
+        return {
+          content,
+          frontMatter: data
+        }
+      }
       return data
     })
     .sort((a, b) => compareAsc(parseISO(a.publishedOn), parseISO(b.publishedOn)))
