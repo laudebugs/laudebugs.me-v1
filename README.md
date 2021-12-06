@@ -1,7 +1,6 @@
 # Sandstorm
 
 <span style="text-align: center; width: '100%'">
-    <a href="https://github.com/lbugasu/sandstorm/actions/workflows/deployment.js.yml"> <img src="https://github.com/lbugasu/sandstorm/actions/workflows/deployment.js.yml/badge.svg" style="height: 22.5px; width: auto; padding-right: 5px"> </a>
     <a href="https://github.com/lbugasu/sandstorm/actions/workflows/CI.js.yml"> <img src="https://github.com/lbugasu/sandstorm/actions/workflows/CI.yml/badge.svg" style="height: 22.5px; width: auto; padding-right: 5px"> </a>
   <a href="https://github.com/commitizen/cz-cli"> <img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" style="height: 22.5px; width: auto; padding-right: 5px"> </a>
   <a href="https://www.laudebugs.me/api/feed/rss"><img src="./design_notes/assets/rss.png" style="height: 22.5px; width: 50px; padding-right: 5px"> </a>
