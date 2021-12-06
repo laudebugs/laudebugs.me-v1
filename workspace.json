@@ -20,7 +20,7 @@
         "serve": {
           "executor": "@nrwl/next:server",
           "options": {
-            "buildTarget": "lbugasu.github.io:build",
+            "buildTarget": "lbugasu.github.io",
             "dev": true
           },
           "configurations": {
