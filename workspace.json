@@ -25,7 +25,7 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "lbugasu.github.io:build:production",
+              "buildTarget": "lbugasu.github.io:build",
               "dev": false
             }
           }
@@ -33,7 +33,7 @@
         "export": {
           "executor": "@nrwl/next:export",
           "options": {
-            "buildTarget": "lbugasu.github.io:build:production"
+            "buildTarget": "lbugasu.github.io:build"
           }
         },
         "test": {
