@@ -5,10 +5,18 @@
   position: relative;
   background-color: var(--theme-ui-colors-background);
   user-select: none;
+  .menuBtn{
+    @media print {
+      display: none;
+    }
+  }
   span.centerNav {
     h2 {
       margin: 0;
       text-align: center;
+      @media print {
+        text-align: left;
+      }
     }
     span {
       display: flex;
@@ -23,6 +31,9 @@
       }
       h3 {
         margin: 0;
+      }
+      @media print {
+        display: none;
       }
     }
   }
@@ -69,6 +80,9 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  @media print {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 600px) {
