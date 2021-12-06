@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import { useRouter } from 'next/router'
+import { memo } from 'react'
 import { Spinner } from 'theme-ui'
 import HeadWithMetaTags from '../../components/head'
 import PostInfo from '../../components/post-info'
@@ -29,7 +30,7 @@ function JournalEntry({ source, frontMatter }) {
   )
 }
 
-export default JournalEntry
+export default memo(JournalEntry)
 
 export async function getStaticPaths(slug) {
   const filePosts = getFilesFromSrcDir('posts/journal')

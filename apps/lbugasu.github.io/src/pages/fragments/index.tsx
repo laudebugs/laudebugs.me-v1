@@ -1,8 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import { Spinner } from 'theme-ui'
 import { getFilesFromSrcDir, getStatsForPosts } from '../../helpers/files.helpers'
 import styles from './fragments.module.scss'
@@ -11,7 +10,7 @@ import { shuffle } from 'lodash'
 import { dayCount } from '../../helpers/posts.helpers'
 import Tags from '../../components/tags'
 
-export default function Fragments({ fragments }) {
+function Fragments({ fragments }) {
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
@@ -51,6 +50,8 @@ export default function Fragments({ fragments }) {
     </div>
   )
 }
+
+export default memo(Fragments)
 
 export async function getStaticProps() {
   let fragments = getFilesFromSrcDir('posts/fragments', true)
