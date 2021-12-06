@@ -34,6 +34,7 @@
     "@mui/styles": "^5.0.1",
     "@next/mdx": "^11.1.2",
     "@nrwl/next": "12.8.0",
+    "@primer/octicons": "^16.1.1",
     "@theme-ui/match-media": "^0.11.3",
     "@theme-ui/mdx": "^0.11.1",
     "@theme-ui/presets": "^0.11.1",

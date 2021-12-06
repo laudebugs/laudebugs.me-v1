@@ -5,25 +5,21 @@ import { dayCount } from '../helpers/posts.helpers'
 import HeadWithMetaTags from './head'
 import styles from './post-info.module.scss'
 import Tags from './tags'
-import archive from '../../../../posts/archive.json'
+import archive from '../../../../posts/out/archive.json'
 
 export default function PostInfo(matter) {
   const { frontMatter } = matter
   const posts = archive as any[]
   const { no } = posts.find(post => post.slug === frontMatter.slug)
   const caption = frontMatter.imageCaption || frontMatter.imageCredit
-
+  console.log(frontMatter.image)
   return (
     <div className={styles.postinfo}>
       <HeadWithMetaTags {...frontMatter} />
       <span className={styles.featuredImage}>
-        <Image
-          className={styles.featuredImage}
-          src={`/post-images/${frontMatter.image}`}
-          height={720}
-          width={1280}
-          alt={frontMatter.title}
-        />
+        {!!frontMatter?.image && (
+          <Image className={styles.featuredImage} src={frontMatter.image} height={720} width={1280} alt={frontMatter.title} />
+        )}
         {frontMatter.imageCaption ? (
           <figcaption>{frontMatter.imageCaption}</figcaption>
         ) : frontMatter.imageCredit ? (

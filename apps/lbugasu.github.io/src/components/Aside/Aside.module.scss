@@ -1,8 +1,8 @@
+@import '../../styles/mixins.scss';
+
 .wrapper {
   &::before {
-    font-family: 'Material Icons';
-    content: 'join_right';
-    -webkit-font-feature-settings: 'liga';
+    @include material-icon('join_right');
     position: absolute;
     top: -10px;
     left: -10px;

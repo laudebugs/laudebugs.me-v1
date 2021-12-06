@@ -11,6 +11,8 @@ import BlockQuote from '../../components/blockQuote/blockquote'
 import PostInfo from '../../components/post-info'
 import { getFilesFromSrcDir, getSinglePostFromSrcDir } from '../../helpers/files.helpers'
 import styles from './dev.module.scss'
+import { IssuesAndComments } from '../../components/IssuesAndComments'
+import { IMAGE_BASE_URL } from '../../constants'
 
 const components = {
   Btn,
@@ -32,6 +34,8 @@ const DevPost = ({ source, frontMatter }) => {
     <div className={styles.singlePost}>
       <PostInfo frontMatter={frontMatter} />
       <MDXRemote {...source} components={components} />
+      <hr />
+      <IssuesAndComments slug={frontMatter.slug} />
     </div>
   )
 }
@@ -40,9 +44,7 @@ export default DevPost
 
 export async function getStaticPaths() {
   const filePosts = getFilesFromSrcDir('posts/dev')
-
   const paths = filePosts.map(post => ({ params: { slug: post.slug } }))
-
   return {
     paths: paths,
     fallback: false

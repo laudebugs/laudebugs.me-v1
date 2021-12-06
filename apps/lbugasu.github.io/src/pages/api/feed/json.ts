@@ -1,9 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import nc from 'next-connect'
 
-import feed from '../../../../../../posts/feed.json'
-import devFeed from '../../../../../../posts/dev.json'
-import journalFeed from '../../../../../../posts/journal.json'
+import feed from '../../../../../../posts/out/feed.json'
+import devFeed from '../../../../../../posts/out/dev.json'
+import journalFeed from '../../../../../../posts/out/journal.json'
 
 const handler = nc<NextApiRequest, NextApiResponse>()
 

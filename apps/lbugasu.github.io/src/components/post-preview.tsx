@@ -11,7 +11,7 @@ const PostPreview = ({ post }) => {
         <small>{dayCount(post.publishedOn)}</small>
         <div className={styles.content}>
           <div className={styles.image}>
-            <Image src={`/post-images/${post.image}`} alt={post.title} height={720} width={1280} />
+            <Image src={post.image} alt={post.title} height={720} width={1280} />
           </div>
           <div className={styles.summary}>
             <p>{post.summary}</p>
