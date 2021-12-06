@@ -1,12 +1,13 @@
 /** @jsxImportSource theme-ui */
 
 import Head from 'next/head'
+import { memo } from 'react'
 import PostPreview from '../../components/post-preview'
 import Stats from '../../components/stats'
 import { getFilesFromSrcDir, getStatsForPosts } from '../../helpers/files.helpers'
 import styles from './dev.module.scss'
 
-export default function Index(props) {
+function Index(props) {
   return (
     <div className={styles.content}>
       <Head>
@@ -21,6 +22,8 @@ export default function Index(props) {
     </div>
   )
 }
+
+export default memo(Index)
 
 export async function getStaticProps() {
   const filePosts = getFilesFromSrcDir('posts/dev')

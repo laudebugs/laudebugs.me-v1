@@ -1,6 +1,7 @@
 /** @jsxImportSource theme-ui */
 
 import Head from 'next/head'
+import { memo } from 'react'
 import PostPreview from '../../components/post-preview'
 import Stats from '../../components/stats'
 import { getFilesFromSrcDir, getStatsForPosts } from '../../helpers/files.helpers'
@@ -21,7 +22,7 @@ function Journal(props) {
     </div>
   )
 }
-export default Journal
+export default memo(Journal)
 
 export async function getStaticProps() {
   const filePosts = getFilesFromSrcDir('posts/journal')

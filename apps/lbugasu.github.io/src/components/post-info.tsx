@@ -12,7 +12,6 @@ export default function PostInfo(matter) {
   const posts = archive as any[]
   const { no } = posts.find(post => post.slug === frontMatter.slug)
   const caption = frontMatter.imageCaption || frontMatter.imageCredit
-  console.log(frontMatter.image)
   return (
     <div className={styles.postinfo}>
       <HeadWithMetaTags {...frontMatter} />

@@ -9,10 +9,10 @@ import Btn from '../../components/btn'
 import Aside from '../../components/Aside/Aside'
 import BlockQuote from '../../components/blockQuote/blockquote'
 import PostInfo from '../../components/post-info'
-import { getFilesFromSrcDir, getSinglePostFromSrcDir } from '../../helpers/files.helpers'
+import { getFilesFromSrcDir, getSinglePostFromSrcDir, getImageForPost } from '../../helpers/files.helpers'
 import styles from './dev.module.scss'
 import { IssuesAndComments } from '../../components/IssuesAndComments'
-import { IMAGE_BASE_URL } from '../../constants'
+import { memo } from 'react'
 
 const components = {
   Btn,
@@ -22,7 +22,6 @@ const components = {
 
 const DevPost = ({ source, frontMatter }) => {
   const router = useRouter()
-  console.log(source)
   if (router.isFallback) {
     return (
       <div sx={{ width: '100%', height: '100%' }}>
@@ -40,7 +39,7 @@ const DevPost = ({ source, frontMatter }) => {
   )
 }
 
-export default DevPost
+export default memo(DevPost)
 
 export async function getStaticPaths() {
   const filePosts = getFilesFromSrcDir('posts/dev')
@@ -53,14 +52,17 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   let post
+  let image
   try {
     post = getSinglePostFromSrcDir('posts/dev', params.slug)
+    image = getImageForPost(params.slug)
   } catch (err) {
     // TODO: handle error
   }
 
   const source = post
   const { content, data } = matter(source)
+  data.image = image
   const mdxSource = await serialize(content, { scope: data })
   return {
     props: {
