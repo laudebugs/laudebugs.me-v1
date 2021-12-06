@@ -13,7 +13,6 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "topLevelAwait": true,
     "baseUrl": ".",
     "paths": {}
   },

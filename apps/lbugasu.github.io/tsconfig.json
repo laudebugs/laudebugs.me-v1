@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "target": "es2017",
+    "module": "esnext",
     "jsx": "preserve",
     "allowJs": true,
     "esModuleInterop": true,
@@ -12,7 +13,6 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "topLevelAwait": true,
     "paths": {
       "@posts": ["../../posts/*"]
     }
