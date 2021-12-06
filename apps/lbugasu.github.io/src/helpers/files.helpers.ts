@@ -15,7 +15,7 @@ export function getFilesFromSrcDir(directory: string) {
       const fullPath = path.join(process.cwd(), `${rootPath + directory}`, filename)
       const post = fs.readFileSync(fullPath, 'utf-8')
       const { data } = matter(post)
-      data.image = getImageForPost(data.slug)
+      if (directory !== 'fragments') data.image = getImageForPost(data.slug)
       return data
     })
     .sort((a, b) => compareAsc(parseISO(a.publishedOn), parseISO(b.publishedOn)))
