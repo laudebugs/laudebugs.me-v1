@@ -12,6 +12,7 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "topLevelAwait": true,
     "paths": {
       "@posts": ["../../posts/*"]
     }
