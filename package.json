@@ -47,6 +47,7 @@
     "cz-customizable": "^6.3.0",
     "date-fns": "^2.25.0",
     "dotenv-load": "^2.0.0",
+    "esbuild": "^0.14.2",
     "fastify": "^3.22.1",
     "fastify-cors": "^6.0.2",
     "fastify-micro": "^2.2.0",
