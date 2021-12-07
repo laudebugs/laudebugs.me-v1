@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/lbugasu/sandstorm/compare/v0.1.2...v0.2.0) (2021-12-07)
+
+### Features
+
+- **add website title:** add website title to page 7e53719, closes #18
+- **commitizen:** add a new option for articles in commitizen 50b23e8, closes #24
+
+### Bug Fixes
+
+- **title:** title missing in dev and journal f77b51e
+
 ### [0.1.2](https://github.com/lbugasu/sandstorm/compare/v0.1.1...v0.1.2) (2021-11-16)
 
 ### Features
