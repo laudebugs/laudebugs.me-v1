@@ -46,7 +46,7 @@
   }
 
   small {
-    font-size: map.get($font-size, 'small');
+    font-size: map.get($font-size, 'xsmall');
   }
   footer ul {
     font-size: map.get($font-size, 'large');
@@ -109,6 +109,13 @@ pre[class*='language-'] {
   html {
     margin: 0 5% 0 5%;
   }
+  body,
+  li,
+  ul,
+  p,
+  ol {
+    font-size: map.get($font-size, 'medium') !important;
+  }
 }
 
 @media screen and (max-width: map.get($screen-size, 'medium')) {
@@ -145,7 +152,7 @@ pre[class*='language-'] {
   ul,
   p,
   ol {
-    font-size: map.get($font-size, 'small');
+    font-size: map.get($font-size, 'small') !important;
   }
   html {
     margin: 0 2.5% 0 2.5%;
