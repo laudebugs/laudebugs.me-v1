@@ -6,9 +6,9 @@ export default function Tags({ tags }) {
   return (
     <span className={styles.tags}>
       {tags.map((tag, index) => (
-        <p key={tag} sx={{ fontFamily: 'monospace' }}>
+        <span key={tag} sx={{ fontFamily: 'monospace' }}>
           {tag}
-        </p>
+        </span>
       ))}
     </span>
   )

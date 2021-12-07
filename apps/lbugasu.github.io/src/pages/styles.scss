@@ -46,7 +46,7 @@
   }
 
   small {
-    font-size: map.get($font-size, 'small');
+    font-size: map.get($font-size, 'xsmall');
   }
   footer ul {
     font-size: map.get($font-size, 'large');
@@ -73,7 +73,7 @@ figcaption {
 }
 figcaption {
   font-style: italic;
-  font-size: map.get($font-size, 'xsmall') map.get($font-size, 'xsmall');
+  font-size: map.get($font-size, 'xsmall');
 }
 .contentBody {
   min-height: calc(95vh - 70px);
@@ -108,6 +108,13 @@ pre[class*='language-'] {
 @media screen and (max-width: map.get($screen-size, 'large')) {
   html {
     margin: 0 5% 0 5%;
+  }
+  body,
+  li,
+  ul,
+  p,
+  ol {
+    font-size: map.get($font-size, 'medium') !important;
   }
 }
 
@@ -145,7 +152,7 @@ pre[class*='language-'] {
   ul,
   p,
   ol {
-    font-size: map.get($font-size, 'small');
+    font-size: map.get($font-size, 'small') !important;
   }
   html {
     margin: 0 2.5% 0 2.5%;
