@@ -13,11 +13,15 @@ import { getFilesFromSrcDir, getSinglePostFromSrcDir, getImageForPost } from '..
 import styles from './dev.module.scss'
 import { IssuesAndComments } from '../../components/IssuesAndComments'
 import { memo } from 'react'
-
+import rehypeKatex from 'rehype-katex'
+import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import { Pre } from '../../components/mdxElements/pre'
 const components = {
   Btn,
   Aside,
-  BlockQuote
+  BlockQuote,
+  pre: props => <Pre variant="pre" {...props} />
 }
 
 const DevPost = ({ source, frontMatter }) => {
@@ -63,7 +67,13 @@ export async function getStaticProps({ params }) {
   const source = post
   const { content, data } = matter(source)
   data.image = image
-  const mdxSource = await serialize(content, { scope: data })
+  const mdxSource = await serialize(content, {
+    mdxOptions: {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      rehypePlugins: [rehypeAutolinkHeadings, rehypeSlug, rehypeKatex]
+    }
+  })
   return {
     props: {
       source: mdxSource,

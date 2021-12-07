@@ -59,6 +59,5 @@ export function getImageForPost(slug) {
   const imagesPath = 'posts/assets/'
   const images = fs.readdirSync(imagesPath)
   const image = images.find(_image => _image.includes(slug))
-  console.log(image)
   return IMAGE_BASE_URL + image ?? ''
 }

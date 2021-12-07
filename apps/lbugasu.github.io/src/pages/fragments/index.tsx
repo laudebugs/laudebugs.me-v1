@@ -29,22 +29,24 @@ function Fragments({ fragments }) {
     <div className={styles.container}>
       {fragments.map((fragment, i) => {
         return (
-          <div key={fragment?.frontMatter?.slug} className={styles.fragment}>
-            <div className={styles.description}>
-              <div style={{ gridArea: fragment.gridAreas[0] }}>
-                <h2>{fragment?.frontMatter?.title}</h2>
+          <a key={fragment?.frontMatter?.slug} id={fragment.frontMatter.slug} className={styles.anchor}>
+            <div className={styles.fragment}>
+              <div className={styles.description}>
+                <div style={{ gridArea: fragment.gridAreas[0] }}>
+                  <h2>{fragment?.frontMatter?.title}</h2>
+                </div>
+                <span style={{ gridArea: fragment.gridAreas[1] }}>
+                  <Image src={fragment.frontMatter.image} width={1280} height={720} alt={fragment?.frontMatter?.title} />
+                </span>
+                <div style={{ gridArea: fragment.gridAreas[2] }} className={styles.metadata}>
+                  <p>{dayCount(fragment.frontMatter.publishedOn)}</p>
+                  {fragment.frontMatter.tags && <Tags tags={fragment.frontMatter.tags} />}
+                </div>
               </div>
-              <span style={{ gridArea: fragment.gridAreas[1] }}>
-                <Image src={fragment.frontMatter.image} width={1280} height={720} alt={fragment?.frontMatter?.title} />
-              </span>
-              <div style={{ gridArea: fragment.gridAreas[2] }} className={styles.metadata}>
-                <p>{dayCount(fragment.frontMatter.publishedOn)}</p>
-                {fragment.frontMatter.tags && <Tags tags={fragment.frontMatter.tags} />}
-              </div>
+              <MDXRemote {...fragment?.content} />
+              {i < fragments.length - 1 && <hr />}
             </div>
-            <MDXRemote {...fragment?.content} />
-            {i < fragments.length - 1 && <hr />}
-          </div>
+          </a>
         )
       })}
     </div>

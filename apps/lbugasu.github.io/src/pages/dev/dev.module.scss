@@ -8,29 +8,8 @@ div.content {
 
 div.singlePost {
   margin: 0 10% 0 10%;
-  @media print{
+  @media print {
     margin: 0;
-  }
-  // a::after {
-  //   font-family: 'Material Icons';
-  //   content: ' open_in_new';
-  //   -webkit-font-feature-settings: 'liga';
-  //   vertical-align: top;
-  // }
-  pre {
-    // position: relative;
-    // &:hover{
-    //   &::after {
-    //     color: #F4602A; //var(--theme-ui-colors-accent);
-    //     font-family: 'Material Icons';
-    //     content: 'content_copy';
-    //     -webkit-font-feature-settings: 'liga';
-    //     position: absolute;
-    //     top: 10px;
-    //     right: 10px;
-    //     cursor: pointer;
-    //   }
-    // }
   }
 }
 
