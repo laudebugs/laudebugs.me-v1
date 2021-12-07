@@ -73,7 +73,7 @@ figcaption {
 }
 figcaption {
   font-style: italic;
-  font-size: map.get($font-size, 'xsmall') map.get($font-size, 'xsmall');
+  font-size: map.get($font-size, 'xsmall');
 }
 .contentBody {
   min-height: calc(95vh - 70px);
