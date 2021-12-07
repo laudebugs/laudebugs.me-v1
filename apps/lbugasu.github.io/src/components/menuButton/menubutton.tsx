@@ -18,17 +18,12 @@ const MenuButton = open => {
   const close = new Subject()
   close.subscribe(_isOpen => toggleDrawer(_isOpen))
 
-  const [rotation, setRotation] = useState('0deg')
-  useEffect(() => {
-    if (!isOpen) setTimeout(() => setRotation('0deg'), 400)
-    else setTimeout(() => setRotation('90deg'), 500)
-  }, [isOpen])
   const [colorMode] = useColorMode()
 
   return (
     <>
       <Image
-        sx={{ variant: 'containers.menuButton', transform: `rotateZ(${rotation})` }}
+        sx={{ variant: 'containers.menuButton' }}
         src={`/images/elements/menu${colorMode == 'light' ? '' : '_light'}.svg`}
         width={40}
         className={activated ? (isOpen ? styles.opened : styles.closed) : ''}

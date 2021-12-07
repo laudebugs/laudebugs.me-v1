@@ -35,7 +35,7 @@ const DevPost = ({ source, frontMatter }) => {
   }
   return (
     <div className={styles.singlePost}>
-      <PostInfo frontMatter={frontMatter} />
+      <PostInfo frontMatter={frontMatter} className={styles.postInfo} />
       <MDXRemote {...source} components={components} />
       <hr />
       <IssuesAndComments slug={frontMatter.slug} />

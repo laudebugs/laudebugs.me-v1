@@ -8,7 +8,6 @@ export default function Tags({ tags }) {
       {tags.map((tag, index) => (
         <h6 key={tag} sx={{ fontFamily: 'monospace' }}>
           {tag}
-          {/* {index !== tags.length - 1 && <span key={`_${tag}`}> &nbsp;· &nbsp;</span>} */}
         </h6>
       ))}
     </span>
