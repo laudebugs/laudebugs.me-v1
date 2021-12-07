@@ -27,7 +27,7 @@ const Footer = className => {
         </span>
         <nav>
           <span className={styles.link} onClick={() => toggleDrawer(!isOpen)}>
-            socials
+            <a href="">socials</a>
           </span>
           <span>&nbsp;―&nbsp;</span>
           <Link href="/stats">

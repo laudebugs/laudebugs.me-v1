@@ -1,8 +1,12 @@
+@use 'sass:map';
+@import '../styles/_variables.scss';
+
 span.tags {
   display: flex;
   flex-direction: row;
   flex-flow: wrap;
-  h6 {
+  p {
+    font-size: map.get($font-size, 'xsmall');
     border: 0.5px dotted var(--theme-ui-colors-text);
     padding: 0 1ch 0 1ch;
     margin: 1ch 1ch 0 0ch;

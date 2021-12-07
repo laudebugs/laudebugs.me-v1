@@ -25,9 +25,9 @@ const MenuButton = open => {
       <Image
         sx={{ variant: 'containers.menuButton' }}
         src={`/images/elements/menu${colorMode == 'light' ? '' : '_light'}.svg`}
-        width={40}
+        width={34}
         className={activated ? (isOpen ? styles.opened : styles.closed) : ''}
-        height={40}
+        height={34}
         alt="menu toggle"
         onClick={() => toggleDrawer(!isOpen)}
       />
