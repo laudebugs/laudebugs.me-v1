@@ -2,10 +2,12 @@
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
   nav {
+    vertical-align: top;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     font-family: 'Amiri', serif;
     span.link {
       &:hover {

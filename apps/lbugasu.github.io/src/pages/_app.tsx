@@ -9,7 +9,7 @@ import { Progress, ThemeProvider } from 'theme-ui'
 import Footer from '../components/footer'
 import Header from '../components/header'
 import theme from '../styles/theme'
-import './styles.css'
+import './styles.scss'
 
 const components = {
   // eslint-disable-next-line react/display-name
@@ -50,7 +50,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <div className="contentBody">
-        <Progress sx={{ variant: 'containers.progressBar' }} className='progressBar' max={1} value={progress}>
+        <Progress sx={{ variant: 'containers.progressBar' }} className="progressBar" max={1} value={progress}>
           {progress * 100}%
         </Progress>
         <span className="content">

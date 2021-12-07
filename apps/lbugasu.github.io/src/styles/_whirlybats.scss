@@ -1,0 +1,121 @@
+.specialChar {
+  font-family: 'Whirly Bats';
+  font-size: 24pt;
+}
+.specialChar:hover {
+  cursor: pointer;
+  animation: animateFont 0.75s ease 0s infinite normal none running;
+}
+
+.verySpecialChar {
+  font-family: 'Whirly Bats';
+  animation: animateFont 0.75s ease 0s infinite normal none running;
+}
+
+/* Animateion */
+
+@keyframes animateFont {
+  0% {
+    font-variation-settings: 'anim' 100;
+  }
+  10% {
+    font-variation-settings: 'anim' 110;
+  }
+  20% {
+    font-variation-settings: 'anim' 120;
+  }
+  30% {
+    font-variation-settings: 'anim' 130;
+  }
+  40% {
+    font-variation-settings: 'anim' 140;
+  }
+  50% {
+    font-variation-settings: 'anim' 150;
+  }
+  60% {
+    font-variation-settings: 'anim' 160;
+  }
+  70% {
+    font-variation-settings: 'anim' 170;
+  }
+  80% {
+    font-variation-settings: 'anim' 180;
+  }
+  90% {
+    font-variation-settings: 'anim' 190;
+  }
+  100% {
+    font-variation-settings: 'anim' 200;
+  }
+}
+@-moz-keyframes animateFont {
+  0% {
+    font-variation-settings: 'anim' 100;
+  }
+  10% {
+    font-variation-settings: 'anim' 110;
+  }
+  20% {
+    font-variation-settings: 'anim' 120;
+  }
+  30% {
+    font-variation-settings: 'anim' 130;
+  }
+  40% {
+    font-variation-settings: 'anim' 140;
+  }
+  50% {
+    font-variation-settings: 'anim' 150;
+  }
+  60% {
+    font-variation-settings: 'anim' 160;
+  }
+  70% {
+    font-variation-settings: 'anim' 170;
+  }
+  80% {
+    font-variation-settings: 'anim' 180;
+  }
+  90% {
+    font-variation-settings: 'anim' 190;
+  }
+  100% {
+    font-variation-settings: 'anim' 200;
+  }
+}
+@-webkit-keyframes animateFont {
+  0% {
+    font-variation-settings: 'anim' 100;
+  }
+  10% {
+    font-variation-settings: 'anim' 110;
+  }
+  20% {
+    font-variation-settings: 'anim' 120;
+  }
+  30% {
+    font-variation-settings: 'anim' 130;
+  }
+  40% {
+    font-variation-settings: 'anim' 140;
+  }
+  50% {
+    font-variation-settings: 'anim' 150;
+  }
+  60% {
+    font-variation-settings: 'anim' 160;
+  }
+  70% {
+    font-variation-settings: 'anim' 170;
+  }
+  80% {
+    font-variation-settings: 'anim' 180;
+  }
+  90% {
+    font-variation-settings: 'anim' 190;
+  }
+  100% {
+    font-variation-settings: 'anim' 200;
+  }
+}

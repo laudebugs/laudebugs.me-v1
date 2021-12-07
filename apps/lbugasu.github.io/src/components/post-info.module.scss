@@ -3,6 +3,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
+  z-index: 0;
   span.featuredImage {
     img {
       object-fit: cover;
