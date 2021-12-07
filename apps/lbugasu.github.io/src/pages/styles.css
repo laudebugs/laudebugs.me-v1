@@ -2,7 +2,7 @@
   font-family: 'Whirly Bats';
   src: url('/fonts/Whirlybats.ttf');
 }
-@media screen{
+@media screen {
   h1 {
     font-size: 36pt;
   }
@@ -88,7 +88,6 @@ figcaption {
   z-index: 1 !important;
 }
 
-
 a {
   color: var(--theme-ui-colors-text);
   text-decoration: none;
@@ -138,6 +137,7 @@ a {
 .material-icons.material-icons--sharp {
   font-family: 'Material Icons Sharp';
 }
+
 code[class*='language-'],
 pre[class*='language-'] {
   white-space: pre-wrap;
@@ -352,7 +352,7 @@ pre[class*='language-'] {
   }
 }
 
-@media print{
+@media print {
   h1 {
     font-size: 20pt !important;
   }
@@ -390,7 +390,8 @@ pre[class*='language-'] {
   p {
     font-size: 12pt !important;
   }
-  pre *, code {
+  pre *,
+  code {
     font-size: 10pt !important;
   }
 
@@ -409,13 +410,13 @@ pre[class*='language-'] {
   nav .label {
     font-size: 12pt;
   }
-  .progressBar{
-      display: none;
+  .progressBar {
+    display: none;
   }
-  span h6{
+  span h6 {
     font-size: 10pt;
   }
   a:after {
-    content: " [" attr(href) "] ";
+    content: ' [' attr(href) '] ';
   }
 }
