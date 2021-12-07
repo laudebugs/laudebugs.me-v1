@@ -1,6 +1,3 @@
-.menu {
-}
-
 @keyframes open {
   0% {
     transform: rotateZ(0deg);
@@ -20,8 +17,8 @@
 }
 
 .opened {
-  animation: open ease-in-out 500ms;
+  animation: open ease-in-out 500ms forwards;
 }
 .closed {
-  animation: close ease-in-out 400ms;
+  animation: close ease-in-out 400ms forwards;
 }
