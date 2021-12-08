@@ -1,16 +1,24 @@
 import Head from 'next/head'
 import { useState } from 'react'
 import { Document, Page, pdfjs } from 'react-pdf'
-import { Button } from 'theme-ui'
-import CloudDownloadIcon from '@mui/icons-material/CloudDownload'
-
+import fs from 'fs'
+import path from 'path'
 import styles from './index.module.scss'
-import { AboutButton } from '../../components/buttons/aboutButton/aboutButton'
-import { DownloadButton } from '../../components/buttons/download/download'
+import { DownloadButton, Hi, AngularLogo, ReactLogo, Contact, CurrentLocation } from '@sandstorm/components'
+import matter from 'gray-matter'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
-function About() {
+const components = {
+  Hi,
+  AngularLogo,
+  ReactLogo,
+  Contact,
+  CurrentLocation
+}
+function About({ source }) {
   const [pageNumber, setPageNumber] = useState(1)
 
   function onDocumentLoadSuccess({ numPages }) {
@@ -25,7 +33,8 @@ function About() {
         <meta key="description" name="description" content="More about what I do." />
         <meta name="robots" content="index, follow" />
       </Head>
-      <h1>About</h1>
+      <MDXRemote {...source} components={components} />
+
       <div className={styles.container}>
         <Document
           file="./assets/resume_12_2021.pdf"
@@ -41,3 +50,17 @@ function About() {
   )
 }
 export default About
+
+export async function getStaticProps() {
+  const aboutPath = 'apps/lbugasu.github.io/src/components/About/aboutMe.mdx'
+  const filePath = path.join(process.cwd(), aboutPath)
+  console.log(filePath)
+  const file = fs.readFileSync(filePath, 'utf-8')
+  const { content } = matter(file)
+  const source = await serialize(content)
+  return {
+    props: {
+      source
+    }
+  }
+}

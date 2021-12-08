@@ -15,6 +15,11 @@
     justify-content: space-between;
     .resume {
       width: 100%;
+      display: none;
+
+      // @media screen and (max-width: map.get($screen-size, 'large')){
+      //   display: none;
+      // }
     }
     .page {
       display: flex;

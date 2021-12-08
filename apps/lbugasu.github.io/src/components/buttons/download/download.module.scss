@@ -8,7 +8,12 @@
   @extend %button;
   border-radius: 5px;
 }
-
+.mobile {
+  // @media screen and (min-width: map.get($screen-size, 'large')){
+  //   display: none;
+  // }
+  display: hidden;
+}
 .downloadButton {
   position: relative;
 }
@@ -17,7 +22,7 @@
   padding: 1rem 1rem 0.75rem;
 }
 
-.button__dione span {
+.button__dione span.download {
   display: inline-block;
   position: relative;
   color: var(--theme-ui-colors-background);
