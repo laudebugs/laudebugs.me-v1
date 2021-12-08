@@ -18,6 +18,11 @@ jobs:
         with:
           submodules: recursive
           token: ${{secrets.SANDSTORM}}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
       - name: Cache node modules
         id: cache-node-modules
         uses: actions/cache@v2
@@ -31,13 +36,6 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - name: 'Set up user 🩸'
-        uses: fregante/setup-git-user@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
       - name: Install packages🤖
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm install
