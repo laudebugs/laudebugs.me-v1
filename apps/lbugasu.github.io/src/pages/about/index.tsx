@@ -37,7 +37,7 @@ function About({ source }) {
 
       <div className={styles.container}>
         <Document
-          file="./assets/resume_12_2021.pdf"
+          file="./assets/lbi_resume_12_2021.pdf"
           onLoadSuccess={onDocumentLoadSuccess}
           className={styles.resume}
           externalLinkTarget="_self"

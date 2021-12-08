@@ -11,6 +11,7 @@ https://oreillymedia.github.io/Using_SVG/extras/ch07-textpaths.html */
   background: none;
   -webkit-clip-path: circle(40% at 50% 50%);
   clip-path: circle(40% at 50% 50%);
+  user-select: none;
 }
 
 .button__surtur:focus-visible {

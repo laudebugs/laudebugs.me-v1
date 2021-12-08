@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const AboutButton = ({ onClick }) => {
   return (
-    <span className="content__item">
+    <span className="noSelect">
       <Link href="/about">
         <a onClick={onClick}>
           <button className={`${styles.button} ${styles.button__surtur}`}>

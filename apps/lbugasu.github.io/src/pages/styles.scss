@@ -99,6 +99,20 @@ pre[class*='language-'] {
   border-radius: 5px;
 }
 
+// for things that you don't want the user to select
+.noSelect {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+
+  /*
+      Introduced in Internet Explorer 10.
+      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+    */
+  -ms-user-select: none;
+  user-select: none;
+}
+
 @media screen and (max-width: map.get($screen-size, 'xlarge')) {
   html {
     margin: 0 6.5% 0 6.5%;

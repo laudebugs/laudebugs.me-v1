@@ -5,7 +5,6 @@ import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import { useRouter } from 'next/router'
 import { Spinner } from 'theme-ui'
-import Btn from '../../components/btn'
 import Aside from '../../components/Aside/Aside'
 import BlockQuote from '../../components/blockQuote/blockquote'
 import PostInfo from '../../components/post-info'
@@ -18,7 +17,6 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { Pre } from '../../components/mdxElements/pre'
 const components = {
-  Btn,
   Aside,
   BlockQuote,
   pre: props => <Pre variant="pre" {...props} />
