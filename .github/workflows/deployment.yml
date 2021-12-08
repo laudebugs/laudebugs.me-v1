@@ -1,43 +1,31 @@
 name: deployment
 on:
   push:
-    branches: []
+    branches: [main]
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout 🧞'
         uses: actions/checkout@v2
+      - uses: oleksiyrudenko/gha-git-credentials@v2-latest
         with:
-          submodules: recursive
-          token: ${{secrets.SANDSTORM}}
-      - name: Cache node modules
-        id: cache-node-modules
-        uses: actions/cache@v2
-        env:
-          cache-name: node-cache
+          token: ${{ secrets.SANDSTORM }}
+      - name: Update Git Submodules
+        run: |
+          git submodule init
+          git submodule update --remote --merge
+      - name: Verify Changed files 🐒
+        uses: tj-actions/verify-changed-files@v8.3
+        id: verify-changed-files
         with:
-          # npm cache files are stored in `~/.npm` on Linux/macOS
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-      - name: 'Set up user 🩸'
-        uses: fregante/setup-git-user@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - name: Install packages🤖
-        if: steps.cache-node-modules.outputs.cache-hit != 'true'
-        run: npm install
-      - uses: amondnet/vercel-action@v20
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          github-token: ${{ secrets.SANDSTORM }}
-          vercel-args: '--prod'
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
+          files: |
+            .
+      - name: commit & Push changes 💾
+        if: steps.verify-changed-files.outputs.files_changed == 'true'
+        run: |
+          # Stage the file, commit and push
+          git pull
+          git add .
+          git commit -m "Updated Submodules"
+          git push origin main
