@@ -1,0 +1,14 @@
+@use 'sass:map';
+@import '../../../styles/_variables.scss';
+
+.contact {
+  svg {
+    stroke: var(--theme-ui-colors-text);
+    width: map.get($font-size, 'large');
+    // height: map.get($font-size, 'medium');
+    fill: var(--theme-ui-colors-text);
+    stroke: var(--theme-ui-colors-background);
+    vertical-align: middle;
+    padding-bottom: 5px;
+  }
+}

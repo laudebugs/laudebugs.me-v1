@@ -1,0 +1,13 @@
+@use 'sass:map';
+
+@import '../../../styles/_mixins.scss';
+@import '../../../styles/_variables.scss';
+
+.location {
+  font-size: map.get($font-size, 'small');
+  &::before {
+    @include material-icon('place');
+    padding-right: 0.25ch;
+    vertical-align: text-top;
+  }
+}
