@@ -19,6 +19,7 @@ jobs:
         with:
           files: |
             .gitmodules
+            posts
       - name: commit & Push changes 💾
         if: steps.verify-changed-files.outputs.files_changed == 'true'
         run: |
