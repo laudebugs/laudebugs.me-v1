@@ -29,3 +29,27 @@ jobs:
           git add .
           git commit -m "Updated Submodules"
           git push origin main
+
+      - name: Create PR, Commit & Push changes 💾
+        id: cpr
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.SANDSTORM }}
+          commit-message: Update Submodule
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          signoff: false
+          branch: blog-posts
+          delete-branch: true
+          title: 'Update Blog Posts Submodule'
+          body: |
+            Update Submodule
+            - Updated with *today's* date
+          labels: |
+            blog posts
+            automated pr
+          assignees: lbugasu
+          reviewers: lbugasu
+          team-reviewers: |
+            owners
+          draft: false
