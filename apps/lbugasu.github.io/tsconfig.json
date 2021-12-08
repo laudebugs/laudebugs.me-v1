@@ -11,8 +11,10 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "baseUrl": "./",
     "paths": {
-      "@posts": ["../../posts/*"]
+      "@posts": ["../../posts/*"],
+      "@sandstorm/*": ["src/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "next-env.d.ts", "../../posts", "next.config.mjs"],

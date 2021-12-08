@@ -2,7 +2,8 @@
   font-family: 'Whirly Bats';
   font-size: 24pt;
 }
-.specialChar:hover {
+.specialChar:hover,
+.specialChar.very {
   cursor: pointer;
   animation: animateFont 0.75s ease 0s infinite normal none running;
 }

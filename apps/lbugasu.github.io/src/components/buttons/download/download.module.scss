@@ -1,0 +1,68 @@
+@use 'sass:map';
+@import '../../../styles/_fonts.scss';
+@import '../../../styles/_buttons.scss';
+@import '../../../styles/_mixins.scss';
+@import '../../../styles/_variables.scss';
+
+.button {
+  @extend %button;
+  border-radius: 5px;
+}
+.mobile {
+  // @media screen and (min-width: map.get($screen-size, 'large')){
+  //   display: none;
+  // }
+  display: hidden;
+}
+.downloadButton {
+  position: relative;
+}
+.button__dione {
+  background: none;
+  padding: 1rem 1rem 0.75rem;
+}
+
+.button__dione span.download {
+  display: inline-block;
+  position: relative;
+  color: var(--theme-ui-colors-background);
+  font-size: map-get($font-size, 'xsmall');
+  display: flex;
+  align-items: center;
+  &::before {
+    @include material-icon('cloud_download');
+    padding-right: 0.5ch;
+  }
+}
+
+.button__dione::before {
+  content: '';
+  position: absolute;
+  top: 3%;
+  left: 1%;
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+
+  background: var(--theme-ui-colors-text);
+  transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+}
+
+.button__dione:hover::before {
+  transform: scale3d(0.9, 0.8, 1);
+}
+
+.button__dione::after {
+  content: '';
+  border: 2px solid var(--theme-ui-colors-text);
+  transition: transform 0.3s cubic-bezier(0.2, 1, 0.7, 1);
+  border-radius: 0px;
+  z-index: -1;
+  border-radius: 3px;
+
+  transform: scale3d(0.85, 0.85, 1);
+}
+
+.button__dione:hover::after {
+  transform: scale3d(1, 1, 1);
+}

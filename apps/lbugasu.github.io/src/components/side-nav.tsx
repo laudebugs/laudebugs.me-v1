@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { AboutButton } from './buttons/aboutButton/aboutButton'
 import styles from './side-nav.module.scss'
 
 function SideNav({ close, isOpen }) {
@@ -34,6 +35,7 @@ function SideNav({ close, isOpen }) {
             <a className={styles.undone}> - listenings</a>
             <a className={styles.undone}> - old stuff</a>
           </nav>
+          <AboutButton onClick={() => close.next(!isOpen)} />
         </div>
         <div onClick={() => close.next(!isOpen)} className={styles.shadow}></div>
       </div>
