@@ -1,7 +1,7 @@
 name: deployment
 on:
   push:
-    branches: []
+    branches: [main]
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -18,8 +18,7 @@ jobs:
         id: verify-changed-files
         with:
           files: |
-            .gitmodules
-            posts
+            .
       - name: commit & Push changes 💾
         if: steps.verify-changed-files.outputs.files_changed == 'true'
         run: |
