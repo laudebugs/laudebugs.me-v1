@@ -8,9 +8,6 @@ jobs:
     steps:
       - name: 'Checkout 🧞'
         uses: actions/checkout@v2
-        with:
-          submodules: recursive
-          token: ${{secrets.SANDSTORM}}
       - uses: oleksiyrudenko/gha-git-credentials@v2-latest
         with:
           token: ${{ secrets.SANDSTORM }}
