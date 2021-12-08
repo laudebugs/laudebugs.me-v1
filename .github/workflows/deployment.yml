@@ -32,6 +32,7 @@ jobs:
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
           branch: blog-posts
+          branch-suffix: random
           delete-branch: true
           title: 'Update Blog Posts Submodule'
           body: |
@@ -41,7 +42,6 @@ jobs:
             blog posts
             automated pr
           assignees: lbugasu
-          reviewers: lbugasu
           team-reviewers: |
             owners
           draft: false
