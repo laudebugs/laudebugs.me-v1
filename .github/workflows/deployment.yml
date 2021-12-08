@@ -22,6 +22,7 @@ jobs:
           files: |
             .
       - name: Create PR, Commit & Push changes 💾
+        id: cpr
         if: steps.verify-changed-files.outputs.files_changed == 'true'
         uses: peter-evans/create-pull-request@v3
         with:
@@ -35,7 +36,7 @@ jobs:
           title: 'Update Blog Posts Submodule'
           body: |
             Update Submodule
-            - Updated with *today's* date
+            - Updated with Blog Posts
           labels: |
             blog posts
             automated pr
@@ -44,3 +45,10 @@ jobs:
           team-reviewers: |
             owners
           draft: false
+      - name: Enable Pull Request Automerge
+        if: steps.cpr.outputs.pull-request-operation == 'created'
+        uses: peter-evans/enable-pull-request-automerge@v1
+        with:
+          token: ${{ secrets.SANDSTORM }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+          merge-method: squash
