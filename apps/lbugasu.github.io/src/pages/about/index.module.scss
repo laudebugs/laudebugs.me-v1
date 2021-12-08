@@ -1,0 +1,28 @@
+@use 'sass:map';
+@import '../../styles/_variables.scss';
+
+.about {
+  padding: 0 5%;
+
+  h1 {
+    text-align: center;
+    margin-top: 0;
+    text-decoration: underline;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .resume {
+      width: 100%;
+    }
+    .page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .downloadButton {
+      margin-top: 0.5%;
+    }
+  }
+}
