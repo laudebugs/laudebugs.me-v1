@@ -21,17 +21,8 @@ jobs:
         with:
           files: |
             .
-      - name: commit & Push changes 💾
-        if: steps.verify-changed-files.outputs.files_changed == 'true'
-        run: |
-          # Stage the file, commit and push
-          git pull
-          git add .
-          git commit -m "Updated Submodules"
-          git push origin main
-
       - name: Create PR, Commit & Push changes 💾
-        id: cpr
+        if: steps.verify-changed-files.outputs.files_changed == 'true'
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.SANDSTORM }}
