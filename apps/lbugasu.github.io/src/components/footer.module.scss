@@ -1,13 +1,33 @@
 .footer {
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
+  grid-template-areas: 'rss nav version';
+  span {
+    grid-area: 'rss';
+    justify-content: flex-start;
+  }
   nav {
-    vertical-align: top;
-
+    grid-area: 'nav';
+    justify-content: center;
+  }
+  small {
+    grid-area: 'version';
+    justify-content: flex-end;
+  }
+  & > * {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    margin-bottom: 5%;
+    height: 100%;
+    small {
+      margin-bottom: 5%;
+    }
+    h6 {
+      margin-bottom: 5%;
+    }
+  }
+  nav {
     font-family: 'Amiri', serif;
     span.link {
       &:hover {
