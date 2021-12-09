@@ -12,6 +12,9 @@ https://oreillymedia.github.io/Using_SVG/extras/ch07-textpaths.html */
   -webkit-clip-path: circle(40% at 50% 50%);
   clip-path: circle(40% at 50% 50%);
   user-select: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .button__surtur:focus-visible {
