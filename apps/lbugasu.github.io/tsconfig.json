@@ -18,5 +18,5 @@
     }
   },
   "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "next-env.d.ts", "../../posts", "next.config.mjs"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "posts"]
 }
