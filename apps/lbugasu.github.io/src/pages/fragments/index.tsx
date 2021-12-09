@@ -32,15 +32,15 @@ function Fragments({ fragments }) {
           <a key={fragment?.frontMatter?.slug} id={fragment.frontMatter.slug} className={styles.anchor}>
             <div className={styles.fragment}>
               <div className={styles.description}>
-                <div style={{ gridArea: fragment.gridAreas[0] }}>
+                <div className={styles.title} style={{ gridArea: fragment.gridAreas[0] }}>
                   <h2>{fragment?.frontMatter?.title}</h2>
                 </div>
-                <span style={{ gridArea: fragment.gridAreas[1] }}>
+                <span className={styles.image} style={{ gridArea: fragment.gridAreas[1] }}>
                   <Image src={fragment.frontMatter.image} width={1280} height={720} alt={fragment?.frontMatter?.title} />
                 </span>
                 <div style={{ gridArea: fragment.gridAreas[2] }} className={styles.metadata}>
                   <p>{dayCount(fragment.frontMatter.publishedOn)}</p>
-                  {fragment.frontMatter.tags && <Tags tags={fragment.frontMatter.tags} />}
+                  <span className={styles.tags}>{fragment.frontMatter.tags && <Tags tags={fragment.frontMatter.tags} />}</span>
                 </div>
               </div>
               <MDXRemote {...fragment?.content} />
