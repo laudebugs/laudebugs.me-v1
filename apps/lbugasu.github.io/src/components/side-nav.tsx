@@ -27,7 +27,7 @@ function SideNav({ close, isOpen }) {
             <Link href="/fragments">
               <a onClick={() => close.next(!isOpen)}>
                 - fragments{' '}
-                <span className="specialChar" style={{ color: 'var(--theme-ui-colors-accent)', fontSize: '1.5rem' }}>
+                <span className="verySpecialChar" style={{ color: 'var(--theme-ui-colors-accent)', fontSize: '1.5rem' }}>
                   G
                 </span>
               </a>

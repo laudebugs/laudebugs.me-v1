@@ -56,7 +56,7 @@
     "fastify-nextjs": "^6.0.0",
     "fastify-websocket": "^4.0.0",
     "feed": "^4.2.2",
-    "feed-core": "^1.1.4",
+    "feed-core": "^1.1.5",
     "graphql": "^15.6.1",
     "gray-matter": "^4.0.3",
     "grey-matter": "^0.0.0",
