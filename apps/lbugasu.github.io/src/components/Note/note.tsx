@@ -1,8 +1,8 @@
 /** @jsxImportSource theme-ui */
 
-import styles from './blockquote.module.scss'
+import styles from './Note.module.scss'
 
-const BlockQuote = props => {
+const Note = props => {
   return (
     <div className={styles.wrapper}>
       <span className="material-icons-outlined">tips_and_updates</span>
@@ -10,4 +10,4 @@ const BlockQuote = props => {
     </div>
   )
 }
-export default BlockQuote
+export default Note
