@@ -6,7 +6,7 @@ import { serialize } from 'next-mdx-remote/serialize'
 import { useRouter } from 'next/router'
 import { Spinner } from 'theme-ui'
 import Aside from '../../components/Aside/Aside'
-import BlockQuote from '../../components/blockQuote/blockquote'
+import Note from '../../components/Note/note'
 import PostInfo from '../../components/post-info'
 import { getFilesFromSrcDir, getSinglePostFromSrcDir, getImageForPost } from '../../helpers/files.helpers'
 import styles from './dev.module.scss'
@@ -18,7 +18,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { Pre } from '../../components/mdxElements/pre'
 const components = {
   Aside,
-  BlockQuote,
+  Note,
   pre: props => <Pre variant="pre" {...props} />
 }
 

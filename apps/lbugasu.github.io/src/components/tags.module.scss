@@ -10,13 +10,16 @@ span.tags {
     border: 0.5px dotted var(--theme-ui-colors-text);
     padding: 0 1ch 0 1ch;
     margin: 1ch 1ch 0 0ch;
+    user-select: none;
     &:hover {
       background-color: var(--theme-ui-colors-text);
       color: var(--theme-ui-colors-background);
       cursor: pointer;
     }
-    @media print {
-      // font-size: 12pt !important;
+    &.selected,
+    &.selected:hover {
+      background-color: var(--theme-ui-colors-secondary);
+      color: var(--theme-ui-colors-background);
     }
   }
 }
