@@ -1,8 +1,14 @@
 /** @jsxImportSource theme-ui */
 
+import { FC, memo } from 'react'
 import styles from './tags.module.scss'
 
-export default function Tags({ tags, toggleTag, selectedTags }) {
+export interface TagsProps {
+  tags: string[]
+  toggleTag?: (tag: string) => void
+  selectedTags?: []
+}
+const Tags: FC<TagsProps> = ({ tags, toggleTag, selectedTags }) => {
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   if (!toggleTag) toggleTag = () => {}
   if (!selectedTags) selectedTags = []
@@ -25,3 +31,5 @@ export default function Tags({ tags, toggleTag, selectedTags }) {
     </span>
   )
 }
+
+export default memo(Tags)
