@@ -31,6 +31,8 @@
     margin: 0 7.5% 0 7.5%;
     height: 100%;
     box-sizing: border-box;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
   }
   body {
     height: 100%;
@@ -189,15 +191,10 @@ pre[class*='language-'] {
   width: 10px;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: var(--theme-ui-colors-gray);
-}
-
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--theme-ui-colors-text);
-  border-radius: 1px;
+  border-radius: 3px;
 }
 
 /* Handle on hover */
