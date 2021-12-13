@@ -1,6 +1,6 @@
 {
   "name": "sandstorm",
-  "version": "0.1.4",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "start": "nx serve lbugasu.github.io --port 5001",
@@ -114,6 +114,7 @@
     "commitlint-config-gitmoji": "^2.2.5",
     "cypress": "^8.7.0",
     "cz-conventional-changelog": "^3.3.0",
+    "cz-emoji-conventional": "^1.0.1",
     "eslint": "7.32.0",
     "eslint-config-next": "12.0.0",
     "eslint-config-prettier": "8.1.0",
@@ -142,7 +143,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "cz-customizable"
+      "path": "node_modules/cz-emoji-conventional"
     }
   }
 }
