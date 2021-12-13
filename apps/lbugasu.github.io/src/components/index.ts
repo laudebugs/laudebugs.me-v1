@@ -1,6 +1,6 @@
 export * from './About'
 export * from './Aside/Aside'
-export * from './blockQuote/blockquote'
+export * from './Note/note'
 export * from './buttons'
 export * from './mdxElements'
 export * from './socials'
