@@ -15,8 +15,10 @@ const Tags: FC<TagsProps> = ({ tags, toggleTag, selectedTags }) => {
 
   return (
     <span className={styles.tags}>
-      {tags.map((tag, index) => {
-        const isSelected = selectedTags.length > 0 && selectedTags.includes(tag)
+      {tags.map((tag: string, index) => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        const isSelected = !!selectedTags &&  selectedTags.length > 0 && selectedTags.includes(tag)
         return (
           <span
             className={isSelected ? styles.selected : styles.tag}
