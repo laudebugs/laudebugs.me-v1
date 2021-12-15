@@ -5,6 +5,9 @@
 @import '../styles/_variables.scss';
 
 @media screen {
+  * {
+    transition: background-color 200ms;
+  }
   h1 {
     font-size: map.get($font-size, 'xxxxlarge');
   }
