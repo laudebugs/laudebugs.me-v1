@@ -16,6 +16,7 @@ import rehypeKatex from 'rehype-katex'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { Pre } from '../../components/mdxElements/pre'
+import { trackPage } from '@sandstorm/components/analytics'
 const components = {
   Aside,
   Note,
@@ -23,6 +24,8 @@ const components = {
 }
 
 const DevPost = ({ source, frontMatter }) => {
+  trackPage()
+
   const router = useRouter()
   if (router.isFallback) {
     return (

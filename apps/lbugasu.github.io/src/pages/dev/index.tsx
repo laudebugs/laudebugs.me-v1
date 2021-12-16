@@ -1,5 +1,6 @@
 /** @jsxImportSource theme-ui */
 
+import { trackPage } from '@sandstorm/components/analytics'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import { memo } from 'react'
@@ -9,6 +10,8 @@ import { getFilesFromSrcDir, getStatsForPosts } from '../../helpers/files.helper
 import styles from './dev.module.scss'
 
 function Index(props) {
+  trackPage()
+
   const [selectedTags, setSelectedTags] = useState([])
   const [posts, setPosts] = useState(props.posts)
   const toggleTag = tag => {

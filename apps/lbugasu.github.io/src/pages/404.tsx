@@ -1,6 +1,9 @@
 /** @jsxImportSource theme-ui */
 
+import { trackPage } from '@sandstorm/components/analytics'
+
 const NotFound = () => {
+  trackPage()
   return (
     <div
       sx={{

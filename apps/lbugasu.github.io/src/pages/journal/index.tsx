@@ -1,5 +1,6 @@
 /** @jsxImportSource theme-ui */
 
+import { trackPage } from '@sandstorm/components/analytics'
 import Head from 'next/head'
 import { memo } from 'react'
 import PostPreview from '../../components/post-preview'
@@ -8,6 +9,8 @@ import { getFilesFromSrcDir, getStatsForPosts } from '../../helpers/files.helper
 import styles from '../dev/dev.module.scss'
 
 function Journal(props) {
+  trackPage()
+
   return (
     <div className={styles.content}>
       <Head>

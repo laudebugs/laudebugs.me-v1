@@ -1,0 +1,1 @@
+export { trackPage } from './analytics'

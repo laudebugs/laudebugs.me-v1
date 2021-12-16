@@ -9,6 +9,7 @@ import Image from 'next/image'
 import { shuffle } from 'lodash'
 import { dayCount } from '../../helpers/posts.helpers'
 import Tags from '../../components/tags'
+import { trackPage } from '@sandstorm/components/analytics'
 
 function Fragments({ fragments }) {
   const [loaded, setLoaded] = useState(false)
@@ -56,6 +57,8 @@ function Fragments({ fragments }) {
 export default memo(Fragments)
 
 export async function getStaticProps() {
+  trackPage()
+
   let fragments = getFilesFromSrcDir('posts/fragments', true)
   fragments = await Promise.all(
     fragments.map(async fragment => {

@@ -10,6 +10,7 @@ import Footer from '../components/footer'
 import Header from '../components/header'
 import theme from '../styles/theme'
 import './styles.scss'
+import { trackPage } from '@sandstorm/components/analytics'
 
 const components = {
   // eslint-disable-next-line react/display-name
@@ -18,6 +19,8 @@ const components = {
 }
 
 function CustomApp({ Component, pageProps }: AppProps) {
+  trackPage()
+
   const isHome = true
   const [progress, setProgress] = useState(0)
   function calculateScrollPercent(scrollTop, scrollHeight, clientHeight) {

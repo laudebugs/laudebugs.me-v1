@@ -19,6 +19,7 @@
   },
   "private": true,
   "dependencies": {
+    "@analytics/google-tag-manager": "^0.5.1",
     "@apollo/client": "^3.4.16",
     "@babel/core": "^7.12.9",
     "@babel/preset-react": "^7.16.0",
@@ -42,6 +43,7 @@
     "@theme-ui/sidenav": "^0.11.3",
     "@types/react-pdf": "^5.0.9",
     "altair-fastify-plugin": "^4.1.0",
+    "analytics": "^0.7.19",
     "apollo-server-micro": "^3.4.0",
     "axios": "^0.24.0",
     "clipboard-copy": "^4.0.1",

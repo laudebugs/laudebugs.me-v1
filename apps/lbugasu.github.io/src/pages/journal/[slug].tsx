@@ -1,5 +1,6 @@
 /** @jsxImportSource theme-ui */
 
+import { trackPage } from '@sandstorm/components/analytics'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
@@ -13,6 +14,8 @@ import styles from '../dev/dev.module.scss'
 const components = {}
 
 function JournalEntry({ source, frontMatter }) {
+  trackPage()
+
   const router = useRouter()
 
   if (router.isFallback) {

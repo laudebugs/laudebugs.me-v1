@@ -8,6 +8,7 @@ import { DownloadButton, Hi, AngularLogo, ReactLogo, Contact, CurrentLocation } 
 import matter from 'gray-matter'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
+import { trackPage } from '@sandstorm/components/analytics'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`
 
@@ -19,6 +20,8 @@ const components = {
   CurrentLocation
 }
 function About({ source }) {
+  trackPage()
+
   const [pageNumber, setPageNumber] = useState(1)
 
   function onDocumentLoadSuccess({ numPages }) {
