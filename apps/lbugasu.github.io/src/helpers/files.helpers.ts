@@ -15,7 +15,6 @@ export function getFilesFromSrcDir(directory: string, includeContent = false) {
       const fullPath = path.join(process.cwd(), `${rootPath + directory}`, filename)
       const post = fs.readFileSync(fullPath, 'utf-8')
       const { content, data } = matter(post)
-
       data.image = getImageForPost(data.slug)
       if (includeContent) {
         return {
@@ -25,7 +24,12 @@ export function getFilesFromSrcDir(directory: string, includeContent = false) {
       }
       return data
     })
-    .sort((a, b) => compareAsc(parseISO(a.publishedOn), parseISO(b.publishedOn)))
+    .sort((a, b) => {
+      if (includeContent) {
+        return compareAsc(parseISO(a.frontMatter.publishedOn), parseISO(b.frontMatter.publishedOn))
+      }
+      return compareAsc(parseISO(a.publishedOn), parseISO(b.publishedOn))
+    })
     .reverse()
 }
 
