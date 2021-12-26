@@ -17,6 +17,14 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 'a b c';
 
+    .title {
+      display: flex;
+      justify-content: center;
+      // align-items: center;
+      h2 {
+        margin: 0;
+      }
+    }
     @media screen and (max-width: map.get($screen-size, 'medium')) {
       display: flex;
       flex-direction: column;
@@ -49,6 +57,7 @@
   hr {
     width: 50%;
     margin-left: 0 25%;
+    margin-bottom: 5%;
     color: var(--theme-ui-colors-borderColor);
   }
   margin-bottom: 5%;
