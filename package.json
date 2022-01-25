@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve lbugasu.github.io --port 5001",
-    "local": "nx serve lbugasu.github.io --host 0.0.0.0 --port 5001",
+    "start": "nx serve lbugasu.github.io --port 5002",
+    "local": "nx serve lbugasu.github.io --host 0.0.0.0 --port 5002",
     "next": "next",
     "build": "npx nx build",
     "build:prod": "npx nx build lbugasu.github.io --prod --runner=no-cloud",
