@@ -11,6 +11,9 @@ div.singlePost {
   @media print {
     margin: 0;
   }
+  p a {
+    color: var(--theme-ui-colors-secondary);
+  }
 }
 
 @media screen and (max-width: 1200px) {
