@@ -72,7 +72,7 @@ figcaption {
 }
 @for $i from 1 through 6 {
   h#{$i} {
-    margin-bottom: #{$i * 6}px;
+    margin-bottom: #{30 - ($i * 5)}px;
     font-family: 'Amiri', serif;
   }
 }
