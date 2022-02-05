@@ -12,7 +12,7 @@ export const IssuesAndComments: FC<IssuesAndCommentsProps> = ({ slug }) => {
   return (
     <div>
       <p>
-        Find an issue?
+        Found an issue or have a suggestion?
         <Link href={`${baseUrl + slug}.mdx`}>
           <a target="__blank" className={styles.link}>
             {' '}
