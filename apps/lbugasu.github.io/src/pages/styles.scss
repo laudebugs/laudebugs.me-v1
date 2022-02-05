@@ -159,7 +159,7 @@ pre[class*='language-'] {
     font-size: map.get($font-size, 'small');
   }
   code {
-    font-size: map.get($font-size, 'small');
+    font-size: map.get($font-size, 'xsmall');
     word-break: normal;
   }
   pre {
