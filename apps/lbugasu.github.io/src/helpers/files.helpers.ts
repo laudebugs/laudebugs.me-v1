@@ -5,6 +5,7 @@ import path from 'path'
 import { dayCount } from './posts.helpers'
 import { compareAsc, parseISO } from 'date-fns'
 import { IMAGE_BASE_URL } from '../constants'
+import { ITag } from '@sandstorm/components'
 const rootPath = ''
 
 export function getFilesFromSrcDir(directory: string, includeContent = false) {
@@ -45,13 +46,22 @@ export function getSinglePostFromSrcDir(directory: string, filename: string) {
 
 export function getStatsForPosts(posts) {
   const dates = []
-  let tags = []
+  let tags: ITag[] = []
   posts.map(post => {
     dates.push(new Date(post.publishedOn))
-    if (post.tags) tags.push(...post.tags)
+    if (post.tags) {
+      post.tags.forEach((postTag: string) => {
+        const tagIndex = tags.findIndex(tag => tag.title === postTag)
+        if (tagIndex < 0) {
+          tags.push({ title: postTag, articleCount: 1 })
+        } else {
+          tags[tagIndex] = { ...tags[tagIndex], articleCount: tags[tagIndex].articleCount + 1 }
+        }
+      })
+    }
   })
 
-  tags = uniq(tags).filter(tag => tag !== '')
+  tags = tags.sort((a, b) => b.articleCount - a.articleCount)
 
   const startDate = dayCount(new Date(Math.min(...dates)).toString())
   const endDate = dayCount(new Date(Math.max(...dates)).toString())

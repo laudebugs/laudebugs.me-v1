@@ -1,5 +1,6 @@
 @use 'sass:map';
 @import '../styles/_variables.scss';
+@import '../styles/_fonts.scss';
 
 span.tags {
   display: flex;
@@ -11,15 +12,31 @@ span.tags {
     padding: 0 1ch 0 1ch;
     margin: 1ch 1ch 0 0ch;
     user-select: none;
-    &:hover {
+    .articleCount {
+      border: none;
+      padding: 0;
+      margin: 0;
+      font-size: map.get($font-size, 'xxxsmall');
+    }
+    &:hover,
+    .articleCount:hover {
       background-color: var(--theme-ui-colors-text);
       color: var(--theme-ui-colors-background);
       cursor: pointer;
     }
     &.selected,
-    &.selected:hover {
+    &.selected:hover,
+    &.selected .articleCount:hover,
+    &.selected:hover .articleCount:hover {
       background-color: var(--theme-ui-colors-secondary);
       color: var(--theme-ui-colors-background);
     }
+  }
+  .button {
+    padding: 0;
+    // margin: 0;
+    margin: 1ch 0 0.25ch;
+    border-style: solid;
+    border-radius: 10px;
   }
 }

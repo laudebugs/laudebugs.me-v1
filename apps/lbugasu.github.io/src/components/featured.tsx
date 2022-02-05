@@ -4,9 +4,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { dayCount } from '../helpers/posts.helpers'
 import styles from './featured.module.scss'
-import Tags from './tags'
+import Tags, { ITag } from './tags'
 
 const Featured = ({ post }) => {
+  const tags = post.tags?.map((tag): ITag => ({ title: tag, articleCount: 0 })) ?? []
+  console.log(post.tags)
   return (
     <div className={styles.featured}>
       <div className={styles.content}>
@@ -17,7 +19,7 @@ const Featured = ({ post }) => {
                 <h5>{post.title}</h5>
               </a>
             </Link>
-            {post.tags && <Tags tags={post.tags} />}
+            {tags.length > 0 && <Tags tags={tags} showCount={false} showExpand={false} />}
           </span>
 
           <span className={styles.details}>
