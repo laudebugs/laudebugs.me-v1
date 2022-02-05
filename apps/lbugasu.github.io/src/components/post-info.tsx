@@ -12,6 +12,8 @@ export default function PostInfo(matter) {
   const posts = archive as any[]
   const { no } = posts.find(post => post.slug === frontMatter.slug)
   const caption = frontMatter.imageCaption || frontMatter.imageCredit
+  const postTags = frontMatter.tags.map(tag => ({ title: tag, articleCount: 0 }))
+
   return (
     <div className={styles.postinfo}>
       <HeadWithMetaTags {...frontMatter} />
@@ -27,7 +29,7 @@ export default function PostInfo(matter) {
       </span>
       <span className={styles.deets}>
         <h1>{frontMatter.title.toLowerCase()}</h1>
-        {frontMatter.tags && <Tags tags={frontMatter.tags} />}
+        {frontMatter.tags && <Tags tags={postTags} showCount={false} />}
         <span className={styles.details}>
           <p>
             №: <span sx={{ textDecoration: 'underline' }}>{no} </span>

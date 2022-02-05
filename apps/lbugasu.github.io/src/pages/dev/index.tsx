@@ -1,5 +1,6 @@
 /** @jsxImportSource theme-ui */
 
+import { ITag } from '@sandstorm/components'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import { memo } from 'react'
@@ -9,10 +10,11 @@ import { getFilesFromSrcDir, getStatsForPosts } from '../../helpers/files.helper
 import styles from './dev.module.scss'
 
 function Index(props) {
-  const [selectedTags, setSelectedTags] = useState([])
+  const [selectedTags, setSelectedTags] = useState<ITag[]>([])
   const [posts, setPosts] = useState(props.posts)
-  const toggleTag = tag => {
-    if (selectedTags.includes(tag)) {
+
+  const toggleTag = (tag: ITag) => {
+    if (selectedTags.find(({ title }) => title === tag.title)) {
       setSelectedTags(selectedTags.filter(t => t !== tag))
     } else {
       setSelectedTags([...selectedTags, tag])
@@ -20,7 +22,12 @@ function Index(props) {
   }
 
   useEffect(() => {
-    const taggedPosts = props.posts.filter(post => post.tags.some(tag => selectedTags.includes(tag)))
+    const taggedPosts = props.posts.filter(post => {
+      return post.tags.some((postTag: string) => {
+        const tag = selectedTags.find(({ title }) => title == postTag)
+        return !!tag
+      })
+    })
     setPosts(taggedPosts)
     if (selectedTags.length === 0) {
       setPosts(props.posts)
