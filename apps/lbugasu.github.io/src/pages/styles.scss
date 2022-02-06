@@ -162,6 +162,9 @@ pre[class*='language-'] {
     font-size: map.get($font-size, 'xsmall');
     word-break: normal;
   }
+  h1 code {
+    font-size: map.get($font-size, 'large');
+  }
   pre {
     font-size: map.get($font-size, 'small');
     word-break: normal;
@@ -172,6 +175,9 @@ pre[class*='language-'] {
   p,
   ol {
     font-size: map.get($font-size, 'small') !important;
+  }
+  p code {
+    font-size: map.get($font-size, 'xsmall');
   }
   html {
     margin: 0 2.5% 0 2.5%;

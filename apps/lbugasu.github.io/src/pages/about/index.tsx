@@ -22,7 +22,6 @@ function About({ source }) {
   const [pageNumber, setPageNumber] = useState(1)
 
   function onDocumentLoadSuccess({ numPages }) {
-    console.log('loaded document')
     setPageNumber(1)
   }
 
@@ -54,7 +53,6 @@ export default About
 export async function getStaticProps() {
   const aboutPath = 'apps/lbugasu.github.io/src/components/About/aboutMe.mdx'
   const filePath = path.join(process.cwd(), aboutPath)
-  console.log(filePath)
   const file = fs.readFileSync(filePath, 'utf-8')
   const { content } = matter(file)
   const source = await serialize(content)

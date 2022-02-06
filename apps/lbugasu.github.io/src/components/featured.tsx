@@ -8,7 +8,6 @@ import Tags, { ITag } from './tags'
 
 const Featured = ({ post }) => {
   const tags = post.tags?.map((tag): ITag => ({ title: tag, articleCount: 0 })) ?? []
-  console.log(post.tags)
   return (
     <div className={styles.featured}>
       <div className={styles.content}>
