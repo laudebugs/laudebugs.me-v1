@@ -16,14 +16,14 @@ import rehypeKatex from 'rehype-katex'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { Pre } from '../../components/mdxElements/pre'
-const components = {
-  Aside,
-  Note,
-  pre: props => <Pre variant="pre" {...props} />
-}
+import { useSelector } from 'react-redux'
+import { selectIsNpm } from '@sandstorm/redux/store'
 
 const DevPost = ({ source, frontMatter }) => {
   const router = useRouter()
+
+  const isNpm = useSelector(selectIsNpm)
+
   if (router.isFallback) {
     return (
       <div sx={{ width: '100%', height: '100%' }}>
@@ -31,6 +31,22 @@ const DevPost = ({ source, frontMatter }) => {
       </div>
     )
   }
+  const components = {
+    Aside,
+    Note,
+    pre: props => <Pre variant="pre" {...props} isNpm={isNpm} />
+  }
+
+  if (!isNpm) {
+    let { compiledSource } = source
+    if (!/npm install[\r\n]+/gm.test(compiledSource)) {
+      compiledSource = compiledSource.replace('npm install', 'yarn add')
+    } else {
+      compiledSource = compiledSource.replace('npm install', 'yarn')
+    }
+    source.compiledSource = compiledSource
+  }
+
   return (
     <div className={styles.singlePost}>
       <PostInfo frontMatter={frontMatter} className={styles.postInfo} />
