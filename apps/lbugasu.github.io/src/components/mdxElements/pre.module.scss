@@ -1,5 +1,12 @@
 @import '../../styles/_mixins.scss';
 
+.npmYarn {
+  font-size: 12pt;
+  display: flex;
+  background-color: var(--theme-ui-colors-background);
+  grid-gap: 0.5rem;
+}
+
 .codeBlock {
   position: relative;
   &:hover {
@@ -9,6 +16,7 @@
       }
     }
   }
+
   .copyToClipboard {
     &::after {
       @include material-icon('content_copy');
