@@ -25,5 +25,5 @@ jobs:
     - name: Install Dependencies
       run: npm install
     - name: Release
-      run: npx run release
+      run: npm run release
     - run: git push --follow-tags
