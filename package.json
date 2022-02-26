@@ -22,7 +22,6 @@
     "@apollo/client": "^3.4.16",
     "@babel/core": "^7.12.9",
     "@babel/preset-react": "^7.16.0",
-    "@commitlint/config-conventional": "^13.2.0",
     "@component-controls/components": "^3.15.0",
     "@emotion/react": "11.5.0",
     "@emotion/styled": "11.3.0",
@@ -95,6 +94,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^14.1.0",
+    "@commitlint/config-conventional": "^16.2.1",
     "@nrwl/cli": "13.2.3",
     "@nrwl/cypress": "13.2.3",
     "@nrwl/eslint-plugin-nx": "13.2.3",
@@ -147,7 +147,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "node_modules/cz-emoji-conventional"
+      "path": "./node_modules/cz-conventional-changelog"
     }
   }
 }
