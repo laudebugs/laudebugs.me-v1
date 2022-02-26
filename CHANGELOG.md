@@ -4,11 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### 0.0.11 (2022-02-26)
 
-### [0.0.10](https://github.com/lbugasu/sandstorm/compare/v0.1.2...v0.0.10) (2022-02-15)
+## Nothing new ;)
 
-<a name="1.0.0"></a>
-
-## 1.0.0 (2021-12-15)
+## 0.0.6 (2021-12-15)
 
 ### Added
 
@@ -219,7 +217,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 <a name="0.1.2"></a>
 
-## 0.1.2 (2021-11-16)
+## 0.0.5 (2021-11-16)
 
 ### Miscellaneous
 
@@ -286,7 +284,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 <a name="0.1.0"></a>
 
-## 0.1.0 (2021-10-29)
+## 0.0.4 (2021-10-29)
 
 ### Miscellaneous
 
