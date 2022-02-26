@@ -36,7 +36,7 @@ jobs:
           branch: blog-posts
           branch-suffix: random
           delete-branch: true
-          title: 'Update Blog Posts Submodule'
+          title: 'chore: update blog posts submodule [skip ci]'
           body: |
             Update Submodule
             - Updated with Blog Posts
