@@ -1,7 +1,5 @@
 name: deployment
 on:
-  push:
-    branches: [main]
   repository_dispatch:
     types: [posts_update]
 jobs:
