@@ -41,7 +41,8 @@ export function getChangeLog() {
 
 export function getSinglePostFromSrcDir(directory: string, filename: string) {
   const fullPath = path.join(process.cwd(), `${rootPath + directory}/${filename}.mdx`)
-  return fs.readFileSync(fullPath, 'utf-8')
+  const { mtime } = fs.statSync(fullPath)
+  return { post: fs.readFileSync(fullPath, 'utf-8'), lastModified: mtime.toDateString() }
 }
 
 export function getStatsForPosts(posts) {

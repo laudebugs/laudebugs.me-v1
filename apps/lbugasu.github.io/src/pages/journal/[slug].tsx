@@ -44,12 +44,7 @@ export async function getStaticPaths(slug) {
 }
 
 export async function getStaticProps({ params }) {
-  let post
-  try {
-    post = getSinglePostFromSrcDir('posts/journal', params.slug)
-  } catch (err) {
-    // TODO: handle error
-  }
+  const { post } = getSinglePostFromSrcDir('posts/journal', params.slug)
 
   const source = post
   const { content, data } = matter(source)

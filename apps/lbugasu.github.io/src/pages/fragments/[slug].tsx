@@ -43,7 +43,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const post = getSinglePostFromSrcDir('posts/fragments', params.slug)
+  const { post } = getSinglePostFromSrcDir('posts/fragments', params.slug)
   const source = post
   const image = getImageForPost(params.slug)
   const { content, data } = matter(source)

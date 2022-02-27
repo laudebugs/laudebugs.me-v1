@@ -19,7 +19,7 @@ import { Pre } from '../../components/mdxElements/pre'
 import { useSelector } from 'react-redux'
 import { selectIsNpm } from '@sandstorm/redux/store'
 
-const DevPost = ({ source, frontMatter }) => {
+const DevPost = ({ source, frontMatter, lastModified }) => {
   const router = useRouter()
 
   const isNpm = useSelector(selectIsNpm)
@@ -53,6 +53,9 @@ const DevPost = ({ source, frontMatter }) => {
       <MDXRemote {...source} components={components} />
       <hr />
       <IssuesAndComments slug={frontMatter.slug} />
+      <small>
+        Last modified on: <code>{lastModified}</code>
+      </small>
     </div>
   )
 }
@@ -69,14 +72,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  let post
-  let image
-  try {
-    post = getSinglePostFromSrcDir('posts/dev', params.slug)
-    image = getImageForPost(params.slug)
-  } catch (err) {
-    // TODO: handle error
-  }
+  const { post, lastModified } = getSinglePostFromSrcDir('posts/dev', params.slug)
+  const image = getImageForPost(params.slug)
 
   const source = post
   const { content, data } = matter(source)
@@ -91,7 +88,8 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       source: mdxSource,
-      frontMatter: data
+      frontMatter: data,
+      lastModified
     }
   }
 }

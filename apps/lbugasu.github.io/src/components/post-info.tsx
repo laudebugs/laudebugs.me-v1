@@ -6,9 +6,14 @@ import HeadWithMetaTags from './head'
 import styles from './post-info.module.scss'
 import Tags from './tags'
 import archive from '../../../../posts/out/archive.json'
+import { ComponentProps, FC, memo } from 'react'
 
-export default function PostInfo(matter) {
-  const { frontMatter } = matter
+type PostInfoProps = {
+  frontMatter: any
+  lastModified?: string
+} & ComponentProps<any>
+
+const PostInfoComponent: FC<PostInfoProps> = ({ frontMatter, lastModified }) => {
   const posts = archive as any[]
   const { no } = posts.find(post => post.slug === frontMatter.slug)
   const caption = frontMatter.imageCaption || frontMatter.imageCredit
@@ -40,3 +45,5 @@ export default function PostInfo(matter) {
     </div>
   )
 }
+
+export default memo(PostInfoComponent)
