@@ -29,24 +29,16 @@ const BasePreComponent = props => {
   }
 
   return (
-    <div>
-      {hasNpmScript && (
-        <div className={styles.npmYarn}>
-          <span onClick={() => setNpmYarn(true)}>npm</span>
-          <span onClick={() => setNpmYarn(false)}>yarn</span>
-        </div>
-      )}
-      <div className={styles.codeBlock}>
-        <div
-          className={`${styles.copyToClipboard} ${copied ? styles.copied : ''} ${hasNpmScript ? 'npm' : ''}`}
-          onClick={() => {
-            copyToClipBoard()
-          }}
-        />
-        <pre {...rest}>
-          <code>{children}</code>
-        </pre>
-      </div>
+    <div className={styles.codeBlock}>
+      <div
+        className={`${styles.copyToClipboard} ${copied ? styles.copied : ''} ${hasNpmScript ? 'npm' : ''}`}
+        onClick={() => {
+          copyToClipBoard()
+        }}
+      />
+      <pre {...rest}>
+        <code>{children}</code>
+      </pre>
     </div>
   )
 }
