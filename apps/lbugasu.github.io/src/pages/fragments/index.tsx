@@ -8,7 +8,7 @@ import styles from './fragments.module.scss'
 import Image from 'next/image'
 import { shuffle } from 'lodash'
 import { dayCount } from '../../helpers/posts.helpers'
-import Tags from '../../components/tags'
+import Tags, { ITag } from '../../components/tags'
 import Link from 'next/link'
 
 function Fragments({ fragments }) {
@@ -26,9 +26,19 @@ function Fragments({ fragments }) {
       </div>
     )
   }
+  const createTags = (tags: string[]): ITag[] => {
+    return tags.map(tag => {
+      return {
+        title: tag,
+        articleCount: 1
+      }
+    })
+  }
+
   return (
     <div className={styles.container}>
       {fragments.map((fragment, i) => {
+        console.log(fragment.frontMatter?.tags)
         return (
           <Link key={fragment?.frontMatter?.slug} href={`/fragments/${fragment.frontMatter.slug}`}>
             <a id={fragment.frontMatter.slug} className={styles.anchor}>
@@ -42,7 +52,11 @@ function Fragments({ fragments }) {
                   </span>
                   <div style={{ gridArea: fragment.gridAreas[2] }} className={styles.metadata}>
                     <p>{dayCount(fragment.frontMatter.publishedOn)}</p>
-                    <span className={styles.tags}>{fragment.frontMatter.tags && <Tags tags={fragment.frontMatter.tags} />}</span>
+                    <span className={styles.tags}>
+                      {fragment.frontMatter.tags && (
+                        <Tags tags={createTags(fragment.frontMatter.tags)} showCount={false} showExpand={false} />
+                      )}
+                    </span>
                   </div>
                 </div>
                 <MDXRemote {...fragment?.content} />
