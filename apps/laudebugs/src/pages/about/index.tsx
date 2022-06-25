@@ -51,7 +51,7 @@ function About({ source }) {
 export default About
 
 export async function getStaticProps() {
-  const aboutPath = 'apps/laudebugs.github.io/src/components/About/aboutMe.mdx'
+  const aboutPath = 'apps/laudebugs/src/components/About/aboutMe.mdx'
   const filePath = path.join(process.cwd(), aboutPath)
   const file = fs.readFileSync(filePath, 'utf-8')
   const { content } = matter(file)
