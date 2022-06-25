@@ -12,6 +12,7 @@ export function getFilesFromSrcDir(directory: string, includeContent = false) {
   const postsDirectory = path.join(process.cwd(), `${rootPath + directory}`)
   const filenames = fs.readdirSync(postsDirectory)
   return filenames
+    .filter((filename)=>/^(?!_).+.mdx/gm.test(filename))
     .map(filename => {
       const fullPath = path.join(process.cwd(), `${rootPath + directory}`, filename)
       const post = fs.readFileSync(fullPath, 'utf-8')
@@ -36,6 +37,11 @@ export function getFilesFromSrcDir(directory: string, includeContent = false) {
 
 export function getChangeLog() {
   const fullPath = path.join(process.cwd(), `CHANGELOG.md`)
+  return fs.readFileSync(fullPath, 'utf-8')
+}
+
+export function getFileFromDir(directory: string, filename: string) {
+  const fullPath = path.join(process.cwd(), `${rootPath + directory}/${filename}`)
   return fs.readFileSync(fullPath, 'utf-8')
 }
 

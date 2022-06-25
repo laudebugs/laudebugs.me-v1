@@ -1,17 +1,17 @@
 {
   "version": 2,
   "projects": {
-    "laudebugs.github.io": {
-      "root": "apps/laudebugs.github.io",
-      "sourceRoot": "apps/laudebugs.github.io",
+    "laudebugs": {
+      "root": "apps/laudebugs",
+      "sourceRoot": "apps/laudebugs",
       "projectType": "application",
       "targets": {
         "build": {
           "executor": "@nrwl/next:build",
           "outputs": ["{options.outputPath}"],
           "options": {
-            "root": "apps/laudebugs.github.io",
-            "outputPath": "dist/apps/laudebugs.github.io"
+            "root": "apps/laudebugs",
+            "outputPath": "dist/apps/laudebugs"
           },
           "configurations": {
             "production": {}
@@ -20,12 +20,12 @@
         "serve": {
           "executor": "@nrwl/next:server",
           "options": {
-            "buildTarget": "laudebugs.github.io:build",
+            "buildTarget": "laudebugs:build",
             "dev": true
           },
           "configurations": {
             "production": {
-              "buildTarget": "laudebugs.github.io:build:production",
+              "buildTarget": "laudebugs:build:production",
               "dev": false
             }
           }
@@ -33,55 +33,55 @@
         "export": {
           "executor": "@nrwl/next:export",
           "options": {
-            "buildTarget": "laudebugs.github.io:build:production"
+            "buildTarget": "laudebugs:build:production"
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/laudebugs.github.io"],
+          "outputs": ["coverage/apps/laudebugs"],
           "options": {
-            "jestConfig": "apps/laudebugs.github.io/jest.config.js",
+            "jestConfig": "apps/laudebugs/jest.config.js",
             "passWithNoTests": true
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/laudebugs.github.io/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": ["apps/laudebugs/**/*.{ts,tsx,js,jsx}"]
           },
           "outputs": ["{options.outputFile}"]
         }
       },
       "tags": []
     },
-    "laudebugs.github.io-e2e": {
-      "root": "apps/laudebugs.github.io-e2e",
-      "sourceRoot": "apps/laudebugs.github.io-e2e/src",
+    "laudebugs-e2e": {
+      "root": "apps/laudebugs-e2e",
+      "sourceRoot": "apps/laudebugs-e2e/src",
       "projectType": "application",
       "targets": {
         "e2e": {
           "executor": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/laudebugs.github.io-e2e/cypress.json",
-            "devServerTarget": "laudebugs.github.io:serve",
-            "tsConfig": "apps/laudebugs.github.io-e2e/tsconfig.json"
+            "cypressConfig": "apps/laudebugs-e2e/cypress.json",
+            "devServerTarget": "laudebugs:serve",
+            "tsConfig": "apps/laudebugs-e2e/tsconfig.json"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "laudebugs.github.io:serve:production"
+              "devServerTarget": "laudebugs:serve:production"
             }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/laudebugs.github.io-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": ["apps/laudebugs-e2e/**/*.{js,ts}"]
           },
           "outputs": ["{options.outputFile}"]
         }
       },
       "tags": [],
-      "implicitDependencies": ["laudebugs.github.io"]
+      "implicitDependencies": ["laudebugs"]
     }
   }
 }
