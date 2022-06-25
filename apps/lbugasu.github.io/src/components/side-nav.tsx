@@ -25,10 +25,13 @@ function SideNav({ close, isOpen }) {
               <a onClick={() => close.next(!isOpen)}>- journal</a>
             </Link>
             <Link href="/fragments">
+              <a onClick={() => close.next(!isOpen)}>- fragments</a>
+            </Link>
+            <Link href="/cuisine">
               <a onClick={() => close.next(!isOpen)}>
-                - fragments{' '}
+                - cuisine{' '}
                 <span className="verySpecialChar" style={{ color: 'var(--theme-ui-colors-accent)', fontSize: '1.5rem' }}>
-                  G
+                  9
                 </span>
               </a>
             </Link>

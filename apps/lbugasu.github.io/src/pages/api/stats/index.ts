@@ -16,7 +16,7 @@ const oauth = { Authorization: 'bearer ' + process.env.GH_TOKEN }
 const githubUrl = 'https://api.github.com/graphql'
 
 const statsQuery = `query {
-  repository(name:"sandstorm", owner: "lbugasu"){
+  repository(name:"sandstorm", owner: "laudebugs"){
     description
     homepageUrl
     forkCount

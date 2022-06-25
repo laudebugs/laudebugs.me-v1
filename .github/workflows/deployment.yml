@@ -41,7 +41,7 @@ jobs:
           labels: |
             blog posts
             automated pr
-          assignees: lbugasu
+          assignees: laudebugs
           team-reviewers: |
             owners
           draft: false

@@ -1,4 +1,4 @@
-describe('lbugasu.github.io', () => {
+describe('laudebugs.github.io', () => {
   beforeEach(() => cy.visit('/'))
 
   it('should Website name', () => {

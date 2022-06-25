@@ -14,7 +14,7 @@ function Socials({ close, isOpen }) {
       <div onClick={() => close.next(!isOpen)} className={styles.shadow}></div>
       <div className={styles.menu}>
         <nav>
-          <Link href="https://twitter.com/lbugasu">
+          <Link href="https://twitter.com/laudebugs">
             <a target="_blank" onClick={() => close.next(!isOpen)}>
               <Twitter />
             </a>
@@ -29,7 +29,7 @@ function Socials({ close, isOpen }) {
               <LinkedIn />
             </a>
           </Link>
-          <Link href="https://github.com/lbugasu">
+          <Link href="https://github.com/laudebugs">
             <a target="_blank" onClick={() => close.next(!isOpen)}>
               <Github />
             </a>

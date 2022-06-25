@@ -6,7 +6,7 @@ import { GitPullRequestIcon } from '@primer/octicons-react'
 export interface IssuesAndCommentsProps {
   slug: string
 }
-const baseUrl = 'https://github.com/lbugasu/blog-posts/blob/main/dev/'
+const baseUrl = 'https://github.com/laudebugs/blog-posts/blob/main/dev/'
 
 export const IssuesAndComments: FC<IssuesAndCommentsProps> = ({ slug }) => {
   return (

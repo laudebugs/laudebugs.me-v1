@@ -15,8 +15,8 @@ function HeadWithMetaTags(frontMatter) {
       <meta name="twitter:title" content={frontMatter.title} />
       <meta name="twitter:description" content={frontMatter.summary} />
       <meta name="twitter:image" content={frontMatter.image} />
-      <meta name="twitter:site" content="@lbugasu" />
-      <meta name="twitter:creator" content="@lbugasu"></meta>
+      <meta name="twitter:site" content="@laudebugs" />
+      <meta name="twitter:creator" content="@laudebugs"></meta>
       <meta name="robots" content="index, follow" />
     </Head>
   )
