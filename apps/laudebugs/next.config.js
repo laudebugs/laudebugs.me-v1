@@ -20,6 +20,11 @@ const nextConfig = {
   images: {
     domains: ['images.unsplash.com', 'images.ctfassets.net', 'raw.githubusercontent.com']
   },
+  typescript: {
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    ignoreBuildErrors: true
+  },
   webpack: config => {
     config.experiments = {
       topLevelAwait: true,
