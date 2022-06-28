@@ -25,17 +25,21 @@ function SideNav({ close, isOpen }) {
               <a onClick={() => close.next(!isOpen)}>- journal</a>
             </Link>
             <Link href="/fragments">
-              <a onClick={() => close.next(!isOpen)}>- fragments</a>
-            </Link>
-            <Link href="/cuisine">
               <a onClick={() => close.next(!isOpen)}>
-                - cuisine{' '}
+                - fragments{' '}
                 <span className="verySpecialChar" style={{ color: 'var(--theme-ui-colors-accent)', fontSize: '1.5rem' }}>
-                  9
+                  Ρ
                 </span>
               </a>
             </Link>
-            <a className={styles.undone}> - listenings</a>
+            <a className={styles.undone}>
+              {' '}
+              - cuisine <small>[coming soon]</small>
+            </a>
+            <a className={styles.undone}>
+              {' '}
+              - listenings <small>[coming soon]</small>
+            </a>
             <a className={styles.undone}> - old stuff</a>
           </nav>
           <AboutButton onClick={() => close.next(!isOpen)} />
