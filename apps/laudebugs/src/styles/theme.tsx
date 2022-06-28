@@ -2,10 +2,11 @@ import { dark, tosh } from '@theme-ui/presets'
 import shadesOfPurple from '@theme-ui/prism/presets/shades-of-purple.json'
 
 const theme = {
+  useLocalStorage: false,
   ...tosh,
   config: {
     initialColorModeName: 'lightMode',
-    printColorModeName: 'lightMode',
+    printColorModeName: 'lightMode'
   },
   colors: {
     ...tosh.colors,
@@ -72,8 +73,7 @@ const theme = {
     },
     progress: {
       color: '#c2185b'
-    },
-
+    }
   },
   fonts: {
     heading: 'Amiri, serif',
