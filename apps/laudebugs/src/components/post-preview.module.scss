@@ -1,3 +1,6 @@
+@use 'sass:map';
+@import '../styles/variables.scss';
+
 .content {
   display: grid;
   position: relative;
@@ -18,8 +21,8 @@
   z-index: -2;
   p {
     margin-top: 0;
-    font-size: 14pt;
-    @media print{
+    font-size: map.get($font-size, 'small');
+    @media print {
       font-size: 12pt;
     }
   }
