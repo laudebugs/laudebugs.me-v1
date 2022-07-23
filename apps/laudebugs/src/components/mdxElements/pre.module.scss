@@ -1,3 +1,6 @@
+@use 'sass:map';
+@import '../../styles/_variables.scss';
+@import '../../styles/_fonts.scss';
 @import '../../styles/_mixins.scss';
 
 .npmYarn {
@@ -18,8 +21,25 @@
   }
 
   .copyToClipboard {
+    position: absolute;
+    right: 0;
+    .copiedText {
+      user-select: none;
+      opacity: 0;
+      color: #00e676;
+      &.animateText {
+        opacity: 1;
+      }
+      transition: opacity 0.25s ease-in-out;
+      position: relative;
+      right: 38px;
+      top: 4px;
+      font-size: map.get($font-size, 'xxsmall');
+    }
     &::after {
       @include material-icon('content_copy');
+      font-size: map.get($font-size, 'small');
+
       color: #d6c9c9;
       position: absolute;
       top: 10px;
@@ -35,9 +55,9 @@
       transition: all 0.2s ease-in-out;
     }
     &.copied::after {
-      color: greenyellow;
+      color: #00e676;
       opacity: 0.8;
-      transition: all 0.3s ease-in-out;
+      transition: all 0.25s ease-in-out;
     }
   }
 }

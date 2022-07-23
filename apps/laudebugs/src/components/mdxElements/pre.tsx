@@ -1,7 +1,6 @@
 import { memo, useEffect, useRef, useState } from 'react'
 import copy from 'copy-to-clipboard'
 import styles from './pre.module.scss'
-import produce from 'immer'
 import { useDispatch } from 'react-redux'
 import { appActions } from '@sandstorm/redux/store'
 
@@ -14,13 +13,13 @@ const BasePreComponent = props => {
   const [copied, setCopied] = useState(false)
 
   const copyToClipBoard = () => {
-    copy(children.current.props['children'])
+    copy(children?.props['children'])
     setCopied(true)
   }
 
   useEffect(() => {
     if (copied) {
-      setTimeout(() => setCopied(false), 3000)
+      setTimeout(() => setCopied(false), 2500)
     }
   }, [copied])
 
@@ -35,7 +34,9 @@ const BasePreComponent = props => {
         onClick={() => {
           copyToClipBoard()
         }}
-      />
+      >
+        <small className={`${styles.copiedText} ${copied ? styles.animateText : ''}`}>COPIED</small>
+      </div>
       <pre {...rest}>
         <code>{children}</code>
       </pre>
