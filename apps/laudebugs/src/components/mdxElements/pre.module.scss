@@ -33,7 +33,11 @@
       transition: opacity 0.25s ease-in-out;
       position: relative;
       right: 38px;
-      top: 4px;
+      top: 5px;
+      text-align: start;
+      background-color: #2e2e32b3;
+      padding: 0 3px;
+      border-radius: 5px;
       font-size: map.get($font-size, 'xxsmall');
     }
     &::after {
