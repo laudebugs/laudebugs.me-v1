@@ -12,7 +12,7 @@ const NotFound = () => {
         padding: '10%'
       }}
     >
-      <span sx={{ fontSize: '200%' }}>Oops, nothing here!</span>
+      <span sx={{ fontSize: '200%' }}>Oops, something here!</span>
       <span className="verySpecialChar" sx={{ fontSize: '400%' }}>
         [
       </span>
