@@ -12,12 +12,15 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/nx-cloud",
+      "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
         "cacheableOperations": ["build", "lint", "test", "e2e"],
-        "parallel": 3,
-        "accessToken": "MDVkYTFmMDItNzQ2NC00YjE1LWIyZTEtMjViN2M3MDY0NjNlfHJlYWQtd3JpdGU="
+        "parallel": 3
       }
+    },
+    "no-cloud": {
+      "runner": "@nrwl/workspace/src/tasks-runner/default-tasks-runner",
+      "options": {}
     }
   },
   "targetDependencies": {
@@ -44,5 +47,5 @@
       }
     }
   },
-  "defaultProject": "laudebugs"
+  "defaultProject": "laudebugs.github.io"
 }
