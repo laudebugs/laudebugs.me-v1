@@ -1,6 +1,5 @@
 import fs from 'fs'
 import matter from 'gray-matter'
-import uniq from 'lodash/uniq'
 import path from 'path'
 import { dayCount } from './posts.helpers'
 import { compareAsc, parseISO } from 'date-fns'
@@ -12,7 +11,7 @@ export function getFilesFromSrcDir(directory: string, includeContent = false) {
   const postsDirectory = path.join(process.cwd(), `${rootPath + directory}`)
   const filenames = fs.readdirSync(postsDirectory)
   return filenames
-    .filter((filename)=>/^(?!_).+.mdx/gm.test(filename))
+    .filter(filename => /^(?!_).+.mdx/gm.test(filename))
     .map(filename => {
       const fullPath = path.join(process.cwd(), `${rootPath + directory}`, filename)
       const post = fs.readFileSync(fullPath, 'utf-8')
@@ -47,8 +46,11 @@ export function getFileFromDir(directory: string, filename: string) {
 
 export function getSinglePostFromSrcDir(directory: string, filename: string) {
   const fullPath = path.join(process.cwd(), `${rootPath + directory}/${filename}.mdx`)
-  const { mtime } = fs.statSync(fullPath)
-  return { post: fs.readFileSync(fullPath, 'utf-8'), lastModified: mtime.toDateString() }
+  const lastModified = JSON.parse(fs.readFileSync('posts/out/archive.json', 'utf-8')).find(
+    (post: any) => post.slug === filename
+  )?.lastModified
+
+  return { post: fs.readFileSync(fullPath, 'utf-8'), lastModified }
 }
 
 export function getStatsForPosts(posts) {
