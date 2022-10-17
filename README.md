@@ -17,8 +17,6 @@ Server Side Rendering was therefore something that I had to take into considerat
 
 <hr/>
 
-## Dashboad
-
 <span>
   <p>This Blog is available on Google News: </p>
   <a href="https://news.google.com/publications/CAAqBwgKMKaErQsws4_FAw?ceid=US:en&oc=3"><img src="https://static.wikia.nocookie.net/logopedia/images/7/75/Google_News_2015.png/revision/latest?cb=20160220081235" style="height: 30px; width: auto; padding-right: 5px"> </a>
