@@ -34,21 +34,15 @@ jobs:
           branch: blog-posts
           branch-suffix: random
           delete-branch: true
-          title: 'chore: update blog posts submodule [skip ci]'
+          title:  "articles(update): ${{ github.event.client_payload.message.commit_sha }} [skip ci]"
           body: |
             Update Submodule
             - Updated with Blog Posts
           labels: |
-            blog posts
+            blog posts archive
+            ready for review
             automated pr
           assignees: laudebugs
           team-reviewers: |
             owners
           draft: false
-      - name: Enable Pull Request Automerge
-        if: steps.cpr.outputs.pull-request-operation == 'created'
-        uses: peter-evans/enable-pull-request-automerge@v1
-        with:
-          token: ${{ secrets.SANDSTORM }}
-          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
-          merge-method: squash
