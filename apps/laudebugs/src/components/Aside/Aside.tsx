@@ -1,6 +1,4 @@
 /** @jsxImportSource theme-ui */
-
-import { Pre } from '..'
 import styles from './Aside.module.scss'
 
 const Aside = props => {
