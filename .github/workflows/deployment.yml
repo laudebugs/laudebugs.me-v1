@@ -27,7 +27,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.SANDSTORM }}
-          commit-message: "articles(update): ${{ github.event.inputs.commit_sha }}"
+          commit-message: "articles(update): ${{ github.event.client_payload.message.commit_sha }}"
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
