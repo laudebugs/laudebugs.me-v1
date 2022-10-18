@@ -21,6 +21,8 @@ export function Index({ initialColorMode, posts }) {
       <div className={styles.nonFeatured}>
         <PostPreview post={archive[1]} />
         <PostPreview post={archive[2]} />
+        <PostPreview post={archive[3]} />
+        <PostPreview post={archive[4]} />
       </div>
     </div>
   )

@@ -1,7 +1,9 @@
-import Image from 'next/image'
+import Image from 'next/future/image'
 import Link from 'next/link'
 import { dayCount } from '../helpers/posts.helpers'
 import styles from './post-preview.module.scss'
+
+const css = { width: '100%', height: 'auto' }
 
 const PostPreview = ({ post }) => {
   return (
@@ -11,11 +13,9 @@ const PostPreview = ({ post }) => {
         <small>{dayCount(post.publishedOn)}</small>
         <div className={styles.content}>
           <div className={styles.image}>
-            <Image src={post.image} alt={post.title} height={720} width={1280} />
+            <Image src={post.image} alt={post.title} fill />
           </div>
-          <div className={styles.summary}>
-            <p>{post.summary}</p>
-          </div>
+          <p>{post.summary}</p>
         </div>
       </a>
     </Link>
