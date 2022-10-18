@@ -3,8 +3,6 @@ import Link from 'next/link'
 import { dayCount } from '../helpers/posts.helpers'
 import styles from './post-preview.module.scss'
 
-const css = { width: '100%', height: 'auto' }
-
 const PostPreview = ({ post }) => {
   return (
     <Link href={`/${post.type}/${post.slug}`}>
