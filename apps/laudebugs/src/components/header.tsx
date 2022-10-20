@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
 import { useColorMode } from 'theme-ui'
 import Logo from './logo'
 import MenuButton from './menuButton/menubutton'

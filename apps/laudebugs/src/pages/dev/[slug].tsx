@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import { useRouter } from 'next/router'
-import { Spinner } from 'theme-ui'
+import { Spinner, useColorMode } from 'theme-ui'
 import Aside from '../../components/Aside/Aside'
 import Note from '../../components/Note/note'
 import PostInfo from '../../components/post-info'
@@ -24,6 +24,7 @@ const DevPost = ({ source, frontMatter, lastModified }) => {
   const router = useRouter()
 
   const isNpm = useSelector(selectIsNpm)
+  const [colorMode] = useColorMode()
 
   if (router.isFallback) {
     return (
@@ -63,7 +64,7 @@ const DevPost = ({ source, frontMatter, lastModified }) => {
         reactionsEnabled="1"
         emitMetadata="1"
         inputPosition="top"
-        theme="preferred_color_scheme"
+        theme={colorMode == 'light' ? 'light_tritanopia' : 'transparent_dark'}
         lang="en"
         loading="lazy"
       />
