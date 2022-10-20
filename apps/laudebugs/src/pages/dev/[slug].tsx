@@ -60,7 +60,6 @@ const DevPost = ({ source, frontMatter, lastModified }) => {
         category="Blog Articles"
         categoryId="DIC_kwDOGZa9rs4CSGfP"
         mapping="pathname"
-        term="Welcome to @giscus/react component!"
         reactionsEnabled="1"
         emitMetadata="1"
         inputPosition="top"
