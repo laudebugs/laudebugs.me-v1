@@ -18,6 +18,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { Pre } from '../../components/mdxElements/pre'
 import { useSelector } from 'react-redux'
 import { selectIsNpm } from '@sandstorm/redux/store'
+import Giscus from '@giscus/react'
 
 const DevPost = ({ source, frontMatter, lastModified }) => {
   const router = useRouter()
@@ -52,7 +53,21 @@ const DevPost = ({ source, frontMatter, lastModified }) => {
       <PostInfo frontMatter={frontMatter} className={styles.postInfo} />
       <MDXRemote {...source} components={components} />
       <hr />
-      <IssuesAndComments slug={frontMatter.slug} />
+      <Giscus
+        id="comments"
+        repo="laudebugs/blog-posts"
+        repoId="R_kgDOGZa9rg"
+        category="Blog Articles"
+        categoryId="DIC_kwDOGZa9rs4CSGfP"
+        mapping="pathname"
+        term="Welcome to @giscus/react component!"
+        reactionsEnabled="1"
+        emitMetadata="1"
+        inputPosition="top"
+        theme="preferred_color_scheme"
+        lang="en"
+        loading="lazy"
+      />
       <small>
         Last modified on: <code>{lastModified}</code>
       </small>
