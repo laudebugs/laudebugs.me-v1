@@ -28,8 +28,8 @@ jobs:
         with:
           token: ${{ secrets.SANDSTORM }}
           commit-message: "articles(update): ${{ github.event.client_payload.message.commit_sha }}"
-          committer: GitHub <noreply@github.com>
-          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          committer: laudebugs@gmail.com
+          author: laudebugs@gmail.com
           signoff: false
           branch: blog-posts
           branch-suffix: random
