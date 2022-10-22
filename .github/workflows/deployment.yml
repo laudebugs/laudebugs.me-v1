@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v2
       - uses: oleksiyrudenko/gha-git-credentials@v2-latest
         with:
-          token: ${{ secrets.SANDSTORM }}
+          token: ${{ secrets.LAUDEBUGS_BLOG_POSTS }}
       - name: Update Git Submodules
         run: |
           git submodule init
@@ -26,15 +26,15 @@ jobs:
         if: steps.verify-changed-files.outputs.files_changed == 'true'
         uses: peter-evans/create-pull-request@v4
         with:
-          token: ${{ secrets.SANDSTORM }}
-          commit-message: "articles(update): ${{ github.event.client_payload.message.commit_sha }}"
+          token: ${{ secrets.LAUDEBUGS_BLOG_POSTS }}
+          commit-message: 'articles(update): ${{ github.event.client_payload.message.commit_sha }}'
           committer: laudebugs@gmail.com
           author: laudebugs@gmail.com
           signoff: false
           branch: blog-posts
           branch-suffix: random
           delete-branch: true
-          title:  "articles(update): ${{ github.event.client_payload.message.commit_sha }} [skip ci]"
+          title: 'articles(update): ${{ github.event.client_payload.message.commit_sha }} [skip ci]'
           body: |
             Update Submodule
             - Updated with Blog Posts
