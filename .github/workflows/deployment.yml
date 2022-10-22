@@ -27,9 +27,9 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.LAUDEBUGS_BLOG_POSTS }}
-          commit-message: 'articles(update): ${{ github.event.client_payload.message.commit_sha }}'
-          committer: laudebugs@gmail.com
-          author: laudebugs@gmail.com
+          commit-message: "articles(update): ${{ github.event.client_payload.message.commit_sha }}"
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
           branch: blog-posts
           branch-suffix: random
