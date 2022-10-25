@@ -10,12 +10,11 @@ import Note from '../../components/Note/note'
 import PostInfo from '../../components/post-info'
 import { getFilesFromSrcDir, getSinglePostFromSrcDir, getImageForPost } from '../../helpers/files.helpers'
 import styles from './dev.module.scss'
-import { IssuesAndComments } from '../../components/IssuesAndComments'
 import { memo } from 'react'
 import rehypeKatex from 'rehype-katex'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import { Pre } from '../../components/mdxElements/pre'
+import { Pre, CodeSandBox } from '../../components/mdxElements'
 import { useSelector } from 'react-redux'
 import { selectIsNpm } from '@sandstorm/redux/store'
 import Giscus from '@giscus/react'
@@ -36,7 +35,8 @@ const DevPost = ({ source, frontMatter, lastModified }) => {
   const components = {
     Aside,
     Note,
-    pre: props => <Pre variant="pre" {...props} isNpm={isNpm} />
+    pre: props => <Pre variant="pre" {...props} isNpm={isNpm} />,
+    CodeSandBox: props => <CodeSandBox fileName={props?.fileName} {...props} />
   }
 
   if (!isNpm) {

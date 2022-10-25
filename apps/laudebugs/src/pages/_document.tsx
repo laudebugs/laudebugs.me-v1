@@ -1,4 +1,5 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document'
+import { getSandpackCssText } from '@codesandbox/sandpack-react'
 
 export default class MyDocument extends Document {
   render() {
@@ -42,6 +43,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500|Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp&display=swap"
           />
+          <style dangerouslySetInnerHTML={{ __html: getSandpackCssText() }} id="sandpack" />
         </Head>
         <body>
           <Main />
