@@ -1,8 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
-import { memo, useEffect, useState } from 'react'
-import { Spinner } from 'theme-ui'
+import { memo } from 'react'
 import { getFilesFromSrcDir } from '../../helpers/files.helpers'
 import styles from './fragments.module.scss'
 import Image from 'next/image'
@@ -12,20 +11,6 @@ import Tags, { ITag } from '../../components/tags'
 import Link from 'next/link'
 
 function Fragments({ fragments }) {
-  const [loaded, setLoaded] = useState(false)
-
-  useEffect(() => {
-    if (Array.isArray(fragments)) {
-      setLoaded(true)
-    }
-  }, [fragments])
-  if (!loaded) {
-    return (
-      <div className={styles.spinner}>
-        <Spinner size={48} />
-      </div>
-    )
-  }
   const createTags = (tags: string[]): ITag[] => {
     return tags.map(tag => {
       return {
@@ -38,7 +23,6 @@ function Fragments({ fragments }) {
   return (
     <div className={styles.container}>
       {fragments.map((fragment, i) => {
-        console.log(fragment.frontMatter?.tags)
         return (
           <Link
             key={fragment?.frontMatter?.slug}
@@ -52,7 +36,7 @@ function Fragments({ fragments }) {
                   <h2>{fragment?.frontMatter?.title}</h2>
                 </div>
                 <span className={styles.image} style={{ gridArea: fragment.gridAreas[1] }}>
-                  <Image src={fragment.frontMatter.image} width={1280} height={720} alt={fragment?.frontMatter?.title} />
+                  <Image src={fragment.frontMatter.image} fill alt={fragment?.frontMatter?.title} />
                 </span>
                 <div style={{ gridArea: fragment.gridAreas[2] }} className={styles.metadata}>
                   <p>{dayCount(fragment.frontMatter.publishedOn)}</p>
