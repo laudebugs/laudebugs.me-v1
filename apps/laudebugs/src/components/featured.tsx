@@ -20,13 +20,12 @@ const Featured = ({ post }) => {
           </span>
 
           <span className={styles.details}>
-            <p>
+            <p style={{ margin: '5px 0' }}>
               №: <span sx={{ textDecoration: 'underline' }}>{post.no} </span>
             </p>
-            <p>{dayCount(post.publishedOn)}</p>
+            <p style={{ margin: '5px 0' }}>{dayCount(post.publishedOn)}</p>
           </span>
         </div>
-
         <Link href={`/${post.type}/${post.slug}`}>
           <p className={styles.summary}>{post.summary}</p>
         </Link>

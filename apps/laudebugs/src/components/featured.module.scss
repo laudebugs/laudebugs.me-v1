@@ -6,9 +6,10 @@
   display: flex;
   flex-direction: row;
   z-index: 0;
+  gap: 1em;
   .content {
     width: 60%;
-    div.postInfo {
+    margin div.postInfo {
       display: flex;
       justify-content: space-between;
       span.title {
