@@ -6,7 +6,6 @@
   z-index: 0;
   span.featuredImage {
     position: relative;
-    // overflow: hidden;
     display: flex;
     height: 100%;
     flex-direction: column;
@@ -15,7 +14,6 @@
       position: relative;
     }
     .caption {
-      height: 20%;
       text-align: center;
     }
   }
