@@ -1,5 +1,5 @@
 import { createSlice, createSelector } from '@reduxjs/toolkit'
-import { setLocalStorageItem } from '../helpers/localStorage'
+import { setLocalStorageItem } from '../../../../libs/utils/src/functions/local-storage'
 import { RootState } from '.'
 
 export interface AppState {

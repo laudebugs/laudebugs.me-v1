@@ -1,20 +1,20 @@
-import fs from 'fs'
+import { readFileSync, readdirSync } from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 import { dayCount } from '@laudebugs/utils/functions'
 import { compareAsc, parseISO } from 'date-fns'
-import { IMAGE_BASE_URL } from '../constants'
+import { IMAGE_BASE_URL } from '@laudebugs/common/constants'
 import { ITag } from '@laudebugs/common/models'
 const rootPath = ''
 
 export function getFilesFromSrcDir(directory: string, includeContent = false) {
   const postsDirectory = path.join(process.cwd(), `${rootPath + directory}`)
-  const filenames = fs.readdirSync(postsDirectory)
+  const filenames = readdirSync(postsDirectory)
   return filenames
     .filter(filename => /^(?!_).+.mdx/gm.test(filename))
     .map(filename => {
       const fullPath = path.join(process.cwd(), `${rootPath + directory}`, filename)
-      const post = fs.readFileSync(fullPath, 'utf-8')
+      const post = readFileSync(fullPath, 'utf-8')
       const { content, data } = matter(post)
       data.image = getImageForPost(data.slug)
       if (includeContent) {
@@ -36,21 +36,19 @@ export function getFilesFromSrcDir(directory: string, includeContent = false) {
 
 export function getChangeLog() {
   const fullPath = path.join(process.cwd(), `CHANGELOG.md`)
-  return fs.readFileSync(fullPath, 'utf-8')
+  return readFileSync(fullPath, 'utf-8')
 }
 
 export function getFileFromDir(directory: string, filename: string) {
   const fullPath = path.join(process.cwd(), `${rootPath + directory}/${filename}`)
-  return fs.readFileSync(fullPath, 'utf-8')
+  return readFileSync(fullPath, 'utf-8')
 }
 
 export function getSinglePostFromSrcDir(directory: string, filename: string) {
   const fullPath = path.join(process.cwd(), `${rootPath + directory}/${filename}.mdx`)
-  const lastModified = JSON.parse(fs.readFileSync('posts/out/archive.json', 'utf-8')).find(
-    (post: any) => post.slug === filename
-  )?.lastModified
+  const lastModified = JSON.parse(readFileSync('posts/out/archive.json', 'utf-8')).find((post: any) => post.slug === filename)?.lastModified
 
-  return { post: fs.readFileSync(fullPath, 'utf-8'), lastModified }
+  return { post: readFileSync(fullPath, 'utf-8'), lastModified }
 }
 
 export function getStatsForPosts(posts) {
@@ -80,7 +78,7 @@ export function getStatsForPosts(posts) {
 
 export function getImageForPost(slug) {
   const imagesPath = 'posts/assets/'
-  const images = fs.readdirSync(imagesPath)
+  const images = readdirSync(imagesPath)
   const image = images.find(_image => _image.includes(slug))
   return IMAGE_BASE_URL + image ?? ''
 }

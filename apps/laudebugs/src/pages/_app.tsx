@@ -13,7 +13,7 @@ import theme from '../styles/theme'
 import './styles.scss'
 import { store } from '../redux'
 import { useIsBrowser } from '@laudebugs/common/hooks'
-import { getLocalStorageItem } from '../helpers/localStorage'
+import { getLocalStorageItem } from '../../../../libs/utils/src/functions/local-storage'
 import { appActions } from '../redux/store'
 
 const components = {

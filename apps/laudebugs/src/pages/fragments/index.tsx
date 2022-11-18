@@ -2,7 +2,7 @@
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import { memo } from 'react'
-import { getFilesFromSrcDir } from '../../helpers/files.helpers'
+import { getFilesFromSrcDir } from '@laudebugs/utils/functions'
 import styles from './fragments.module.scss'
 import Image from 'next/image'
 import { shuffle } from 'lodash'

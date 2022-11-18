@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import ReactMarkdown from 'react-markdown'
-import { getChangeLog } from '../../helpers/files.helpers'
+import { getChangeLog } from '../../../../../libs/utils/src/functions/files.helpers'
 import styles from './index.module.scss'
 
 const Changelog = ({ changelog }) => {

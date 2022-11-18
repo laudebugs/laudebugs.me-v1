@@ -32,6 +32,12 @@ const nextConfig = {
       topLevelAwait: true,
       layers: true
     }
+    /* https://stackoverflow.com/questions/64926174/module-not-found-cant-resolve-fs-in-next-js-application */
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+      path: false
+    }
     return config
   },
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx', 'mdoc'],

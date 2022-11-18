@@ -77,35 +77,6 @@
       },
       "tags": []
     },
-    "laudebugs-e2e": {
-      "root": "apps/laudebugs-e2e",
-      "sourceRoot": "apps/laudebugs-e2e/src",
-      "projectType": "application",
-      "targets": {
-        "e2e": {
-          "executor": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/laudebugs-e2e/cypress.json",
-            "devServerTarget": "laudebugs:serve",
-            "tsConfig": "apps/laudebugs-e2e/tsconfig.json"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "laudebugs:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/laudebugs-e2e/**/*.{js,ts}"]
-          },
-          "outputs": ["{options.outputFile}"]
-        }
-      },
-      "tags": [],
-      "implicitDependencies": ["laudebugs"]
-    },
     "utils": {
       "root": "libs/utils",
       "sourceRoot": "libs/utils/src",

@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { memo } from 'react'
 import PostPreview from '../../components/post-preview'
 import Stats from '../../components/stats'
-import { getFilesFromSrcDir, getStatsForPosts } from '../../helpers/files.helpers'
+import { getFilesFromSrcDir, getStatsForPosts } from '@laudebugs/utils/functions'
 import styles from '../dev/dev.module.scss'
 
 function Journal(props) {
