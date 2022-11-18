@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { dayCount } from '../helpers/posts.helpers'
+import { dayCount } from '@laudebugs/utils/functions'
 import styles from './post-preview.module.scss'
 
 const PostPreview = ({ post }) => {

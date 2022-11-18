@@ -17,7 +17,7 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { Pre } from '../../components/mdxElements/pre'
 import { useSelector } from 'react-redux'
-import { selectIsNpm } from '@sandstorm/redux/store'
+import { selectIsNpm } from '../../redux/store'
 import Giscus from '@giscus/react'
 
 const DevPost = ({ source, frontMatter, lastModified }) => {

@@ -1,5 +1,5 @@
 {
-  "npmScope": "sandstorm",
+  "npmScope": "laudebugs",
   "affected": {
     "defaultBase": "master"
   },

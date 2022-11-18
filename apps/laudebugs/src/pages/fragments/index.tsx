@@ -6,9 +6,10 @@ import { getFilesFromSrcDir } from '../../helpers/files.helpers'
 import styles from './fragments.module.scss'
 import Image from 'next/image'
 import { shuffle } from 'lodash'
-import { dayCount } from '../../helpers/posts.helpers'
-import Tags, { ITag } from '../../components/tags'
+import { dayCount } from '@laudebugs/utils/functions'
+import Tags from '../../components/tags'
 import Link from 'next/link'
+import { ITag } from '@laudebugs/common/models'
 
 function Fragments({ fragments }) {
   const createTags = (tags: string[]): ITag[] => {

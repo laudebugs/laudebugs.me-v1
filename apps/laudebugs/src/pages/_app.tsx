@@ -11,10 +11,10 @@ import Footer from '../components/footer'
 import Header from '../components/header'
 import theme from '../styles/theme'
 import './styles.scss'
-import { store } from '@sandstorm/redux'
-import { useIsBrowser } from '@sandstorm/hooks/useIsBrowser'
-import { getLocalStorageItem } from '@sandstorm/helpers/localStorage'
-import { appActions } from '@sandstorm/redux/store'
+import { store } from '../redux'
+import { useIsBrowser } from '@laudebugs/common/hooks'
+import { getLocalStorageItem } from '../helpers/localStorage'
+import { appActions } from '../redux/store'
 
 const components = {
   // eslint-disable-next-line react/display-name

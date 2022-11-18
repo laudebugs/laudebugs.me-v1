@@ -1,10 +1,10 @@
 import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
-import { dayCount } from './posts.helpers'
+import { dayCount } from '@laudebugs/utils/functions'
 import { compareAsc, parseISO } from 'date-fns'
 import { IMAGE_BASE_URL } from '../constants'
-import { ITag } from '@sandstorm/components'
+import { ITag } from '@laudebugs/common/models'
 const rootPath = ''
 
 export function getFilesFromSrcDir(directory: string, includeContent = false) {

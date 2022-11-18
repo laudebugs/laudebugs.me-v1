@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
 
-import { ITag } from '@sandstorm/components'
+import { ITag } from '@laudebugs/common/models'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import { memo } from 'react'

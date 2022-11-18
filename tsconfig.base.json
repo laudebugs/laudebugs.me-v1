@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@laudebugs/common/*": ["libs/common/src/*"],
+      "@laudebugs/utils/*": ["libs/utils/src/*"]
+    }
   },
   "exclude": ["node_modules", "tmp", "posts"]
 }

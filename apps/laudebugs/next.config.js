@@ -5,7 +5,9 @@ const nextEnv = require('next-env')
 const withPWA = require('next-pwa')
 const dotEnvLoad = require('dotenv-load')
 const withMDX = require('@next/mdx')({ extension: /\.mdx$/ })
+const withMarkdoc = require('@markdoc/next.js')
 const rehypePrism = require('@mapbox/rehype-prism')
+
 dotEnvLoad()
 
 /**
@@ -32,7 +34,7 @@ const nextConfig = {
     }
     return config
   },
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx', 'mdoc'],
   module: {
     rules: [
       {
@@ -56,4 +58,4 @@ const nextConfig = {
   swcMinify: true
 }
 
-module.exports = withPlugins([nextEnv, withMDX, withPWA], withNx(nextConfig))
+module.exports = withPlugins([nextEnv, withMDX, withPWA], withNx(nextConfig), withMarkdoc({ mode: 'static' }))

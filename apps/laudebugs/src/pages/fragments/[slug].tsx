@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
 
-import { getFilesFromSrcDir, getSinglePostFromSrcDir } from '@sandstorm/helpers/files.helpers'
+import { getFilesFromSrcDir, getSinglePostFromSrcDir } from '../../helpers/files.helpers'
 import { serialize } from 'next-mdx-remote/serialize'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
@@ -9,7 +9,7 @@ import { Spinner } from 'theme-ui'
 import { memo } from 'react'
 import { getImageForPost } from '../../helpers/files.helpers'
 import Image from 'next/image'
-import { dayCount } from '@sandstorm/helpers/posts.helpers'
+import { dayCount } from '@laudebugs/utils/functions'
 import styles from './fragments.module.scss'
 
 const Fragment = ({ source, frontMatter }) => {

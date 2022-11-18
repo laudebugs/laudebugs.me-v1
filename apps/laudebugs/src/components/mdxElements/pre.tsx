@@ -2,7 +2,7 @@ import { memo, useEffect, useRef, useState } from 'react'
 import copy from 'copy-to-clipboard'
 import styles from './pre.module.scss'
 import { useDispatch } from 'react-redux'
-import { appActions } from '@sandstorm/redux/store'
+import { appActions } from '../../redux/store'
 
 const BasePreComponent = props => {
   const dispatch = useDispatch()
