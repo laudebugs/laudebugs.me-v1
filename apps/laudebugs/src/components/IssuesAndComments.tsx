@@ -13,14 +13,12 @@ export const IssuesAndComments: FC<IssuesAndCommentsProps> = ({ slug }) => {
     <div>
       <p>
         Found an issue or have a suggestion?
-        <Link href={`${baseUrl + slug}.mdx`}>
-          <a target="__blank" className={styles.link}>
-            {' '}
-            Raise a PR here
-            <span className={styles.icon}>
-              <GitPullRequestIcon verticalAlign="middle" size={16} />
-            </span>
-          </a>
+        <Link href={`${baseUrl + slug}.mdx`} target={'_blank'} className={styles.link}>
+          {' '}
+          Raise a PR here
+          <span className={styles.icon}>
+            <GitPullRequestIcon verticalAlign="middle" size={16} />
+          </span>
         </Link>
       </p>
     </div>

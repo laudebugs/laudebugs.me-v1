@@ -5,10 +5,8 @@ const Logo = () => {
   const [colorMode] = useColorMode()
 
   return (
-    <Link href="/">
-      <a className="noSelect">
-        <Image src={`/images/logos/logo_${colorMode == 'light' ? 'dark' : 'light'}.svg`} width={40} height={40} alt="logo"></Image>
-      </a>
+    <Link href="/" className="noSelect">
+      <Image src={`/images/logos/logo_${colorMode == 'light' ? 'dark' : 'light'}.svg`} width={40} height={40} alt="logo"></Image>
     </Link>
   )
 }

@@ -1,17 +1,18 @@
 import styles from './contact.module.scss'
 import LinkedIn from '../../socials/linkedin'
 import { Email } from '../../socials/email'
+import Link from 'next/link'
 export const Contact = () => {
   return (
     <span className={styles.contact}>
       Contact:{' '}
-      <a href="mailto:laudebugs@gmail.com">
+      <Link href="mailto:laudebugs@gmail.com">
         <Email />
-      </a>{' '}
-      <a href="https://www.linkedin.com/in/laurence-ininda/" target={'_blank'} rel="noreferrer">
+      </Link>{' '}
+      <Link href="https://www.linkedin.com/in/laurence-ininda/" target={'_blank'} rel="noreferrer">
         {' '}
         <LinkedIn />
-      </a>
+      </Link>
     </span>
   )
 }
