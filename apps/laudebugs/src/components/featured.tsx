@@ -14,9 +14,7 @@ const Featured = ({ post }) => {
         <div className={styles.postInfo}>
           <span className={styles.title}>
             <Link href={`/${post.type}/${post.slug}`}>
-              <a>
-                <h5>{post.title}</h5>
-              </a>
+              <h5>{post.title}</h5>
             </Link>
             {tags.length > 0 && <Tags tags={tags} showCount={false} showExpand={false} />}
           </span>
@@ -30,21 +28,15 @@ const Featured = ({ post }) => {
         </div>
 
         <Link href={`/${post.type}/${post.slug}`}>
-          <a>
-            <p className={styles.summary}>{post.summary}</p>
-          </a>
+          <p className={styles.summary}>{post.summary}</p>
         </Link>
         <small>
-          <Link href={`/${post.type}/${post.slug}`}>
-            <a>☶ Read</a>
-          </Link>
+          <Link href={`/${post.type}/${post.slug}`}>☶ Read</Link>
         </small>
       </div>
       <div className={styles.image}>
         <Link href={`/${post.type}/${post.slug}`}>
-          <a>
-            <Image src={post.image} height={720} width={1280} alt={post.title} />
-          </a>
+          <Image src={post.image} fill alt={post.title} style={{ objectFit: 'contain' }} />
         </Link>
       </div>
     </div>

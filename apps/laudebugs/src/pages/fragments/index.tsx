@@ -40,29 +40,32 @@ function Fragments({ fragments }) {
       {fragments.map((fragment, i) => {
         console.log(fragment.frontMatter?.tags)
         return (
-          <Link key={fragment?.frontMatter?.slug} href={`/fragments/${fragment.frontMatter.slug}`}>
-            <a id={fragment.frontMatter.slug} className={styles.anchor}>
-              <div className={styles.fragment}>
-                <div className={styles.description}>
-                  <div className={styles.title} style={{ gridArea: fragment.gridAreas[0] }}>
-                    <h2>{fragment?.frontMatter?.title}</h2>
-                  </div>
-                  <span className={styles.image} style={{ gridArea: fragment.gridAreas[1] }}>
-                    <Image src={fragment.frontMatter.image} width={1280} height={720} alt={fragment?.frontMatter?.title} />
-                  </span>
-                  <div style={{ gridArea: fragment.gridAreas[2] }} className={styles.metadata}>
-                    <p>{dayCount(fragment.frontMatter.publishedOn)}</p>
-                    <span className={styles.tags}>
-                      {fragment.frontMatter.tags && (
-                        <Tags tags={createTags(fragment.frontMatter.tags)} showCount={false} showExpand={false} />
-                      )}
-                    </span>
-                  </div>
+          <Link
+            key={fragment?.frontMatter?.slug}
+            href={`/fragments/${fragment.frontMatter.slug}`}
+            id={fragment.frontMatter.slug}
+            className={styles.anchor}
+          >
+            <div className={styles.fragment}>
+              <div className={styles.description}>
+                <div className={styles.title} style={{ gridArea: fragment.gridAreas[0] }}>
+                  <h2>{fragment?.frontMatter?.title}</h2>
                 </div>
-                <MDXRemote {...fragment?.content} />
-                {i < fragments.length - 1 && <hr />}
+                <span className={styles.image} style={{ gridArea: fragment.gridAreas[1] }}>
+                  <Image src={fragment.frontMatter.image} width={1280} height={720} alt={fragment?.frontMatter?.title} />
+                </span>
+                <div style={{ gridArea: fragment.gridAreas[2] }} className={styles.metadata}>
+                  <p>{dayCount(fragment.frontMatter.publishedOn)}</p>
+                  <span className={styles.tags}>
+                    {fragment.frontMatter.tags && (
+                      <Tags tags={createTags(fragment.frontMatter.tags)} showCount={false} showExpand={false} />
+                    )}
+                  </span>
+                </div>
               </div>
-            </a>
+              <MDXRemote {...fragment?.content} />
+              {i < fragments.length - 1 && <hr />}
+            </div>
           </Link>
         )
       })}

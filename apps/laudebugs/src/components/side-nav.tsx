@@ -18,29 +18,30 @@ function SideNav({ close, isOpen }) {
       <div className={styles.sideNav + ' ' + (isOpen ? styles.open : styles.close)}>
         <div className={styles.menu}>
           <nav>
-            <Link href="/dev">
-              <a onClick={() => close.next(!isOpen)}> - developer notes</a>
+            <Link href="/dev" onClick={() => close.next(!isOpen)}>
+              - developer notes
             </Link>
-            <Link href="/journal">
-              <a onClick={() => close.next(!isOpen)}>- journal</a>
+            <Link href="/journal" onClick={() => close.next(!isOpen)}>
+              - journal
             </Link>
-            <Link href="/fragments">
-              <a onClick={() => close.next(!isOpen)}>
-                - fragments{' '}
-                <span className="verySpecialChar" style={{ color: 'var(--theme-ui-colors-accent)', fontSize: '1.5rem' }}>
-                  Ρ
-                </span>
-              </a>
+            <Link href="/fragments" onClick={() => close.next(!isOpen)}>
+              - fragments{' '}
+              <span className="verySpecialChar" style={{ color: 'var(--theme-ui-colors-accent)', fontSize: '1.5rem' }}>
+                Ρ
+              </span>
             </Link>
-            <a className={styles.undone}>
+            <Link href="/cuisine" className={styles.undone}>
               {' '}
               - cuisine <small>[coming soon]</small>
-            </a>
-            <a className={styles.undone}>
+            </Link>
+            <Link href="listenings" className={styles.undone}>
               {' '}
               - listenings <small>[coming soon]</small>
-            </a>
-            <a className={styles.undone}> - old stuff</a>
+            </Link>
+            <Link href={'old-stuff'} className={styles.undone}>
+              {' '}
+              - old stuff
+            </Link>
           </nav>
           <AboutButton onClick={() => close.next(!isOpen)} />
         </div>

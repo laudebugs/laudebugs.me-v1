@@ -5,8 +5,18 @@
   grid-gap: 1rem;
   z-index: 0;
   span.featuredImage {
-    img {
-      object-fit: cover;
+    position: relative;
+    // overflow: hidden;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    .featuredImageContainer {
+      height: 80%;
+      position: relative;
+    }
+    .caption {
+      height: 20%;
+      text-align: center;
     }
   }
 
@@ -38,5 +48,12 @@
 @media screen and (max-width: 800px) {
   .postinfo {
     grid-template-columns: 1fr;
+    span.featuredImage {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 420px;
+    }
   }
 }

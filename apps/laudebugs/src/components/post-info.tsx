@@ -16,21 +16,22 @@ type PostInfoProps = {
 const PostInfoComponent: FC<PostInfoProps> = ({ frontMatter, lastModified }) => {
   const posts = archive as any[]
   const { no } = posts.find(post => post.slug === frontMatter.slug)
-  const caption = frontMatter.imageCaption || frontMatter.imageCredit
   const postTags = frontMatter.tags.map(tag => ({ title: tag, articleCount: 0 }))
 
   return (
     <div className={styles.postinfo}>
       <HeadWithMetaTags {...frontMatter} />
       <span className={styles.featuredImage}>
-        {!!frontMatter?.image && (
-          <Image className={styles.featuredImage} src={frontMatter.image} height={720} width={1280} alt={frontMatter.title} />
-        )}
-        {frontMatter.imageCaption ? (
-          <figcaption>{frontMatter.imageCaption}</figcaption>
-        ) : frontMatter.imageCredit ? (
-          <figcaption dangerouslySetInnerHTML={{ __html: frontMatter.imageCredit }}></figcaption>
-        ) : null}
+        <span className={styles.featuredImageContainer}>
+          {!!frontMatter?.image && <Image style={{ objectFit: 'contain' }} src={frontMatter.image} fill alt={frontMatter.title} />}
+        </span>
+        <span className={styles.caption}>
+          {frontMatter.imageCaption ? (
+            <figcaption>{frontMatter.imageCaption}</figcaption>
+          ) : frontMatter.imageCredit ? (
+            <figcaption dangerouslySetInnerHTML={{ __html: frontMatter.imageCredit }}></figcaption>
+          ) : null}
+        </span>
       </span>
       <span className={styles.deets}>
         <h1>{frontMatter.title.toLowerCase()}</h1>

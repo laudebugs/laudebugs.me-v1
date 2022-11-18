@@ -14,25 +14,17 @@ function Socials({ close, isOpen }) {
       <div onClick={() => close.next(!isOpen)} className={styles.shadow}></div>
       <div className={styles.menu}>
         <nav>
-          <Link href="https://twitter.com/laudebugs">
-            <a target="_blank" onClick={() => close.next(!isOpen)}>
-              <Twitter />
-            </a>
+          <Link href="https://twitter.com/laudebugs" target="_blank" onClick={() => close.next(!isOpen)}>
+            <Twitter />
           </Link>
-          <Link href="https://www.instagram.com/laudebugs/">
-            <a target="_blank" onClick={() => close.next(!isOpen)}>
-              <Instagram />
-            </a>
+          <Link href="https://www.instagram.com/laudebugs/" target="_blank" onClick={() => close.next(!isOpen)}>
+            <Instagram />
           </Link>
-          <Link href="https://www.linkedin.com/in/laurence-ininda/?_l=en_US">
-            <a target="_blank" onClick={() => close.next(!isOpen)}>
-              <LinkedIn />
-            </a>
+          <Link href="https://www.linkedin.com/in/laurence-ininda/?_l=en_US" target="_blank" onClick={() => close.next(!isOpen)}>
+            <LinkedIn />
           </Link>
-          <Link href="https://github.com/laudebugs">
-            <a target="_blank" onClick={() => close.next(!isOpen)}>
-              <Github />
-            </a>
+          <Link href="https://github.com/laudebugs" target="_blank" onClick={() => close.next(!isOpen)}>
+            <Github />
           </Link>
         </nav>
       </div>

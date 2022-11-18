@@ -19,10 +19,8 @@ const Footer = className => {
     <footer>
       <div className={styles.footer}>
         <span>
-          <Link href="/api/feed/rss">
-            <a target="_blank">
-              <span className="material-icons-outlined">rss_feed</span>
-            </a>
+          <Link href="/api/feed/rss" target={'_blank'}>
+            <span className="material-icons-outlined">rss_feed</span>
           </Link>
         </span>
         <nav>
@@ -31,16 +29,12 @@ const Footer = className => {
           </span>
           <span>&nbsp;―&nbsp;</span>
           <Link href="/stats">
-            <a>
-              <span className={styles.link}>stats</span>
-            </a>
+            <span className={styles.link}>stats</span>
           </Link>
         </nav>
         <small>
-          <Link href="/changelog">
-            <a sx={{ variant: 'containers.link' }}>
-              <h6>{`v${version}`}</h6>
-            </a>
+          <Link href="/changelog" sx={{ variant: 'containers.link' }}>
+            <h6>{`v${version}`}</h6>
           </Link>
         </small>
       </div>

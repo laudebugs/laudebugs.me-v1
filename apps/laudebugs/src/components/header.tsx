@@ -28,21 +28,15 @@ const Header = () => {
       <span>
         <span className={styles.centerNav}>
           <Link href="/">
-            <a>
-              <h2> Lau de Bugs</h2>
-            </a>
+            <h2> Lau de Bugs</h2>
           </Link>
           <span className={`${path !== '/' && path !== '/changelog' ? styles.selected : styles.paths}`}>
-            <Link href="/journal">
-              <a className={`${path === '/journal' ? styles.selected_left : ''}`}>
-                <h4 className={styles.link}>journal</h4>
-              </a>
+            <Link href="/journal" className={`${path === '/journal' ? styles.selected_left : ''}`}>
+              <h4 className={styles.link}>journal</h4>
             </Link>
             <Logo />
-            <Link href="/dev">
-              <a className={`${path === '/dev' ? styles.selected_right : ''}`}>
-                <h4 className={styles.link}>dev</h4>
-              </a>
+            <Link href="/dev" className={`${path === '/dev' ? styles.selected_right : ''}`}>
+              <h4 className={styles.link}>dev</h4>
             </Link>
           </span>
         </span>
