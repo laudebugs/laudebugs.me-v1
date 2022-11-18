@@ -7,7 +7,7 @@
     "local": "nx serve laudebugs --host 0.0.0.0 --port 5002",
     "next": "next",
     "build": "npx nx build",
-    "build:prod": "npx nx build laudebugs --prod --runner=no-cloud",
+    "build:prod": "npx nx build laudebugs",
     "test": "nx test",
     "cz": "cz",
     "prepare": "husky install",
