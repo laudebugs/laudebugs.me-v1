@@ -1,6 +1,6 @@
 /** @jsxImportSource theme-ui */
 
-import { getFilesFromSrcDir, getSinglePostFromSrcDir, getImageForPost } from '@laudebugs/utils/functions'
+import { getFilesFromSrcDir, getSinglePostFromSrcDir, getImageForPost } from '@laudebugs/utils'
 import { serialize } from 'next-mdx-remote/serialize'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 import { Spinner } from 'theme-ui'
 import { memo } from 'react'
 import Image from 'next/image'
-import { dayCount } from '@laudebugs/utils/functions'
+import { dayCount } from '@laudebugs/utils'
 import styles from './fragments.module.scss'
 
 const Fragment = ({ source, frontMatter }) => {

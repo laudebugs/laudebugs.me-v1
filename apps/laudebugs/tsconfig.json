@@ -22,7 +22,7 @@
     "../../posts",
     "next.config.mjs",
     "../../libs/utils/src/functions/local-storage.ts",
-    "../../libs/utils/src/functions/files.helpers.ts"
+    "../../libs/utils/src/functions/file-helpers.ts"
   ],
   "exclude": ["node_modules", "posts"]
 }

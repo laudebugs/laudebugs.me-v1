@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Featured from '../components/featured'
 import PostPreview from '../components/post-preview'
-import { getFilesFromSrcDir } from '@laudebugs/utils/functions'
+import { getFilesFromSrcDir } from '@laudebugs/utils'
 import styles from './index.module.scss'
 import archive from '../../../../posts/out/archive.json'
 

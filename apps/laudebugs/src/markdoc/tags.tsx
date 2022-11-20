@@ -1,4 +1,4 @@
-import Aside from '../components/Aside/Aside'
+import { Aside } from '@laudebugs/common/components'
 import Note from '../components/Note/note'
 
 export const tags = {

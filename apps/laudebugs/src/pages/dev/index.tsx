@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import { memo } from 'react'
 import PostPreview from '../../components/post-preview'
 import Stats from '../../components/stats'
-import { getFilesFromSrcDir, getStatsForPosts } from '@laudebugs/utils/functions'
+import { getFilesFromSrcDir, getStatsForPosts } from '@laudebugs/utils'
 import styles from './dev.module.scss'
 
 function Index(props) {

@@ -1,8 +1,8 @@
 @use 'sass:map';
-@import '../../../styles/_fonts.scss';
-@import '../../../styles/_buttons.scss';
-@import '../../../styles/_mixins.scss';
-@import '../../../styles/_variables.scss';
+@import '@laudebugs/common/styles/_fonts.scss';
+@import '@laudebugs/common/styles/_buttons.scss';
+@import '@laudebugs/common/styles/_mixins.scss';
+@import '@laudebugs/common/styles/_variables.scss';
 
 .button {
   @extend %button;

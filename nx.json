@@ -1,5 +1,10 @@
 {
   "npmScope": "laudebugs",
+  "pluginsConfig": {
+    "@nrwl/js": {
+      "analyzeSourceFiles": true
+    }
+  },
   "affected": {
     "defaultBase": "master"
   },

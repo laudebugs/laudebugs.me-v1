@@ -1,7 +1,7 @@
 @use 'sass:map';
 
-@import '../../../styles/_mixins.scss';
-@import '../../../styles/_variables.scss';
+@import '@laudebugs/common/styles/_mixins.scss';
+@import '@laudebugs/common/styles/_variables.scss';
 
 .location {
   font-size: map.get($font-size, 'small');

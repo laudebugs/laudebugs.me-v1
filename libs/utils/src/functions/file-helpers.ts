@@ -1,10 +1,21 @@
-import { readFileSync, readdirSync } from 'fs'
+import { IMAGE_BASE_URL } from '@laudebugs/common/constants'
+import { compareAsc, parseISO } from 'date-fns'
+import { readdirSync, readFileSync } from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
-import { dayCount } from '@laudebugs/utils/functions'
-import { compareAsc, parseISO } from 'date-fns'
-import { IMAGE_BASE_URL } from '@laudebugs/common/constants'
-import { ITag } from '@laudebugs/common/models'
+function dayCount(_date: string): string {
+  const date = new Date(_date)
+  const start = new Date(date.getFullYear(), 0, 0)
+  const diff = Number(date) - Number(start) + (start.getTimezoneOffset() - date.getTimezoneOffset()) * 60 * 1000
+  const oneDay = 1000 * 60 * 60 * 24
+  return `${Math.floor(diff / oneDay)}.${date.getFullYear()}`
+}
+
+export interface ITag {
+  title: string
+  articleCount: number
+}
+
 const rootPath = ''
 
 export function getFilesFromSrcDir(directory: string, includeContent = false) {

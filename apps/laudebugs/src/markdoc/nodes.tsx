@@ -1,4 +1,4 @@
-import { Pre } from '@laudebugs/components'
+import { Pre } from '@laudebugs/common/components'
 
 export default {
   pre: {

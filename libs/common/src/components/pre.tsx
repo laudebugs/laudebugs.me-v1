@@ -1,13 +1,9 @@
-import { memo, useEffect, useRef, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import copy from 'copy-to-clipboard'
 import styles from './pre.module.scss'
-import { useDispatch } from 'react-redux'
-import { appActions } from '../../redux/store'
 
-const BasePreComponent = props => {
-  const dispatch = useDispatch()
+const BasePreComponent = (props: any) => {
   const { isNpm, ...rest } = props
-  // const dispatch = useDispatch()
   const [children, setChildren] = useState(props.children)
   const [hasNpmScript] = useState<boolean>(/npm/gm.test(children.props['children']))
   const [copied, setCopied] = useState(false)
@@ -23,19 +19,15 @@ const BasePreComponent = props => {
     }
   }, [copied])
 
-  function setNpmYarn(isNpm: boolean) {
-    dispatch(appActions.setIsNpm(isNpm))
-  }
-
   return (
-    <div className={styles.codeBlock}>
+    <div className={styles['codeBlock']}>
       <div
-        className={`${styles.copyToClipboard} ${copied ? styles.copied : ''} ${hasNpmScript ? 'npm' : ''}`}
+        className={`${styles['copyToClipboard']} ${copied ? styles['copied'] : ''} ${hasNpmScript ? 'npm' : ''}`}
         onClick={() => {
           copyToClipBoard()
         }}
       >
-        <small className={`${styles.copiedText} ${copied ? styles.animateText : ''}`}>COPIED</small>
+        <small className={`${styles['copiedText']} ${copied ? styles['animateText'] : ''}`}>COPIED</small>
       </div>
       <pre {...rest}>
         <code>{children}</code>
