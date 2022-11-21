@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.1.0 (2022-11-21)
+
+### Features
+
+- **hooks:** migrate to next 13, react 18, nx 15 + refactor libraries ([#190](https://github.com/laudebugs/laudebugs.me/issues/190)) ([06242a7](https://github.com/laudebugs/laudebugs.me/commit/06242a7d1d148774d583ea9e64a8bb84165ce0a0))
+
 ### 1.0.1 (2022-11-21)
 
 ### Bug Fixes
