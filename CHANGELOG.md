@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.1 (2022-11-21)
+
+### Bug Fixes
+
+- release pipeline ([#192](https://github.com/laudebugs/laudebugs.me/issues/192)) ([6303094](https://github.com/laudebugs/laudebugs.me/commit/63030948aa38693ca001327070ebc0254a7b2238))
+
 ## [1.0.0](https://github.com/laudebugs/sandstorm/compare/v0.0.14...v1.0.0) (2022-02-27)
 
 ## [0.2.0](https://github.com/laudebugs/sandstorm/compare/v0.0.14...v0.2.0) (2022-02-27)
