@@ -1,12 +1,12 @@
 /** @jsxImportSource theme-ui */
 
-import { ITag } from '@sandstorm/components'
+import { ITag } from '@laudebugs/common/models'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import { memo } from 'react'
 import PostPreview from '../../components/post-preview'
 import Stats from '../../components/stats'
-import { getFilesFromSrcDir, getStatsForPosts } from '../../helpers/files.helpers'
+import { getFilesFromSrcDir, getStatsForPosts } from '@laudebugs/utils'
 import styles from './dev.module.scss'
 
 function Index(props) {

@@ -1,23 +1,28 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "jsx": "preserve",
     "allowJs": true,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["node", "jest"],
-    "strict": false,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
     "noEmit": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "baseUrl": "./",
-    "paths": {
-      "@posts": ["../../posts/*"],
-      "@sandstorm/*": ["src/*"]
-    },
-    "incremental": true
+    "strict": false,
+    "types": ["node", "jest"]
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "next-env.d.ts", "../../posts", "next.config.mjs"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
+    "next-env.d.ts",
+    "../../posts",
+    "next.config.mjs",
+    "../../libs/utils/src/functions/local-storage.ts",
+    "../../libs/utils/src/functions/file-helpers.ts"
+  ],
   "exclude": ["node_modules", "posts"]
 }

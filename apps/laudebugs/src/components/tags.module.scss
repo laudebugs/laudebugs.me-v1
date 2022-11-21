@@ -1,6 +1,6 @@
 @use 'sass:map';
-@import '../styles/_variables.scss';
-@import '../styles/_fonts.scss';
+@import '@laudebugs/common/styles/_variables.scss';
+@import '@laudebugs/common/styles/_fonts.scss';
 
 span.tags {
   display: flex;

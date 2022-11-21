@@ -30,18 +30,15 @@ function SideNav({ close, isOpen }) {
                 Ρ
               </span>
             </Link>
-            <Link href="/cuisine" className={styles.undone}>
+            <span className={styles.undone}>
               {' '}
               - cuisine <small>[coming soon]</small>
-            </Link>
-            <Link href="listenings" className={styles.undone}>
+            </span>
+            <span className={styles.undone}>
               {' '}
               - listenings <small>[coming soon]</small>
-            </Link>
-            <Link href={'old-stuff'} className={styles.undone}>
-              {' '}
-              - old stuff
-            </Link>
+            </span>
+            <span className={styles.undone}> - old stuff</span>
           </nav>
           <AboutButton onClick={() => close.next(!isOpen)} />
         </div>

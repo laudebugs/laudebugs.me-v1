@@ -1,0 +1,15 @@
+@import '../styles/mixins.scss';
+
+.wrapper {
+  &::before {
+    @include material-icon('join_right');
+    position: absolute;
+    top: -10px;
+    left: -10px;
+  }
+  .aside {
+    border-left: 1px solid;
+    padding: 0 15px;
+    margin: 15px 0 0 0;
+  }
+}

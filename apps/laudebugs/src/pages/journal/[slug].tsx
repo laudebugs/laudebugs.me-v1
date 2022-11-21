@@ -8,7 +8,7 @@ import { memo } from 'react'
 import { Spinner } from 'theme-ui'
 import HeadWithMetaTags from '../../components/head'
 import PostInfo from '../../components/post-info'
-import { getFilesFromSrcDir, getSinglePostFromSrcDir } from '../../helpers/files.helpers'
+import { getFilesFromSrcDir, getSinglePostFromSrcDir } from '@laudebugs/utils'
 import styles from '../dev/dev.module.scss'
 const components = {}
 

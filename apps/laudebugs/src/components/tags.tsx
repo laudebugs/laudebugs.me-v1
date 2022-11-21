@@ -3,10 +3,6 @@
 import { FC, memo, useEffect, useState } from 'react'
 import styles from './tags.module.scss'
 
-export interface ITag {
-  title: string
-  articleCount: number
-}
 export interface TagsProps {
   tags: ITag[]
   toggleTag?: (tag: ITag) => void

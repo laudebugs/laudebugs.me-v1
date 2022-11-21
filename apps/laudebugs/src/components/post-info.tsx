@@ -1,7 +1,7 @@
 /** @jsxImportSource theme-ui */
 
 import Image from 'next/image'
-import { dayCount } from '../helpers/posts.helpers'
+import { dayCount } from '@laudebugs/utils'
 import HeadWithMetaTags from './head'
 import styles from './post-info.module.scss'
 import Tags from './tags'

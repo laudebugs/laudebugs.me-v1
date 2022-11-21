@@ -9,16 +9,21 @@ import { Progress, ThemeProvider } from 'theme-ui'
 import { Provider } from 'react-redux'
 import Footer from '../components/footer'
 import Header from '../components/header'
-import theme from '../styles/theme'
+import { theme } from '../styles/theme'
 import './styles.scss'
-import { store } from '@sandstorm/redux'
-import { useIsBrowser } from '@sandstorm/hooks/useIsBrowser'
-import { getLocalStorageItem } from '@sandstorm/helpers/localStorage'
-import { appActions } from '@sandstorm/redux/store'
+import { store } from '../redux'
+import { useIsBrowser } from '@laudebugs/common/hooks'
+import { getLocalStorageItem } from '@laudebugs/utils'
+import { appActions } from '../redux/store'
+import { Pre } from '@laudebugs/common/components'
+
+import { MDXProvider, useMDXComponents } from '@mdx-js/react'
+import { useThemedStylesWithMdx } from '@theme-ui/mdx'
 
 const components = {
   // eslint-disable-next-line react/display-name
-  pre: ({ children }) => <>{children}</>,
+  // pre: Pre, //({ children }) => <Pre>{children}</Pre>,
+  pre: ({ children }) => <Pre>{children}</Pre>,
   code: Prism
 }
 
@@ -54,27 +59,31 @@ function CustomApp({ Component, pageProps }: AppProps) {
     })
   }, [])
 
+  const componentsWithStyles = useThemedStylesWithMdx(useMDXComponents(components))
+
   return (
     <Provider store={store}>
-      <ThemeProvider theme={theme} components={components}>
-        <Head>
-          <meta
-            name="viewport"
-            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
-          />
-        </Head>
-        <div className="contentBody">
-          <Progress sx={{ variant: 'containers.progressBar' }} className="progressBar" max={1} value={progress}>
-            {progress * 100}%
-          </Progress>
-          <span className="content">
-            <Header />
-            <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <MDXProvider components={componentsWithStyles}>
+          <Head>
+            <meta
+              name="viewport"
+              content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+            />
+          </Head>
+          <div className="contentBody">
+            <Progress sx={{ variant: 'containers.progressBar' }} className="progressBar" max={1} value={progress}>
+              {progress * 100}%
+            </Progress>
+            <span className="content">
+              <Header />
+              <Component {...pageProps} />
+            </span>
+          </div>
+          <span className="footer">
+            <Footer />
           </span>
-        </div>
-        <span className="footer">
-          <Footer />
-        </span>
+        </MDXProvider>
       </ThemeProvider>
     </Provider>
   )

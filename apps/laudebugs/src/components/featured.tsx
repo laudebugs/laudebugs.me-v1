@@ -2,9 +2,10 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { dayCount } from '../helpers/posts.helpers'
+import { dayCount } from '@laudebugs/utils'
 import styles from './featured.module.scss'
-import Tags, { ITag } from './tags'
+import Tags from './tags'
+import { ITag } from '@laudebugs/common/models'
 
 const Featured = ({ post }) => {
   const tags = post.tags?.map((tag): ITag => ({ title: tag, articleCount: 0 })) ?? []

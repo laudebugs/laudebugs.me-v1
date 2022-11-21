@@ -13,8 +13,14 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@laudebugs/common/*": ["libs/common/src/*"],
+      "@laudebugs/utils": ["libs/utils/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp", "posts"]
 }

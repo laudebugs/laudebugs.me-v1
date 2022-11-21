@@ -2,13 +2,14 @@
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import { memo } from 'react'
-import { getFilesFromSrcDir } from '../../helpers/files.helpers'
+import { getFilesFromSrcDir } from '@laudebugs/utils'
 import styles from './fragments.module.scss'
 import Image from 'next/image'
 import { shuffle } from 'lodash'
-import { dayCount } from '../../helpers/posts.helpers'
-import Tags, { ITag } from '../../components/tags'
+import { dayCount } from '@laudebugs/utils'
+import Tags from '../../components/tags'
 import Link from 'next/link'
+import { ITag } from '@laudebugs/common/models'
 
 function Fragments({ fragments }) {
   const createTags = (tags: string[]): ITag[] => {

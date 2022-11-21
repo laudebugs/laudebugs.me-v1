@@ -1,5 +1,10 @@
 {
-  "npmScope": "sandstorm",
+  "npmScope": "laudebugs",
+  "pluginsConfig": {
+    "@nrwl/js": {
+      "analyzeSourceFiles": true
+    }
+  },
   "affected": {
     "defaultBase": "master"
   },
@@ -14,7 +19,7 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "cacheableOperations": ["build", "lint", "test"],
         "parallel": 3
       }
     },
