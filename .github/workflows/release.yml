@@ -1,0 +1,37 @@
+name: Publish Release
+on:
+  push:
+    branches:
+      - main
+jobs:
+  release:
+    if: (startsWith(github.event.head_commit.message , 'chore(release)')) != true
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.LAUDEBUGS_DOT_ME }}
+          submodules: recursive
+      - name: Cache Dependencies
+        uses: actions/cache@v2
+        env:
+          cache-name: node-cache
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Install modules
+        run: npm install --legacy-peer-deps
+      - name: Release 🦄
+        run: |
+          git config --global user.email "laudebugs@gmail.com"
+          git config --global user.name "Github Action"
+          npm run release
+          git push --follow-tags origin ${GITHUB_REF##*/}
