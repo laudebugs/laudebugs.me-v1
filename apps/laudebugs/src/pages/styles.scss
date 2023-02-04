@@ -71,12 +71,12 @@ iframe {
   border: 0;
 }
 figcaption {
-  font-family: 'Amiri', serif;
+  font-family: 'Darker Grotesque', sans-serif;
 }
 @for $i from 1 through 6 {
   h#{$i} {
     margin-bottom: #{30 - ($i * 5)}px;
-    font-family: 'Amiri', serif;
+    font-family: 'Darker Grotesque', sans-serif;
   }
 }
 figcaption {
