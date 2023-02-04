@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.2.0 (2023-02-04)
+
+### Features
+
+- stackblitz and spotify components ([#197](https://github.com/laudebugs/laudebugs.me/issues/197)) ([320b927](https://github.com/laudebugs/laudebugs.me/commit/320b9271d749c204960806530a57fb16d0e245f6))
+
 ## 1.1.0 (2022-11-21)
 
 ### Features
