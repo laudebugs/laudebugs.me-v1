@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.3.0 (2023-02-04)
+
+### Features
+
+- update to new fonts - Darker Grotesque & Kantumruy Pro ([#200](https://github.com/laudebugs/laudebugs.me/issues/200)) ([4c4e1e2](https://github.com/laudebugs/laudebugs.me/commit/4c4e1e239b99872eb722e5dccb87dfe3fe5280a5))
+
 ### 1.2.1 (2023-02-04)
 
 ## 1.2.0 (2023-02-04)
