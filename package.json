@@ -39,6 +39,7 @@
     "@nrwl/next": "15.2.0",
     "@primer/octicons": "^16.1.1",
     "@reduxjs/toolkit": "1.8.4",
+    "@stackblitz/sdk": "^1.8.2",
     "@theme-ui/components": "^0.14.6",
     "@theme-ui/core": "^0.15.4",
     "@theme-ui/css": "^0.15.4",
