@@ -15,7 +15,8 @@ export const StackBlitzEmbed: FC<IStackBlitzEmbedProps> = ({ view, projectId, op
     sdk.embedProjectId(embedElement?.current ?? 'embed', projectId, {
       forceEmbedLayout: true,
       openFile,
-      view: view ?? 'preview'
+      view: view ?? 'preview',
+      clickToLoad: true
     })
   }, [])
 
