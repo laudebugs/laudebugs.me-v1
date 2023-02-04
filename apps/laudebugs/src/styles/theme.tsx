@@ -75,8 +75,8 @@ export const theme: Theme = {
     }
   },
   fonts: {
-    heading: 'Amiri, serif',
-    body: 'Jost, sans-serif',
+    heading: 'Darker Grotesque, sans-serif',
+    body: 'Kantumruy Pro, sans-serif',
     monospace: 'IBM Plex Mono, monospace'
   }
 }
