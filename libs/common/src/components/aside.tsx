@@ -1,4 +1,5 @@
 /** @jsxImportSource theme-ui */
+
 import styles from './aside.module.scss'
 
 export const Aside = (props: any) => {

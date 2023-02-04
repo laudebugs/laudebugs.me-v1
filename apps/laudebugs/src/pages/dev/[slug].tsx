@@ -5,7 +5,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import { useRouter } from 'next/router'
 import { Spinner, useColorMode } from 'theme-ui'
-import { Aside } from '@laudebugs/common/components'
+import { Aside, SpotifyTrack, StackBlitzEmbed } from '@laudebugs/common/components'
 import Note from '../../components/Note/note'
 import PostInfo from '../../components/post-info'
 import { getFilesFromSrcDir, getSinglePostFromSrcDir, getImageForPost } from '@laudebugs/utils'
@@ -35,6 +35,8 @@ const DevPost = ({ source, frontMatter, lastModified }) => {
   const components = {
     Aside,
     Note,
+    StackBlitzEmbed,
+    SpotifyTrack,
     pre: props => <Pre variant="pre" {...props} isNpm={isNpm} />
   }
 

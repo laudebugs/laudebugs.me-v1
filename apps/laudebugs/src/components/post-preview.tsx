@@ -10,7 +10,7 @@ const PostPreview = ({ post }) => {
       <small>{dayCount(post.publishedOn)}</small>
       <div className={styles.content}>
         <div className={styles.image}>
-          <Image src={post.image} alt={post.title} fill />
+          <Image src={post.image} style={{ objectFit: 'contain' }} alt={post.title} fill />
         </div>
         <p>{post.summary}</p>
       </div>
