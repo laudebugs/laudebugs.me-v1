@@ -25,10 +25,7 @@ function SideNav({ close, isOpen }) {
               - journal
             </Link>
             <Link href="/fragments" onClick={() => close.next(!isOpen)}>
-              - fragments{' '}
-              <span className="verySpecialChar" style={{ color: 'var(--theme-ui-colors-accent)', fontSize: '1.5rem' }}>
-                Ρ
-              </span>
+              - fragments
             </Link>
             <span className={styles.undone}>
               {' '}
