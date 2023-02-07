@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.3.2 (2023-02-07)
+
+### Bug Fixes
+
+- cover photo height on mobile ([6faaf7e](https://github.com/laudebugs/laudebugs.me/commit/6faaf7e916bafd473c474d449b4a0087b53f0b33))
+
 ### 1.3.1 (2023-02-04)
 
 ## 1.3.0 (2023-02-04)
