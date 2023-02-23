@@ -23,6 +23,13 @@
       .undone {
         color: var(--theme-ui-colors-gray);
       }
+      .iconLink {
+        align-items: center;
+        display: flex;
+        span {
+          padding-left: 5px;
+        }
+      }
       a {
         font-size: 18pt;
         &:hover {

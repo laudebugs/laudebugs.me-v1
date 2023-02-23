@@ -27,10 +27,11 @@ function SideNav({ close, isOpen }) {
             <Link href="/fragments" onClick={() => close.next(!isOpen)}>
               - fragments
             </Link>
-            <span className={styles.undone}>
-              {' '}
-              - cuisine <small>[coming soon]</small>
-            </span>
+            <Link href="https://laudebugs.notion.site/Cookbook-5ab1fcaccd22416dbd7c873b1af5fe8c" target="__blank">
+              <span className={styles.iconLink}>
+                - cook book <span className="material-icons-outlined">open_in_new</span>
+              </span>
+            </Link>
             <span className={styles.undone}>
               {' '}
               - listenings <small>[coming soon]</small>
