@@ -2,6 +2,7 @@
 
 import { FC, memo, useEffect, useState } from 'react'
 import styles from './tags.module.scss'
+import { ITag } from '@laudebugs/utils'
 
 export interface TagsProps {
   tags: ITag[]
@@ -34,7 +35,7 @@ const Tags: FC<TagsProps> = ({ tags, toggleTag, selectedTags, showExpand, showCo
             className={isSelected ? styles.selected : styles.tag}
             onClick={() => toggleTag(tag)}
             key={tag.title}
-            sx={{ fontFamily: 'monospace' }}
+            sx={{ fontFamily: 'monospace', height: 'fit-content' }}
           >
             {tag.title} {showCount && <span className={styles.articleCount}>({tag.articleCount})</span>}
           </span>
