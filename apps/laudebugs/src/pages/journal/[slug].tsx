@@ -11,7 +11,7 @@ import PostInfo from '../../components/post-info'
 import { getFilesFromSrcDir, getSinglePostFromSrcDir } from '@laudebugs/utils'
 import styles from '../dev/dev.module.scss'
 const components = {}
-
+import Head from 'next/head'
 function JournalEntry({ source, frontMatter }) {
   const router = useRouter()
 
@@ -24,6 +24,7 @@ function JournalEntry({ source, frontMatter }) {
   }
   return (
     <div className={styles.singlePost}>
+      <HeadWithMetaTags frontMatter={frontMatter} />
       <PostInfo frontMatter={frontMatter} />
       <MDXRemote {...source} components={components} />
     </div>
