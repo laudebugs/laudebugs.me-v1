@@ -12,7 +12,7 @@ jobs:
         node-version: [16.x]
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           submodules: recursive
       - name: Cache Dependencies
