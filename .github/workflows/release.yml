@@ -17,7 +17,7 @@ jobs:
         with:
           token: ${{ secrets.LAUDEBUGS_DOT_ME }}
       - name: Cache Dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         env:
           cache-name: node-cache
         with:
