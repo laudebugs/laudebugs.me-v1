@@ -20,7 +20,7 @@ const PostInfoComponent: FC<PostInfoProps> = ({ frontMatter, lastModified }) => 
 
   return (
     <div className={styles.postinfo}>
-      <HeadWithMetaTags {...frontMatter} />
+      <HeadWithMetaTags frontMatter={frontMatter} />
       <span className={styles.deets}>
         <h1>{frontMatter.title}</h1>
         <span className={styles.metadata}>
