@@ -10,6 +10,7 @@ import { memo } from 'react'
 import Image from 'next/image'
 import { dayCount } from '@laudebugs/utils'
 import styles from './fragments.module.scss'
+import HeadWithMetaTags from '../../components/head'
 
 const Fragment = ({ source, frontMatter }) => {
   const router = useRouter()
@@ -22,6 +23,7 @@ const Fragment = ({ source, frontMatter }) => {
   }
   return (
     <div className={styles.fragment}>
+      <HeadWithMetaTags frontMatter={frontMatter} />
       <Image src={frontMatter.image} width={1280} height={720} alt={frontMatter?.title} />
       <h2>{frontMatter.title}</h2>
       <small>{dayCount(frontMatter.publishedOn)}</small>

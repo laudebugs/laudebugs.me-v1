@@ -1,5 +1,6 @@
 /** @jsxImportSource theme-ui */
 
+import { getFilesFromSrcDir, getSinglePostFromSrcDir } from '@laudebugs/utils'
 import matter from 'gray-matter'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
@@ -8,10 +9,9 @@ import { memo } from 'react'
 import { Spinner } from 'theme-ui'
 import HeadWithMetaTags from '../../components/head'
 import PostInfo from '../../components/post-info'
-import { getFilesFromSrcDir, getSinglePostFromSrcDir } from '@laudebugs/utils'
 import styles from '../dev/dev.module.scss'
+
 const components = {}
-import Head from 'next/head'
 function JournalEntry({ source, frontMatter }) {
   const router = useRouter()
 
@@ -46,7 +46,6 @@ export async function getStaticPaths(slug) {
 
 export async function getStaticProps({ params }) {
   const { post } = getSinglePostFromSrcDir('posts/journal', params.slug)
-
   const source = post
   const { content, data } = matter(source)
   const mdxSource = await serialize(content, { scope: data })

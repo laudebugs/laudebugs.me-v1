@@ -1,15 +1,15 @@
 /** @jsxImportSource theme-ui */
+import { ITag } from '@laudebugs/common/models'
+import { dayCount, getFilesFromSrcDir } from '@laudebugs/utils'
+import { shuffle } from 'lodash'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
-import { memo } from 'react'
-import { getFilesFromSrcDir } from '@laudebugs/utils'
-import styles from './fragments.module.scss'
+import Head from 'next/head'
 import Image from 'next/image'
-import { shuffle } from 'lodash'
-import { dayCount } from '@laudebugs/utils'
-import Tags from '../../components/tags'
 import Link from 'next/link'
-import { ITag } from '@laudebugs/common/models'
+import { memo } from 'react'
+import Tags from '../../components/tags'
+import styles from './fragments.module.scss'
 
 function Fragments({ fragments }) {
   const createTags = (tags: string[]): ITag[] => {
@@ -23,6 +23,10 @@ function Fragments({ fragments }) {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title key="title">Lau de Bugs - Fragments</title>
+        <meta key="description" name="description" content="Bugasu\'s Fragments. Pieces of Me." />
+      </Head>
       {fragments.map((fragment, i) => {
         return (
           <Link
