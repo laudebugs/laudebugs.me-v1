@@ -14,7 +14,6 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.LAUDEBUGS_DOT_ME }}
           submodules: recursive
       - name: Cache Dependencies
         uses: actions/cache@v2
