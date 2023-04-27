@@ -2,35 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### 1.4.2 (2023-04-27)
-
-### 1.4.1 (2023-04-27)
-
 ## 1.4.0 (2023-04-27)
 
 ### Features
 
 - add link to submit a pr ([#227](https://github.com/laudebugs/laudebugs.me/issues/227)) ([682db57](https://github.com/laudebugs/laudebugs.me/commit/682db57d798ee14b995e3b6ccf61d697988fe09f))
-
-### 1.3.12 (2023-04-09)
-
-### 1.3.11 (2023-04-09)
-
-### 1.3.10 (2023-04-02)
-
-### 1.3.9 (2023-04-02)
-
-### 1.3.8 (2023-04-02)
-
-### 1.3.7 (2023-03-23)
-
-### 1.3.6 (2023-03-12)
-
-### 1.3.5 (2023-03-11)
-
-### 1.3.4 (2023-03-02)
-
-### 1.3.3 (2023-03-02)
 
 ### 1.3.2 (2023-02-07)
 
@@ -38,15 +14,11 @@ All notable changes to this project will be documented in this file. See [standa
 
 - cover photo height on mobile ([6faaf7e](https://github.com/laudebugs/laudebugs.me/commit/6faaf7e916bafd473c474d449b4a0087b53f0b33))
 
-### 1.3.1 (2023-02-04)
-
 ## 1.3.0 (2023-02-04)
 
 ### Features
 
 - update to new fonts - Darker Grotesque & Kantumruy Pro ([#200](https://github.com/laudebugs/laudebugs.me/issues/200)) ([4c4e1e2](https://github.com/laudebugs/laudebugs.me/commit/4c4e1e239b99872eb722e5dccb87dfe3fe5280a5))
-
-### 1.2.1 (2023-02-04)
 
 ## 1.2.0 (2023-02-04)
 
