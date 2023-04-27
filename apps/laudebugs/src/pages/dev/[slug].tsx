@@ -18,6 +18,7 @@ import { Pre } from '@laudebugs/common/components'
 import { useSelector } from 'react-redux'
 import { selectIsNpm } from '../../redux/store'
 import Giscus from '@giscus/react'
+import Link from 'next/link'
 
 const DevPost = ({ source, frontMatter, lastModified }) => {
   const router = useRouter()
@@ -55,6 +56,22 @@ const DevPost = ({ source, frontMatter, lastModified }) => {
       <PostInfo frontMatter={frontMatter} className={styles.postInfo} />
       <MDXRemote {...source} components={components} />
       <hr />
+      <div style={{ fontSize: '0.8em' }}>
+        🤔 Suggest an edit on GitHub by{' '}
+        <Link className={styles.link} href={`https://github.com/laudebugs/blog-posts/edit/main/dev/${frontMatter.slug}.mdx`}>
+          {' '}
+          submitting a pull request{' '}
+          <span style={{ fontSize: '1em' }} className="material-icons-outlined">
+            open_in_new
+          </span>
+        </Link>
+      </div>
+      <div style={{ margin: '0.5em 0' }}>
+        <small>
+          <code style={{ fontFamily: 'IBM Plex Mono' }}>Last modified on: {lastModified}</code>
+        </small>
+      </div>
+
       <Giscus
         id="comments"
         repo="laudebugs/blog-posts"
@@ -69,9 +86,6 @@ const DevPost = ({ source, frontMatter, lastModified }) => {
         lang="en"
         loading="lazy"
       />
-      <small>
-        Last modified on: <code>{lastModified}</code>
-      </small>
     </div>
   )
 }
