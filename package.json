@@ -1,6 +1,6 @@
 {
   "name": "sandstorm",
-  "version": "1.4.0",
+  "version": "1.4.2",
   "license": "MIT",
   "scripts": {
     "start": "nx serve laudebugs --port 5002",
