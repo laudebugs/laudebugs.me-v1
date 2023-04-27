@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   release:
-    if: (startsWith(github.event.head_commit.message , 'chore(release)')) != true
+    if: (startsWith(github.event.head_commit.message , 'chore')) != true
     runs-on: ubuntu-latest
     strategy:
       matrix:

@@ -27,14 +27,14 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.LAUDEBUGS_BLOG_POSTS }}
-          commit-message: 'articles(update): ${{ github.event.client_payload.message.commit_sha }}'
+          commit-message: 'chore(update): ${{ github.event.client_payload.message.commit_sha }} [skip ci]'
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
           branch: blog-posts
           branch-suffix: random
           delete-branch: true
-          title: 'articles(update): ${{ github.event.client_payload.message.commit_sha }} [skip ci]'
+          title: 'chore(update): ${{ github.event.client_payload.message.commit_sha }} [skip ci]'
           body: |
             Update Submodule
             - Updated with Blog Posts
