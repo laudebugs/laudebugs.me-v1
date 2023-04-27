@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.4.0 (2023-04-27)
+
+### Features
+
+- add link to submit a pr ([#227](https://github.com/laudebugs/laudebugs.me/issues/227)) ([682db57](https://github.com/laudebugs/laudebugs.me/commit/682db57d798ee14b995e3b6ccf61d697988fe09f))
+
 ### 1.3.12 (2023-04-09)
 
 ### 1.3.11 (2023-04-09)
