@@ -38,10 +38,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 - release pipeline ([#192](https://github.com/laudebugs/laudebugs.me/issues/192)) ([6303094](https://github.com/laudebugs/laudebugs.me/commit/63030948aa38693ca001327070ebc0254a7b2238))
 
-## [1.0.0](https://github.com/laudebugs/sandstorm/compare/v0.0.14...v1.0.0) (2022-02-27)
-
-## [0.2.0](https://github.com/laudebugs/sandstorm/compare/v0.0.14...v0.2.0) (2022-02-27)
-
 ## [0.1.0](https://github.com/laudebugs/sandstorm/compare/v0.0.14...v0.1.0) (2022-02-27)
 
 ## 0.0.6 (2021-12-15)
@@ -253,8 +249,6 @@ All notable changes to this project will be documented in this file. See [standa
 - Merge pull request [#17](https://github.com/laudebugs/sandstorm/issues/17) from laudebugs/bug-fix/header-title-missing [[ca827bd](https://github.com/laudebugs/sandstorm/commit/ca827bd26ef5a30a490de6f0bc5e354430a2c4ad)]
 - fix(title): title missing in dev and journal [[f77b51e](https://github.com/laudebugs/sandstorm/commit/f77b51e19ae37b0cb71eb6798c4fc61d67f5b0ea)]
 
-<a name="0.1.2"></a>
-
 ## 0.0.5 (2021-11-16)
 
 ### Miscellaneous
@@ -299,8 +293,6 @@ All notable changes to this project will be documented in this file. See [standa
 - feat(custom 404 page): add custom 404 page [[6312029](https://github.com/laudebugs/sandstorm/commit/631202932f7e4475856c512c12a502549361af5d)]
 - feat(socials): add Social Links [[97e8a52](https://github.com/laudebugs/sandstorm/commit/97e8a5265d6a852c3222fc8dafba06a84b8217c2)]
 
-<a name="0.1.1"></a>
-
 ## 0.1.1 (2021-11-02)
 
 ### Miscellaneous
@@ -319,8 +311,6 @@ All notable changes to this project will be documented in this file. See [standa
 - build(next config): add PWA to Next Config [[e0ec721](https://github.com/laudebugs/sandstorm/commit/e0ec721e0cecad6f35653230d8e6afe004196b79)]
 - feat(pwa): add PWA support [[789698f](https://github.com/laudebugs/sandstorm/commit/789698f37a009bb58fd3523c78d05ddeb166b9c6)]
 - fix(title tag): add title tag to dev and journal page [[bb3e040](https://github.com/laudebugs/sandstorm/commit/bb3e0400997ca09855ac121a63a2c82eb9c1ca58)]
-
-<a name="0.1.0"></a>
 
 ## 0.0.4 (2021-10-29)
 
@@ -342,8 +332,6 @@ All notable changes to this project will be documented in this file. See [standa
 - fix(styles): remove !important from styles [[0f27303](https://github.com/laudebugs/sandstorm/commit/0f27303a8b6813b07b563977ebb4a5c16549a1d6)]
 - chore(update post): update a post [[d3e3adf](https://github.com/laudebugs/sandstorm/commit/d3e3adfb0333ef575372f34a18d8af6ff855f36f)]
 
-<a name="0.0.3"></a>
-
 ## 0.0.3 (2021-10-28)
 
 ### Miscellaneous
@@ -353,8 +341,6 @@ All notable changes to this project will be documented in this file. See [standa
 - chore(unused import): remove unused imports [[641d3eb](https://github.com/laudebugs/sandstorm/commit/641d3ebdc72973dc3c1b6badaef8ff7287cb91df)]
 - fix(sidenav): fix issue with Z-index [[074a9ee](https://github.com/laudebugs/sandstorm/commit/074a9ee0ef57e2493cd9de5e79eb598a171c897e)]
 - fix(post preview): fix Image being resized incorrectly [[44ba316](https://github.com/laudebugs/sandstorm/commit/44ba316429b65aed39115b4cf0e737c5df8f3fa0)]
-
-<a name="0.0.2"></a>
 
 ## 0.0.2 (2021-10-27)
 
@@ -385,8 +371,6 @@ All notable changes to this project will be documented in this file. See [standa
 - chore(node packages): update node packages [[6f5cef9](https://github.com/laudebugs/sandstorm/commit/6f5cef96160527eb71b47a3362769af160377bec)]
 - chore(add changelog): add changelog [[79e79e7](https://github.com/laudebugs/sandstorm/commit/79e79e789637805c08f745e85d6010a351b26f70)]
 - chore(changelog): run first release [[5c0721d](https://github.com/laudebugs/sandstorm/commit/5c0721d685e8337b59b4e228947b929b301b0996)]
-
-<a name="0.0.1"></a>
 
 ## 0.0.1 (2021-10-25)
 
