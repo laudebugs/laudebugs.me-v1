@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.4.3 (2023-04-28)
+
+### Bug Fixes
+
+- update repo name ([ae81546](https://github.com/laudebugs/laudebugs.me/commit/ae815469ae9a787ecd627a548dfa9264b8a30ef0))
+
 ## 1.4.0 (2023-04-27)
 
 ### Features
