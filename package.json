@@ -62,7 +62,7 @@
     "fastify": "^3.29.4",
     "fastify-cors": "^6.0.2",
     "fastify-micro": "^2.2.0",
-    "fastify-websocket": "^4.0.0",
+    "@fastify/websocket": "^5.0.0",
     "feed": "^4.2.2",
     "feed-core": "^1.1.5",
     "graphql": "^15.6.1",
