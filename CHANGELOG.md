@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.4.5 (2023-05-27)
+
+### Bug Fixes
+
+- **deps:** update dependency @giscus/react to v2.2.8 ([#239](https://github.com/laudebugs/laudebugs.me/issues/239)) ([9a6a44f](https://github.com/laudebugs/laudebugs.me/commit/9a6a44f1e76f42e788ec3572ecedf47a8939c4de))
+
 ### 1.4.4 (2023-05-27)
 
 ### 1.4.3 (2023-04-28)
