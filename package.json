@@ -60,7 +60,7 @@
     "dotenv-load": "^2.0.0",
     "esbuild": "^0.14.2",
     "fastify": "^3.29.4",
-    "fastify-cors": "^6.0.2",
+    "@fastify/cors": "^7.0.0",
     "fastify-micro": "^2.2.0",
     "@fastify/websocket": "^5.0.0",
     "feed": "^4.2.2",
