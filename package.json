@@ -94,7 +94,7 @@
     "rehype-slug": "^5.0.0",
     "remark-rehype": "^10.0.0",
     "rxjs": "^7.4.0",
-    "styled-components": "5.3.5",
+    "styled-components": "5.3.11",
     "swr": "^1.0.1",
     "theme-ui": "^0.15.4",
     "tslib": "^2.3.0",
