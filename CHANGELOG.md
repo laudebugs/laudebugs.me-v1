@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.4.5 (2023-06-19)
+
+### Bug Fixes
+
+- **deps:** update dependency @apollo/client to v3.7.15 ([#250](https://github.com/laudebugs/laudebugs.me/issues/250)) ([2dd55f6](https://github.com/laudebugs/laudebugs.me/commit/2dd55f6ce6f4da2101536cd13ea4d4b30b033b47))
+
 ### 1.4.4 (2023-05-27)
 
 ### 1.4.3 (2023-04-28)
