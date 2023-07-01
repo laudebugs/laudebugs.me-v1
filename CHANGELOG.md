@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.4.6 (2023-07-01)
+
+### Bug Fixes
+
+- metadata positioning on mobile ([e3e4873](https://github.com/laudebugs/laudebugs.me/commit/e3e4873044bb2cc2135847307aed09743c2c19b4))
+
 ### 1.4.5 (2023-06-19)
 
 ### Bug Fixes
