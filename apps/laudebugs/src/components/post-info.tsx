@@ -25,11 +25,13 @@ const PostInfoComponent: FC<PostInfoProps> = ({ frontMatter, lastModified }) => 
         <h1>{frontMatter.title}</h1>
         <span className={styles.metadata}>
           {frontMatter.tags && <Tags tags={postTags} showCount={false} />}
-          <p sx={{ marginLeft: '0.25em' }}>
-            №:{' '}
-            <span sx={{ textDecoration: 'underline', borderRight: '1px solid', marginRight: '0.5em', paddingRight: '0.5em' }}>{no} </span>
-          </p>
-          <p>{dayCount(frontMatter.publishedOn)}</p>
+          <span sx={{ display: 'flex', flexDirection: 'row' }}>
+            <p sx={{ marginLeft: '0.25em', display: 'flex', flexDirection: 'row', gap: '0.25em' }}>
+              №:{' '}
+              <span sx={{ textDecoration: 'underline', borderRight: '1px solid', marginRight: '0.5em', paddingRight: '0.5em' }}>{no} </span>
+            </p>
+            <p>{dayCount(frontMatter.publishedOn)}</p>
+          </span>
         </span>
       </span>
       <span className={styles.featuredImage}>
