@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.4.7 (2023-07-10)
+
+### Bug Fixes
+
+- update margin on header on mobile for featured post ([918d8d5](https://github.com/laudebugs/laudebugs.me/commit/918d8d5c2b4cdaae493cfce14d83e79203906645))
+
 ### 1.4.6 (2023-07-01)
 
 ### Bug Fixes
