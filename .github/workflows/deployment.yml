@@ -19,7 +19,7 @@ jobs:
           git submodule init
           git submodule update --remote --merge
       - name: Verify Changed files 🐒
-        uses: tj-actions/verify-changed-files@v8.3
+        uses: tj-actions/verify-changed-files@v8.8
         id: verify-changed-files
         with:
           files: |
