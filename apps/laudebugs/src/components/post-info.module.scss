@@ -13,6 +13,9 @@
     .featuredImageContainer {
       height: 90%;
       position: relative;
+      img {
+        aspect-ratio: 16/9;
+      }
     }
     .caption {
       text-align: center;

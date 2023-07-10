@@ -4,8 +4,7 @@ export const theme: Theme = {
   useLocalStorage: false,
   ...tosh,
   config: {
-    initialColorModeName: 'darkMode',
-    printColorModeName: 'lightMode'
+    initialColorModeName: 'darkMode'
   },
   colors: {
     ...tosh.colors,

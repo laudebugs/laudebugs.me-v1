@@ -36,7 +36,7 @@ const PostInfoComponent: FC<PostInfoProps> = ({ frontMatter, lastModified }) => 
       </span>
       <span className={styles.featuredImage}>
         <span className={styles.featuredImageContainer}>
-          {!!frontMatter?.image && <Image fill style={{ objectFit: 'contain' }} src={frontMatter.image} alt={frontMatter.title} />}
+          {frontMatter?.image && <Image fill style={{ objectFit: 'contain' }} src={frontMatter.image} alt={frontMatter.title} />}
         </span>
         <span className={styles.caption}>
           {frontMatter.imageCaption ? (
