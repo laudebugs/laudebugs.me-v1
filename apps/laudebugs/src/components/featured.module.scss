@@ -76,5 +76,15 @@
       width: 100%;
       aspect-ratio: 16 / 9;
     }
+    .details {
+      padding-top: 0.5em;
+      p:nth-of-type(2) {
+        border-left: 1px solid var(--theme-ui-colors-text);
+        padding-left: 0.75em;
+      }
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+    }
   }
 }
