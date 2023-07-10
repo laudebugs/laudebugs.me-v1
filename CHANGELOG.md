@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.4.7 (2023-07-10)
+
+### Bug Fixes
+
+- **journal:** featured image ([ed701c8](https://github.com/laudebugs/laudebugs.me/commit/ed701c86a799a65f7167eafd0fde5e35d3cbfbad))
+
 ### 1.4.6 (2023-07-01)
 
 ### Bug Fixes
