@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.4.8 (2023-07-11)
+
+### Bug Fixes
+
+- **fragments:** fix styling on fragments page ([734f88b](https://github.com/laudebugs/laudebugs.me/commit/734f88b24b76985a9cf11d687f21a22a3efec9ba))
+
 ### 1.4.7 (2023-07-10)
 
 ### Bug Fixes
