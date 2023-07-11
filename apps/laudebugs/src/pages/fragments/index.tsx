@@ -52,7 +52,7 @@ function Fragments({ fragments }) {
                   </span>
                 </div>
               </div>
-              <MDXRemote {...fragment?.content} />
+              <p style={{ marginTop: 15 }}>{fragment.frontMatter.summary}</p>
               {i < fragments.length - 1 && <hr />}
             </div>
           </Link>

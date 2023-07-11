@@ -22,9 +22,9 @@ const Fragment = ({ source, frontMatter }) => {
     )
   }
   return (
-    <div className={styles.fragment}>
+    <div className={styles.singleFragment}>
       <HeadWithMetaTags frontMatter={frontMatter} />
-      <Image src={frontMatter.image} width={1280} height={720} alt={frontMatter?.title} />
+      <Image className={'img'} src={frontMatter.image} width={300} height={200} alt={frontMatter?.title} />
       <h2>{frontMatter.title}</h2>
       <small>{dayCount(frontMatter.publishedOn)}</small>
       <MDXRemote {...source} />
