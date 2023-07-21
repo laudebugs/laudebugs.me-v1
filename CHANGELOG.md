@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.4.9 (2023-07-21)
+
+### Bug Fixes
+
+- **deps:** update babel monorepo ([#291](https://github.com/laudebugs/laudebugs.me/issues/291)) ([0cc8337](https://github.com/laudebugs/laudebugs.me/commit/0cc833740ee18d1c15e18307724dd282b0e04a9e))
+
 ### 1.4.8 (2023-07-11)
 
 ### Bug Fixes
