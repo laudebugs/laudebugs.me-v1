@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.5.0 (2023-07-29)
+
+### Features
+
+- hide journal ([1fd38e3](https://github.com/laudebugs/laudebugs.me/commit/1fd38e3b889d880e7860f761f90ddae6e89d2290))
+
 ### 1.4.8 (2023-07-11)
 
 ### Bug Fixes
