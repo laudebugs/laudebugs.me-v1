@@ -134,7 +134,7 @@
     "cypress": "^8.7.0",
     "cz-conventional-changelog": "^3.3.0",
     "cz-emoji-conventional": "^1.0.1",
-    "eslint": "8.44.0",
+    "eslint": "8.46.0",
     "eslint-config-next": "13.0.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-cypress": "^2.10.3",
