@@ -31,12 +31,12 @@ const Header = () => {
             <h2> Lau de Bugs</h2>
           </Link>
           <span className={`${path !== '/' && path !== '/changelog' ? styles.selected : styles.paths}`}>
-            <Link href="/journal" className={`${path === '/journal' ? styles.selected_left : ''}`}>
-              <h4 className={styles.link}>journal</h4>
+            <Link href="/dev" className={`${path === '/dev' ? styles.selected_left : ''}`}>
+              <h4 className={styles.link}>archive</h4>
             </Link>
             <Logo />
-            <Link href="/dev" className={`${path === '/dev' ? styles.selected_right : ''}`}>
-              <h4 className={styles.link}>dev</h4>
+            <Link href="/about" className={`${path === '/about' ? styles.selected_right : ''}`}>
+              <h4 className={styles.link}>about</h4>
             </Link>
           </span>
         </span>
