@@ -51,7 +51,7 @@
     "@theme-ui/sidenav": "^0.11.3",
     "@types/react-pdf": "^5.0.9",
     "apollo-server-micro": "^3.4.0",
-    "axios": "^0.24.0",
+    "axios": "^1.0.0",
     "clipboard-copy": "^4.0.1",
     "conventional-changelog-cli": "^2.1.1",
     "core-js": "^3.6.5",
